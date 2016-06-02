@@ -1,0 +1,39 @@
+// COMMON STYLES
+html, body {
+	height:100%;
+	min-height:100%;
+}
+
+a {
+	text-decoration: none;
+	cursor:pointer;
+	color:$text-clr;
+}
+
+a.anchor{
+	position: absolute;
+	margin-top:-8em;
+}
+
+button:focus {outline:0;}
+
+//b-call
+.b-call{
+	position:fixed;
+	display:none;
+	bottom:2em;
+	width:100%;
+	text-align:center;
+	@media (max-width: 660px) {
+		display:block;
+	}
+}
+.b-call__icon{
+	display:inline-block;
+	max-width:5em;
+	height:auto;
+	animation-name: spin;
+    animation-duration: 8s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite; 
+}
