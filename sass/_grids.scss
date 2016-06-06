@@ -19,49 +19,51 @@ $susy: (
 .wrap {
   width:100%;
   max-width:$cnt;
+  margin:0 auto;
   padding-left:$base-d*6em;
   padding-right:$base-d*6em;
-  @media (max-width: 1440px) {
+  @media (max-width: $bp1440) {
     padding-left:$base-d*3em;
     padding-right:$base-d*3em;
   }
-  @media (max-width: 400px) {
+  @media (max-width: $bp400) {
     padding-left:$base-d*2.4em;
     padding-right:$base-d*2.4em;
   }
 }
+
 .container{
   @include container(); 
   width:100%;
   max-width:$cnt;
   padding-left:$base-d*3em;
   padding-right:$base-d*3em;
-  @media (max-width: 1440px) {
+  @media (max-width: $bp1440) {
     padding-left:$base-d*3em;
     padding-right:$base-d*3em;
   }
-  @media (max-width: 400px) {
-    padding-left:0;
-    padding-right:0;
+  @media (max-width: $bp400) {
+    padding-left:$base-d*2em;;
+    padding-right:$base-d*2em;;
   }
   
 }
 
 .item{
   @include span(2);
-  @media (max-width: 1540px) {
+  @media (max-width: $bp1540) {
     @include span(2.4);
   }
-  @media (max-width: 1260px) {
+  @media (max-width: $bp1260) {
     @include span(3);
   }
-  @media (max-width: 1000px) {
+  @media (max-width: $bp1000) {
     @include span(4);
   }
-  @media (max-width: 760px) {
+  @media (max-width: $bp760) {
     @include span(6);
   }
-  @media (max-width: 540px) {
+  @media (max-width: $bp540) {
     @include span(12);
   }
   margin-bottom:$base-d*6em;
@@ -73,10 +75,9 @@ $susy: (
   width:100%;
   
   margin:0 auto;
-  
 
-  box-shadow: 0 0 $base-d*1.6em 0 $black-15;
-  height:400px;
+  box-shadow: 0 0 $base-d*2em 0 $black-15;
+  min-height:400px;
 }
 
 .test2 {

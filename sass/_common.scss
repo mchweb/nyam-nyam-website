@@ -17,6 +17,8 @@ a.anchor{
 
 button:focus {outline:0;}
 
+strong {font-weight:bold}
+
 //b-call
 .b-call{
 	position:fixed;
@@ -24,13 +26,13 @@ button:focus {outline:0;}
 	bottom:2em;
 	width:100%;
 	text-align:center;
-	@media (max-width: 660px) {
+	@media (max-width: $bp760) {
 		display:block;
 	}
 }
 .b-call__icon{
 	display:inline-block;
-	max-width:5em;
+	max-width:4em;
 	height:auto;
 	animation-name: spin;
     animation-duration: 8s;
