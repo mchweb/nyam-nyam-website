@@ -25,6 +25,12 @@
 			<p style="text-align:center;font-size:20px;background:white;width:100%;z-index:10000;padding:20px 0px"><strong>Кажется, ваш браузер безнадежно устарел.</strong> Скорее всего, сайт будет отображаться и работать некорректно.<br/>Пожалуйста, <a style="color:red" href="http://browsehappy.com/" target="_blank">установите с одного из официальных сайтов</a> новую версию своего браузера.<br/></p>
 		<![endif]-->
 
+		<!-- BEGIN of b-call -->
+		<div class="b-call">
+			<a href="tel:+73822342999"><img width=144 height=144 class="b-call__icon" src="assets/img/b-call.png" alt="Ням-ням — Доставка суши и пиццы в Томске. 342-999"></a>
+		</div>
+		<!-- END of b-call -->
+
 		<header class="header">
 			<div class="header-line-top js-line-top">
 				<div class="container">
@@ -84,26 +90,76 @@
 					</div>
 					<div class="header-cart">
 						<div class="header-cart__sum"><span id="header-total">49</span><span>&nbsp;₽</span></div>&nbsp;
-						<div class="header-cart__button header-cart__button_isActive">
+						<div class="header-cart__button">
+							<div class="header-cart__button-active"></div>
 							<div class="header-cart__title"><p>Корзина</p></div>
 							<div class="header-cart-button__counter"><p>4</p></div>
 						</div>
-					</div>
-					<div class="container m-cart-wrap">
-						<div class="m-cart-container">
+
+						<div class="m-cart-wrap m-cart-wrap_isHidden">
 							<div class="m-cart">
-								<p>yiii</p>
-							</div>
+								<div class="m-cart__heading"><p>В вашей корзине:</p></div>
+								<div class="m-cart__empty"><p>В корзине ничего нет.</p></div>
+
+								<ul class="m-cart-items">
+									<li class="m-cart-item">
+										<div class="m-cart-item__title"><p>Четыре сезона 45 см.</p></div>
+										<div class="m-cart-item-btn">
+											<button class="btn btn-sm"><span>–</span></button>
+											<input class="i-count i-count-sm" type="text" disabled value="2" maxlength="3">
+											<button class="btn btn-sm"><span>+</span></button>
+										</div>
+										<div class="m-cart-item__price"><p>2449&nbsp;₽</p></div>
+										<div class="m-cart-item-remove">
+											<div class="btn-remove"></div>
+										</div>
+									</li>
+									<li class="m-cart-item">
+										<div class="m-cart-item__title"><p>Четыре сезона, а мы добавим еще строку и сейчас все развалится 45 см.</p></div>
+										<div class="m-cart-item-btn">
+											<button class="btn btn-sm"><span>–</span></button>
+											<input class="i-count i-count-sm" type="text" disabled value="2" maxlength="3">
+											<button class="btn btn-sm"><span>+</span></button>
+										</div>
+										<div class="m-cart-item__price"><p>449&nbsp;₽</p></div>
+										<div class="m-cart-item-remove">
+											<div class="btn-remove"></div>
+										</div>
+									</li>
+									<li class="m-cart-item">
+										<div class="m-cart-item__title"><p>Четыре сезона 45 см.</p></div>
+										<div class="m-cart-item-btn">
+											<button class="btn btn-sm"><span>–</span></button>
+											<input class="i-count i-count-sm" type="text" disabled value="2" maxlength="3">
+											<button class="btn btn-sm"><span>+</span></button>
+										</div>
+										<div class="m-cart-item__price"><p>449&nbsp;₽</p></div>
+										<div class="m-cart-item-remove">
+											<div class="btn-remove"></div>
+										</div>
+									</li>
+									<li class="m-cart-item">
+										<div class="m-cart-item__title"><p>Четыре сезона 45 см.</p></div>
+										<div class="m-cart-item-btn">
+											<button class="btn btn-sm"><span>–</span></button>
+											<input class="i-count i-count-sm" type="text" disabled value="2" maxlength="3">
+											<button class="btn btn-sm"><span>+</span></button>
+										</div>
+										<div class="m-cart-item__price"><p>449&nbsp;₽</p></div>
+										<div class="m-cart-item-remove">
+											<div class="btn-remove"></div>
+										</div>
+									</li>
+								</ul>
+
+								<div class="m-cart-total">
+									<div class="m-cart-total__sum"><p>Сумма заказа: <strong>449&nbsp;₽</strong></p></div>
+									<div class="m-cart-total__button"><button class="btn"><span>Перейти к оформлению</span></button></div>
+								</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
-
-
-			<!--
-			
-		-->
 		</header>
 
 		<div class="wrap">
@@ -115,6 +171,12 @@
 				<a href="tel:+73822342999"><div class="main-logo__phone"><div class="main-logo__phone-icon"></div><p>&nbsp;342-999</p></div></a>
 			</div>
 		</div>
+
+		<p>ываываыва</p>
+		<p>ываываыва</p>
+		<p>ываываыва</p>
+		<p>ываываыва</p>
+
 
 
 		<!--
@@ -136,11 +198,7 @@
 		</div>-->
 
 
-		<!-- BEGIN of b-call -->
-		<div class="b-call">
-			<a href="tel:+73822342999"><img width=144 height=144 class="b-call__icon" src="assets/img/b-call.png" alt="Ням-ням — Доставка суши и пиццы в Томске. 342-999"></a>
-		</div>
-		<!-- END of b-call -->
+		
 		
 
 		<div id="updown"><div id="updown-container"></div></div>
