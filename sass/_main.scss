@@ -55,6 +55,8 @@ a:hover{
 	}
 }
 .main-logo__title {
+	visibility:visible;
+	height:auto;
 	text-align:center;
 	color:$bg-clr;
 	& p{
@@ -63,6 +65,11 @@ a:hover{
 	@media (max-width: $bp840) {
 		display:none;
 	}
+}
+.main-logo__title_hide{
+	visibility:hidden;
+	opacity:0;
+	height:0;
 }
 .title__hiding{
 	@media (max-width: $bp1260) {
@@ -77,13 +84,18 @@ a:hover{
 	text-align:center;
 	font-weight:bold;
 	color:$bg-clr;
-	background:$accent-50;
+	background:$accent;
 	border-radius:0 0 $base-d*2em $base-d*2em;
 	padding:$base-d*1.2em $base-d*2em;
+	&:hover{
+		background:$accent-50;
+	}
 	& a{
 		color:$bg-clr;
 	}
 	& p{
+		vertical-align: top;
+		display:inline-block;
 		@include adjust-font-size-to($h3);
 		@media (max-width: $bp840) {
 			@include adjust-font-size-to($h4);
@@ -94,7 +106,13 @@ a:hover{
 	}
 
 }
-
+.main-logo__phone-icon{
+	background-image:url('../img/phone.svg');
+	background-size:contain;
+	width:$base-d*4.4em;
+	height:$base-d*4.4em;
+	display:inline-block;
+}
 .header{
 	padding-top:$base-d*2em;
 }
@@ -192,15 +210,16 @@ a:hover{
 	position:fixed;
 	background-color:$bg-clr;
 	width:100%;
-	top:$base-d*11.2em;
+	//top:$base-d*11.2em;
 	border-bottom:$base-d*0.2em solid $black-35;
 	@media (max-width: $bp940) {
-		top:$base-d*10.2em;
+		//top:$base-d*10.2em;
 	}
 	@media (max-width: $bp760) {
+		position:fixed;
 		top:0;
-		    box-shadow: 0 0 $base-d*2em $black-35;
-		    border:none;
+		box-shadow: 0 0 $base-d*2em $black-35;
+		border:none;
 	}
 }
 .nav-cat{
@@ -220,7 +239,9 @@ a:hover{
 		@include span(7);
 	}
 	@media (max-width: $bp760) {
-		//display:none;
+		visibility: hidden;
+    	opacity: 0;
+    	max-height: 0px;
 		position:fixed;
 		width:100vw;
 		margin:0;
@@ -228,13 +249,17 @@ a:hover{
 		margin-top:$base-d*10em;
 		background-color:$bg-clr;
 		overflow:auto;
-		max-height: 70vh;
 		box-shadow: 0 $base-d*1em $base-d*1em $black-15;
 		padding:$base-d*2em $base-d*3em;
 	}
 	@media (max-width: $bp400) {
 		margin-left:-10px;
 	}
+}
+.nav-cat_open{
+	visibility: visible;
+    opacity: 1;
+    max-height: 70vh;
 }
 .nav-cat-list__item{
 	display:inline-block;
@@ -390,4 +415,38 @@ a:hover{
 }
 .nav-mobile-heading{
 
+}
+
+.m-cart-wrap{
+	position: absolute;
+	text-align:right;
+}
+.m-cart-container{
+	width:50%;
+	min-width:$base-d*120em;
+   	display:inline-block;
+   	padding-right:$base-d*6em;
+   	margin-top:$base-d*9em;
+}
+.m-cart::before{
+
+    width: $base-d*3em;
+	content: "";
+    display: block;
+    position: absolute;
+    margin-top: -$base-d*5em;
+    margin-right: $base-d*15em;
+    right: 0;
+    
+    border-left: $base-d*3em solid transparent;
+    border-right: $base-d*3em solid transparent;
+    border-bottom: $base-d*3em solid $bg-clr;
+}
+.m-cart{
+	text-align:left;
+	box-shadow: 0 0 $base-d*2em $black-15;
+    border-radius: $base-d*1em;
+    background: $bg-clr;
+    top: 3em;
+    padding: $base-d*2em 0;
 }
