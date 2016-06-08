@@ -39,46 +39,16 @@ $susy: (
   padding-left:$base-d*3em;
   padding-right:$base-d*3em;
   @media (max-width: $bp1440) {
-    padding-left:$base-d*3em;
-    padding-right:$base-d*3em;
-  }
-  @media (max-width: $bp400) {
-    padding-left:$base-d*2em;;
-    padding-right:$base-d*2em;;
-  }
-  
+    padding-left:0;
+    padding-right:0;
+  }  
 }
 
-.item{
-  @include span(2);
-  @media (max-width: $bp1540) {
-    @include span(2.4);
-  }
-  @media (max-width: $bp1260) {
-    @include span(3);
-  }
-  @media (max-width: $bp1000) {
-    @include span(4);
-  }
-  @media (max-width: $bp760) {
-    @include span(6);
-  }
-  @media (max-width: $bp540) {
-    @include span(12);
-  }
-  margin-bottom:$base-d*6em;
+.container-sm{
+  max-width:$cnt-sm;
 }
 
-.inside{
-  min-width:$base-d*44em;
-  max-width:$base-d*60em;
-  width:100%;
-  
-  margin:0 auto;
 
-  box-shadow: 0 0 $base-d*2em 0 $black-15;
-  min-height:400px;
-}
 
 .test2 {
   height:500px;

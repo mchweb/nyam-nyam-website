@@ -5,6 +5,7 @@
 
 $(window).scroll(sticky_relocate);
 $(window).resize(sticky_relocate);
+$(window).load(sticky_relocate);
 
 function sticky_relocate(){
    	if ($('.js-line-top').css('display') != 'none'){
@@ -103,31 +104,43 @@ $(document).ready(function() {
         $(".nav-cat").removeClass("nav-cat_open");
     }
 
+    $('.header-cart__button-active_isActive').unbind('hover');
+    function openCart(){
+    	if (!($(".header-cart__button-active").hasClass("header-cart__button-active_isActive"))){
+    		$(".m-cart-wrap").removeClass("m-cart-wrap_isHidden");
+    		$(".header-cart__button").addClass("header-cart__button_isActive");
+    		setTimeout(function(){$(".header-cart__button-active").addClass("header-cart__button-active_isActive");}, 0.5*1000);
+    	}
+    }
+
+    function closeCart(){
+		$(".header-cart__button").removeClass("header-cart__button_isActive");
+    	$(".header-cart__button").blur();
+    	setTimeout(function(){$(".header-cart__button-active").removeClass("header-cart__button-active_isActive");}, 0.5*1000);
+    }
+
+    $(".header-cart__button").click(function(){
+    	openCart();
+    });
     $(".header-cart__button").hover(function(){
-    	$(".m-cart-wrap").removeClass("m-cart-wrap_isHidden");
-    	$(".header-cart__button").addClass("header-cart__button_isActive");
-    	setTimeout(function(){$(".header-cart__button-active").addClass("header-cart__button-active_isActive");}, 0.5*1000)
+    	openCart();
     },
     function(){
     	$(".m-cart-wrap").addClass("m-cart-wrap_isHidden");
-		$(".header-cart__button").removeClass("header-cart__button_isActive");
-		$(".header-cart__button").blur();
-		$(".header-cart__button-active").removeClass("header-cart__button-active_isActive");
+		closeCart();
     });
+
     $(".m-cart-wrap").hover(function(){
 		$(".header-cart__button").addClass("header-cart__button_isActive");
     }, function(){
-		$(".header-cart__button").removeClass("header-cart__button_isActive");
-		$(".header-cart__button").blur();
-		$(".header-cart__button-active").removeClass("header-cart__button-active_isActive");
+		closeCart();
     });
 
     $(".header-cart__button-active").click(function(){
     	$(".m-cart-wrap").addClass("m-cart-wrap_isHidden");
-    	$(".header-cart__button").removeClass("header-cart__button_isActive");
-    	$(".header-cart__button").blur();
-    	$(".header-cart__button-active").removeClass("header-cart__button-active_isActive");
+    	closeCart();
     });
+
 
     $(".nav-mobile__item").each(function() {
         $(this).on("click", closeMenuMobile);
