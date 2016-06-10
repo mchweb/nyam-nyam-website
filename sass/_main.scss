@@ -1137,20 +1137,54 @@ a:hover{
 }
 
 .cart-wrap{
-	padding-top:$base-d*8em;
+	padding-top:$base-d*10em;
+	@media (max-width: $bp760) {
+    	padding-top:$base-d*2em;
+  	}
 }
 .cart-order{
+
 	@include span(6);
+	@media (max-width: $bp1260) {
+    	@include span(7);
+  	}
+  	@media (max-width: $bp1000) {
+    	@include span(8);
+  	}
+  	@media (max-width: $bp840) {
+    	@include span(12 last);
+    	margin-bottom:$base-d*6em;
+    	padding:0 $base-d*2em;
+  	}
 }
 .cart-order__empty{
 	display:none;
 }
 .cart-extras{
 	@include span(6 last);
-	padding:0;
+	@media (max-width: $bp1260) {
+    	@include span(5 last);
+  	}
+  	@media (max-width: $bp1000) {
+    	@include span(4 last);
+  	}
+  	@media (max-width: $bp840) {
+    	@include span(12 last);
+  	}
+	padding:0 !important;
 }
 .cart-form{
 	@include span(6);
+	@media (max-width: $bp1260) {
+    	@include span(7);
+  	}
+  	@media (max-width: $bp1000) {
+    	@include span(8);
+  	}
+  	@media (max-width: $bp840) {
+    	@include span(12 last);
+    	padding:0 $base-d*2em;
+  	}
 	clear:left;
 	margin-top:$base-d*6em;
 }
@@ -1159,6 +1193,7 @@ a:hover{
 	padding-right:$base-d*3em;
 }
 .cart-extras__cancel{
+	display:none;
 	margin-bottom:$base-d*3em;
 	padding:0 $base-d*3em;
 	
@@ -1171,6 +1206,10 @@ a:hover{
 			border-color:$accent-50;
 		}
 	}
+
+	@media (max-width: $bp840) {
+    	display:block;
+  	}
 }
 .circle-title{
 	margin-bottom:$base-d*3em;
@@ -1196,14 +1235,30 @@ a:hover{
 	display:table-cell;
 	vertical-align:middle;
 	& p{
+		color:$black-90;
 		@include adjust-font-size-to($h1);
 		font-weight:bold;
+		@media (max-width: $bp680) {
+    		@include adjust-font-size-to($h2);
+  		}
+	}
+	
+}
+.circle-title__title_sm{
+	& p{
+		font-weight:normal;
+		@media (max-width: $bp1000) and (min-width:$bp840) {
+			@include adjust-font-size-to($h2);
+		}
 	}
 }
 
 .cart-item{
 	cursor:default;
-	display:table;
+	display:flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items:stretch;
 	width:100%;
 	padding:0 $base-d*3em 0 0;
 	&:hover, &:focus{
@@ -1225,18 +1280,25 @@ a:hover{
 }
 
 .cart-item__image{
-	display:table-cell;
 	width:15%;
 	height:auto;
 	background-color:$bg-clr;
 	background-size:contain;
 	background-position:left center;
 	background-repeat: no-repeat;
-
+	@media (max-width: $bp540) {
+    	width:$base-d*12em;
+    	height:$base-d*12em;
+    	position:absolute;
+  	}
+  	@media (max-width: $bp340) {
+    	width:$base-d*9em;
+    	height:$base-d*9em;
+    	position:absolute;
+  	}
 }
 .cart-item-title{
-	display:table-cell;
-	padding:$base-d*2em $base-d*6em $base-d*4em $base-d*3em;
+	padding:$base-d*3em $base-d*6em $base-d*3.4em $base-d*3em;
 
 	width:45%;
 	@media (max-width: $bp540) {
@@ -1246,6 +1308,12 @@ a:hover{
 		width:100%;
 		padding-bottom:0;
 	}
+	@media (max-width: $bp540) {
+    	margin-left:$base-d*12em;
+  	}
+  	@media (max-width: $bp340) {
+    	margin-left:$base-d*9em;
+  	}
 }
 .cart-item__subtitle{
 	color:$black-60;
@@ -1255,17 +1323,20 @@ a:hover{
 	border:none;
 }
 .cart-item-btn{
-	display:table-cell;
 	padding:$base-d*3em 0;
 
-	width:22%;
+	width:20%;
 	@media (max-width: $bp540) {
-		width:$base-d*22em;
+		width:$base-d*24em;
+		margin-left:$base-d*12em;
+		padding-left:$base-d*3em;
 		padding-bottom:$base-d*2.4em;
 	}
+	@media (max-width: $bp340) {
+    	margin-left:$base-d*9em;
+  	}
 }
 .cart-item__price{
-	display:table-cell;
 	padding:$base-d*3em $base-d*3em $base-d*3em 0;
 	text-align:right;
 
@@ -1277,14 +1348,13 @@ a:hover{
 	}
 }
 .cart-item-remove{
-	display:table-cell;
 	padding:$base-d*3em 0;
 	padding-right:$base-d*1em;
 	text-align:right;
 
-	width:7%;
+	width:6%;
 	@media (max-width: $bp540) {
-		width:20%;
+		width:$base-d*6em;
 		text-align:left;
 	}
 }
@@ -1298,23 +1368,35 @@ a:hover{
 
 .product-wrap.product_sm {
   @include span(3);
-  @media (max-width: $bp1540) {
-    @include span(2.4);
-  }
-  @media (max-width: $bp1260) {
-    @include span(3);
-  }
-  @media (max-width: $bp1000) {
+  @media (max-width: $bp1440) {
     @include span(4);
   }
-  @media (max-width: $bp740) {
+  @media (max-width: $bp1260) {
     @include span(6);
   }
-  @media (max-width: $bp540) {
+  @media (max-width: $bp1000) {
+    @include span(12);
+  }
+  @media (max-width: $bp840) {
+    @include span(4);
+  }
+  @media (max-width: $bp680) {
+    @include span(6);
+  }
+  @media (max-width: $bp400) {
     @include span(12);
   }
 }
-
+.products.products_sm{
+	max-height:100vh;
+	padding:$base-d*4em 0;
+	overflow:auto;
+	@media (max-width: $bp760) {
+    	max-height:none;
+    	overflow:initial;
+    	padding:0;
+  	}
+}
 .product.product_sm{
   min-width:$base-d*30em;
   max-width:$base-d*60em;
@@ -1324,7 +1406,7 @@ a:hover{
 }
 .product-info__title.product_sm{
 	& h3{
-		color:$black-90;
+		color:$black-75;
 		@include adjust-font-size-to($h4,4);
 	}
 }
@@ -1362,16 +1444,29 @@ a:hover{
     	display: block;
     	clear: both;
 	}
+	@media (max-width: $bp600) {
+		margin-top:$base-d*1em;
+	}
 }
 .form-group_left{
 	width:50%;
 	padding-right:$base-d*3em;
 	float:left;	
+	@media (max-width: $bp600) {
+    	width:100%;
+    	float:none;
+    	padding:0;
+  	}
 }
 .form-group_right{
 	width:50%;
 	padding-left:$base-d*3em;
 	float:left;
+	@media (max-width: $bp600) {
+    	width:100%;
+    	float:none;
+    	padding:0;
+  	}
 }
 .form-group__label_left{
 	float:left;
@@ -1401,7 +1496,7 @@ a:hover{
 	border-style: solid;
 }
 .form-group__input_sm{
-	margin-left:$base-d*2em;
+	padding:$base-d*1em;
 	width:$base-d*11em;
 	text-align:center;
 }
@@ -1420,6 +1515,9 @@ a:hover{
 	display:inline-block;
 	vertical-align:middle;
 }
+.form-group__label_withExtra{
+	padding-right:$base-d*2em;
+}
 .form-group__radio{
 	cursor:pointer;
 	padding-top:$base-d*1em;
@@ -1437,10 +1535,18 @@ a:hover{
 	margin-top:$base-d*1em;
 	resize:none;
 }
+.form-group_radio{
+	@media (max-width: $bp600) {
+		margin:$base-d*1em 0 $base-d*2em 0;
+	}
+}
 
 .form-group-extra{
 	display: inline-block;
-	padding-left:$base-d*2em;
+	@media (max-width: $bp600) {
+		display:block;
+		margin:$base-d*1em 0 $base-d*2em 0;
+	}
 }
 .form-group__select{
 	padding:$base-d*1em;
@@ -1471,5 +1577,5 @@ a:hover{
     }
 }
 .order-form{
-	margin-bottom:$base-d*5em;
+	margin-bottom:$base-d*6em;
 }
