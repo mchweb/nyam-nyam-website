@@ -38,10 +38,11 @@ $susy: (
   max-width:$cnt;
   padding-left:$base-d*3em;
   padding-right:$base-d*3em;
-  @media (max-width: $bp1440) {
-    padding-left:0;
-    padding-right:0;
-  }  
+  @media (max-width: $bp760) {
+    padding-left:$base-d*1em;
+    padding-right:$base-d*1em;
+  }
+    
 }
 
 .container-sm{

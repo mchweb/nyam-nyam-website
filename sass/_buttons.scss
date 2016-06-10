@@ -16,9 +16,10 @@
 	color:white;
 	border:none;
 	border-radius:$base-d*0.8em;
-	padding:$base-d*1em $base-d*3em; 
+	padding:$base-d*1.2em $base-d*3em $base-d*1em $base-d*3em; 
 	box-shadow: inset 0 0 -$base-d*0.4em 0 $black-75;
 	&:hover{
+		background:$accent;
 		box-shadow: inset 0  0 -$base-d*0.2em 0 $black-75;
 		margin-top:$base-d*0.2em;
 		margin-bottom:-$base-d*0.2em;
@@ -33,26 +34,30 @@
 		font-weight:bold;
 	}
 }
-.btn-lg{
-	border-radius:$base-d*1em;
-	padding:$base-d*2.4em $base-d*5em; 
-	& span{
-		@include adjust-font-size-to($h4);
-	}
-}
 .btn-md{
 	padding: $base-d*1em $base-d*2.6em;
+	&:hover{
+		margin:0;
+	}
 	& span{
 		font-weight:bold;
 	}
 }
+.btn-lg{
+	border-radius:$base-d*1em;
+	padding:$base-d*2em $base-d*5em; 
+	& span{
+		@include adjust-font-size-to($h4);
+	}
+}
+
 .i-count{
 	border-radius:$base-d*0.6em;
 	background:$bg-clr;
 	text-align:center;
 	color:$black-75;
 	padding:$base-d*1em; 
-	width:$base-d*8em;
+	width:$base-d*7.6em;
 }
 .i-count-sm{
 	padding: $base-d*0.4em $base-d*1em $base-d*0.6em $base-d*1em;

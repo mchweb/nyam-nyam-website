@@ -1,12 +1,12 @@
 //font-sizes
 $font-size: 14;
-$h1:$font-size*2.285714px; //32px
-$h2:$font-size*1.571428px; //22px
-$h3:$font-size*1.428571px; //20px
-$h4:$font-size*1.285714px; //18px
-$h5:$font-size*1.142857px; //16px
-$sm:$font-size*0.857142px; //12px
-$sm2:$font-size*0.666666px; //11px
+$h1:$font-size*2.28571px; //32px
+$h2:$font-size*1.57143px; //22px
+$h3:$font-size*1.42857px; //20px
+$h4:$font-size*1.28571px; //18px
+$h5:$font-size*1.14286px; //16px
+$sm:$font-size*0.85714px; //12px
+$sm2:$font-size*0.666667px; //11px
 
 //breakpoints
 $cnt: 1660em/$font-size;
@@ -21,6 +21,7 @@ $bp1000:1000em/$def-font-size;
 $bp940:940em/$def-font-size;
 $bp840:840em/$def-font-size;
 $bp760:764em/$def-font-size;
+$bp740:740em/$def-font-size;
 $bp680:680em/$def-font-size;
 $bp600:600em/$def-font-size;
 $bp540:540em/$def-font-size;
@@ -47,9 +48,9 @@ $red-dark:#cf0000;
 $red-light:#fe0000;
 
 
-$promo-1:#f15f22;
-$promo-2:#b90000;
-$promo-3:#7d349d;
-$promo-4:#0167b1;
-$promo-5:#007d21;
+$promo-1:#007d21;
+$promo-2:#f15f22;
+$promo-3:#0167b1;
+$promo-4:#7d349d;
+$promo-5:#b90000;
 $promo-6:#009c41;

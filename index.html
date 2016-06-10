@@ -31,6 +31,16 @@
 		</div>
 		<!-- END of b-call -->
 
+		<div class="wrap main-logo-wrap">
+			<div class="main-logo">
+				<div class="main-logo-top">
+					<a href="#"><img src="assets/img/logo.png" alt="" class="main-logo__image"></a>
+					<div class="main-logo__title"><p>Доставка суши и&nbsp;пиццы<span class="title__hiding"> в&nbsp;Томске</span></p></div>
+				</div>
+				<a href="tel:+73822342999"><div class="main-logo__phone"><div class="main-logo__phone-icon"></div><p>&nbsp;342-999</p></div></a>
+			</div>
+		</div>
+
 		<header class="header">
 			<div class="header-line-top js-line-top">
 				<div class="container">
@@ -156,29 +166,22 @@
 									<div class="m-cart-total__sum"><p>Сумма заказа: <strong>449&nbsp;₽</strong></p></div>
 									<div class="m-cart-total__button"><button class="btn"><span>Перейти к оформлению</span></button></div>
 								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</header>
 
-		<div class="wrap">
-			<div class="main-logo">
-				<div class="main-logo-top">
-					<a href="#"><img src="assets/img/logo.png" alt="" class="main-logo__image"></a>
-					<div class="main-logo__title"><p>Доставка суши и&nbsp;пиццы<span class="title__hiding"> в&nbsp;Томске</span></p></div>
-				</div>
-				<a href="tel:+73822342999"><div class="main-logo__phone"><div class="main-logo__phone-icon"></div><p>&nbsp;342-999</p></div></a>
-			</div>
-		</div>
-
+		<div class="content">
 		<div class="promo">
 			<img src="assets/img/promo.jpg" alt="">
 		</div>
 
-		<section class="container content">
+		<section class="container">
 			<header class="heading">
 				<div class="heading__title"><h2>Пицца</h2></div>
+				<div class="components__switcher"><a href="">Показать фильтры</a></div>
 				<ul class="components">
 					<li class="components__item components__item_isActive"><span>Любые ингридиенты</span></li>
 					<li class="components__item"><span>Бекон</span></li>
@@ -188,8 +191,9 @@
 					<li class="components__item"><span>Курица</span></li>
 					<li class="components__item"><span>Морепродукты</span></li>
 					<li class="components__item"><span>Томаты</span></li>
+					<li class="components__item"><span>Перец</span></li>
 				</ul>
-				<div class="heading__caption">
+				<div class="components__caption">
 					<p>Показана пицца, в которой есть <span>бекон, грибы и томаты</span></p>
 				</div>
 			</header>
@@ -197,23 +201,29 @@
 			<div class="products">
 				<article class="product-wrap">
 					<div class="product">
+						<div class="product__isOnCart"></div>
 						<div class="product__image" style="background-image:url('assets/img/product.jpg')">
 							<ul class="product-promo">
-								<li class="product-promo__item product-promo__item_promo1"><span>Новинка</span></li>
-								<li class="product-promo__item product-promo__item_promo2"><span>Вегетерианское</span></li>
-								<li class="product-promo__item product-promo__item_promo3"><span>Рекоммендуем</span></li>
+								<li class="product-promo__item product-promo__item_promo1"><span>Вегетерианское</span></li>
+								<li class="product-promo__item product-promo__item_promo2"><span>Рекоммендуем</span></li>
+								<li class="product-promo__item product-promo__item_promo3"><span>Новинка</span></li>
 							</ul>
 						</div>
 						<div class="product-info">
 							<div class="product-info__title"><h3>Курица с грибами</h3></div>
 							<div class="product-info__desc"><p>Соус томатный, сыр, ветчина, салями, курица, пепперони, помидоры.</p></div>
+						 
+							<ul class="product-types">
+								<li class="product-type">
+									<input type="radio" name="p1" checked id="t1" class="product-type__radio">
+									<label for="t1" class="product-type__label">45 см. (1420 г.) — 910&nbsp;₽</label>
+								</li>
+								<li class="product-type"><input type="radio" name="p1" id="t2" class="product-type__radio"><label for="t2" class="product-type__label">36 см. (765 г.) — 589&nbsp;₽</label></li>
+								<li class="product-type"><input type="radio" name="p1" id="t3" class="product-type__radio"><label for="t3" class="product-type__label">28 см. (555 г.) — 395&nbsp;₽</label></li>
+							</ul>
 						</div>
 
-						<ul class="product-types">
-							<li class="product-type"><input type="radio" name="p1" checked id="t1" class="product_type__radio"><label for="t1" class="product_type__label">45 см. (1420 г.) — 910&nbsp;₽</label></li>
-							<li class="product-type"><input type="radio" name="p1" id="t2" class="product_type__radio"><label for="t2" class="product_type__label">36 см. (765 г.) — 589&nbsp;₽</label></li>
-							<li class="product-type"><input type="radio" name="p1" id="t3" class="product_type__radio"><label for="t3" class="product_type__label">28 см. (555 г.) — 395&nbsp;₽</label></li>
-						</ul>
+						
 						
 						<footer class="product-footer">
 							<div class="product__price"><span>595&nbsp;₽*</span></div>
@@ -225,12 +235,19 @@
 									<button class="btn btn-md"><span>+</span></button>
 								</div>
 							</div>
-						</div>
+						</footer>
 					</div>
 				</article>
 				<article class="product-wrap">
-					<div class="product">
-						<div class="product__image" style="background-image:url('assets/img/product-2.jpg')"></div>
+					<div class="product product_isAdded">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-2.jpg')">
+							<ul class="product-promo">
+								<li class="product-promo__item product-promo__item_promo4"><span>Скидка</span></li>
+								<li class="product-promo__item product-promo__item_promo5"><span>Острое</span></li>
+								<li class="product-promo__item product-promo__item_promo6"><span>Хит</span></li>
+							</ul>
+						</div>
 						<div class="product-info">
 							<div class="product-info__title"><h3>Филадельфия</h3></div>
 							<div class="product-info__desc"><p>Свежий лосось, сливочный сыр.</p></div>
@@ -239,6 +256,59 @@
 						<footer class="product-footer">
 							<div class="product__price"><span>595&nbsp;₽*</span></div>
 							<div class="product-buttons">
+								<button class="cart-add btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-3.jpg')">
+							<ul class="product-promo">
+								<li class="product-promo__item product-promo__item_promo6"><span>Хит</span></li>
+							</ul>
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Набор &laquo;Праздничный&raquo;</h3></div>
+							<div class="product-info__desc"><p>Роллы: Калифорния, Саката, Мексиканский, Фетаки, Лава, Аомори, Маки до, Гейша, Филадельфия, Аляска, Отаку, фаворит. Ночная Москва, Амэ.</p></div>
+							<div class="product-info__extra"><p>2955 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>2955&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="cart-add btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-4.jpg')">
+							<ul class="product-promo">
+								<li class="product-promo__item product-promo__item_promo4"><span>Скидка</span></li>
+							</ul>
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Минаго</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
 								<button class="btn">В корзину</button>
 								<div class="product-buttons__count">
 									<button class="btn btn-md"><span>–</span></button>
@@ -246,7 +316,170 @@
 									<button class="btn btn-md"><span>+</span></button>
 								</div>
 							</div>
+						</footer>
+					</div>
+				</article>
+
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-5.jpg')">
 						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Императорский</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-6.jpg')">
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Сорано, темпурный ролл</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-7.jpg')">
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Минаго</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-8.jpg')">
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Минаго</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-9.jpg')">
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Минаго</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-10.jpg')">
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Минаго</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-11.jpg')">
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Минаго</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="cart-add btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
 					</div>
 				</article>
 			</div>
@@ -266,40 +499,27 @@
 			<div class="products">
 				<article class="product-wrap">
 					<div class="product">
+						<div class="product__isOnCart"></div>
 						<div class="product__image" style="background-image:url('assets/img/product.jpg')">
+							<ul class="product-promo">
+								<li class="product-promo__item product-promo__item_promo1"><span>Вегетерианское</span></li>
+								<li class="product-promo__item product-promo__item_promo2"><span>Рекоммендуем</span></li>
+								<li class="product-promo__item product-promo__item_promo3"><span>Новинка</span></li>
+							</ul>
 						</div>
 						<div class="product-info">
 							<div class="product-info__title"><h3>Курица с грибами</h3></div>
 							<div class="product-info__desc"><p>Соус томатный, сыр, ветчина, салями, курица, пепперони, помидоры.</p></div>
+						 
+							<ul class="product-types">
+								<li class="product-type"><input type="radio" name="p1" checked id="t1" class="product_type__radio"><label for="t1" class="product_type__label">45 см. (1420 г.) — 910&nbsp;₽</label></li>
+								<li class="product-type"><input type="radio" name="p1" id="t2" class="product_type__radio"><label for="t2" class="product_type__label">36 см. (765 г.) — 589&nbsp;₽</label></li>
+								<li class="product-type"><input type="radio" name="p1" id="t3" class="product_type__radio"><label for="t3" class="product_type__label">28 см. (555 г.) — 395&nbsp;₽</label></li>
+							</ul>
 						</div>
 
-						<ul class="product-types">
-							<li class="product-type"><input type="radio" name="p1" checked id="t1" class="product_type__radio"><label for="t1" class="product_type__label">45 см. (1420 г.) — 910&nbsp;₽</label></li>
-							<li class="product-type"><input type="radio" name="p1" id="t2" class="product_type__radio"><label for="t2" class="product_type__label">36 см. (765 г.) — 589&nbsp;₽</label></li>
-							<li class="product-type"><input type="radio" name="p1" id="t3" class="product_type__radio"><label for="t3" class="product_type__label">28 см. (555 г.) — 395&nbsp;₽</label></li>
-						</ul>
 						
-						<footer class="product-footer">
-							<div class="product__price"><span>595&nbsp;₽*</span></div>
-							<div class="product-buttons">
-								<button class="btn" style="display:none">В корзину</button>
-								<div class="product-buttons__count" style="display:block">
-									<button class="btn btn-md"><span>–</span></button>
-									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
-									<button class="btn btn-md"><span>+</span></button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</article>
-				<article class="product-wrap">
-					<div class="product">
-						<div class="product__image" style="background-image:url('assets/img/product-2.jpg')"></div>
-						<div class="product-info">
-							<div class="product-info__title"><h3>Филадельфия</h3></div>
-							<div class="product-info__desc"><p>Свежий лосось, сливочный сыр.</p></div>
-							<div class="product-info__extra"><p>240 г</p></div>
-						</div>
+						
 						<footer class="product-footer">
 							<div class="product__price"><span>595&nbsp;₽*</span></div>
 							<div class="product-buttons">
@@ -310,10 +530,256 @@
 									<button class="btn btn-md"><span>+</span></button>
 								</div>
 							</div>
+						</footer>
+					</div>
+				</article>
+				<article class="product-wrap">
+					<div class="product product_isAdded">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-2.jpg')">
+							<ul class="product-promo">
+								<li class="product-promo__item product-promo__item_promo4"><span>Скидка</span></li>
+								<li class="product-promo__item product-promo__item_promo5"><span>Острое</span></li>
+								<li class="product-promo__item product-promo__item_promo6"><span>Хит</span></li>
+							</ul>
 						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Филадельфия</h3></div>
+							<div class="product-info__desc"><p>Свежий лосось, сливочный сыр.</p></div>
+							<div class="product-info__extra"><p>240 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>595&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="cart-add btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-3.jpg')">
+							<ul class="product-promo">
+								<li class="product-promo__item product-promo__item_promo6"><span>Хит</span></li>
+							</ul>
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Набор &laquo;Праздничный&raquo;</h3></div>
+							<div class="product-info__desc"><p>Роллы: Калифорния, Саката, Мексиканский, Фетаки, Лава, Аомори, Маки до, Гейша, Филадельфия, Аляска, Отаку, фаворит. Ночная Москва, Амэ.</p></div>
+							<div class="product-info__extra"><p>2955 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>2955&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="cart-add btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-4.jpg')">
+							<ul class="product-promo">
+								<li class="product-promo__item product-promo__item_promo4"><span>Скидка</span></li>
+							</ul>
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Минаго</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-5.jpg')">
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Императорский</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-6.jpg')">
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Сорано, темпурный ролл</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-7.jpg')">
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Минаго</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-8.jpg')">
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Минаго</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-9.jpg')">
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Минаго</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-10.jpg')">
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Минаго</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</article>
+				<article class="product-wrap">
+					<div class="product">
+						<div class="product__isOnCart"></div>
+						<div class="product__image" style="background-image:url('assets/img/product-11.jpg')">
+						</div>
+						<div class="product-info">
+							<div class="product-info__title"><h3>Минаго</h3></div>
+							<div class="product-info__desc"><p>Тунец, кожа лосося, сливочный сыр, яблоко, соус «Спайси», икра «Тобико».</p></div>
+							<div class="product-info__extra"><p>220 г</p></div>
+						</div>
+						<footer class="product-footer">
+							<div class="product__price"><span>229&nbsp;₽*</span></div>
+							<div class="product-buttons">
+								<button class="cart-add btn">В корзину</button>
+								<div class="product-buttons__count">
+									<button class="btn btn-md"><span>–</span></button>
+									<input class="i-count i-count" type="text" disabled value="2" maxlength="3">
+									<button class="btn btn-md"><span>+</span></button>
+								</div>
+							</div>
+						</footer>
 					</div>
 				</article>
 			</div>
+
+			
 		</section>
 		
 		<div class="delivery-bottom">
@@ -324,7 +790,7 @@
 						<img class="delivery-bottom__image" alt="" src="assets/img/delivery-bottom-1.png">
 						<div class="delivery-bottom-col__title"><p>Стоимость</p></div>
 						<p class="delivery-bottom-col__text">При заказе от&nbsp;400&nbsp;₽&nbsp;&mdash; доставка по&nbsp;городу бесплатно. Если сумма заказа не&nbsp;превышает 400&nbsp;₽, доставка оплачивается отдельно (50&nbsp;Р).<br />
-<a>Доставка в&nbsp;отдаленные районы »</a></p>
+						<a>Доставка в&nbsp;отдаленные районы »</a></p>
 					</div>
 				</div>
 				<div class="delivery-bottom-col-wrap">
@@ -353,6 +819,7 @@
 				<a class="btn btn-lg"><span>Перейти к оформлению »</span></a>
 			</div>
 		</div>
+		</div>
 
 		<footer class="footer">
 			<div class="container">
@@ -380,11 +847,11 @@
 				<div class="inside">
 					<img src="assets/img/product.jpg" style="width:100%;">
 					<p style="font-size:20px;font-family:Appetite;padding:0px 10px;color:#f15f22">Куриный абырвалг</p>
-					<p>Роллы: Калифорния, Саката, Мексиканский, Фетаки, Лава, Аомори, Маки до, Гейша, Филадельфия, Аляска, Отаку, фаворит. Ночная Москва, Амэ.</p>
+					<p></p>
 				</div>
 			</div>
 			<div class="item"><div class="inside"><p>Тельняшка</p></div></div>
-			<div class="item"><div class="inside"><p>Тельняшка</p></div></div>
+			<div class="item"><div class="inside"><p>Тzельняшка</p></div></div>
 			<div class="item"><div class="inside"><p>Тельняшка</p></div></div>
 			<div class="item"><div class="inside"><p>Тельняшка</p></div></div>
 			<div class="item"><div class="inside"><p>Тельняшка</p></div></div>
@@ -399,7 +866,7 @@
 		<div id="updown"><div id="updown-container"></div></div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+		<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
 		<!--<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>-->
 		<!-- build:js assets/js/main.min.js -->
 		<script src="assets/js/main.js"></script>
