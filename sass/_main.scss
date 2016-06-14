@@ -665,6 +665,9 @@ a:hover{
 		color:$accent;
 		border-bottom:$base-d*0.2em solid $accent-25;
 	}
+	& .comp-caption__hide{
+		display:none;
+	}
 	@media (max-width: $bp760) {
 		display:inline-block;
 	}
@@ -704,8 +707,14 @@ a:hover{
 }
 
 .components__caption{
-	@media (max-width: $bp760) {
-		display:none;
+	display:none;
+}
+.components__empty{
+	display:none;
+	margin:$base-d*4em 0;
+	& p{
+		@include adjust-font-size-to($h3);
+		color:$red-dark;
 	}
 }
 .subcat{
@@ -778,7 +787,7 @@ a:hover{
     margin-left:0;
   }
 
-  box-shadow: 0 0 $base-d*2em 0 $black-15;
+  box-shadow: 0 0 $base-d*2em 0 $black-35;
 
 }
 .product__isOnCart{
@@ -984,7 +993,7 @@ a:hover{
 	& p{
 		@include adjust-font-size-to($h4);
 		@media (max-width: $bp940) {
-   			@include adjust-font-size-to($h5);
+   			@include adjust-font-size-to(1em);
   		}
 	}
 }
@@ -1130,7 +1139,7 @@ a:hover{
 		height: 0;
 		margin-top:-$base-d*0.2em;
 
-		border-width:$base-d*2.28em;
+		border-width:$base-d*2.32em;
 		border-style:solid;
 		border-right-color: transparent;
 	}
@@ -1188,6 +1197,9 @@ a:hover{
 	clear:left;
 	margin-top:$base-d*6em;
 }
+.js-cart-extras_isHidden{
+	display:none;
+}
 .cart-extras-title {
 	padding-left:$base-d*3em;
 	padding-right:$base-d*3em;
@@ -1197,7 +1209,7 @@ a:hover{
 	margin-bottom:$base-d*3em;
 	padding:0 $base-d*3em;
 	
-	& span{
+	& a{
 		cursor:pointer;
 		color:$accent-90;
 		border-bottom:$base-d*0.2em solid $accent-25;
@@ -1210,6 +1222,9 @@ a:hover{
 	@media (max-width: $bp840) {
     	display:block;
   	}
+}
+.cart-extras-cancel__show{
+	display:none;
 }
 .circle-title{
 	margin-bottom:$base-d*3em;
@@ -1290,11 +1305,13 @@ a:hover{
     	width:$base-d*12em;
     	height:$base-d*12em;
     	position:absolute;
+    	border-top:$base-d*0.2em solid $black-10;
   	}
   	@media (max-width: $bp340) {
     	width:$base-d*9em;
     	height:$base-d*9em;
     	position:absolute;
+    	
   	}
 }
 .cart-item-title{
@@ -1389,13 +1406,22 @@ a:hover{
 }
 .products.products_sm{
 	max-height:100vh;
-	padding:$base-d*4em 0;
+	padding:$base-d*4em 0 0 0;
 	overflow:auto;
+	@media (min-width: $bp839) {
+    	display:block !important;
+  	}
+	
+	@media (max-width: $bp840) {
+    	max-height:none !important;
+    	
+  	}
 	@media (max-width: $bp760) {
-    	max-height:none;
+    	max-height:none !important;
     	overflow:initial;
     	padding:0;
   	}
+
 }
 .product.product_sm{
   min-width:$base-d*30em;
@@ -1425,6 +1451,7 @@ a:hover{
 }
 
 .form-remember{
+	display:none;
 	background-color:$accent-25;
 	padding:$base-d*2em $base-d*2.4em;
 	border-radius:$base-d*1em;
@@ -1475,6 +1502,8 @@ a:hover{
 	float:right;
 	color:$red-dark;
 	visibility:hidden;
+	margin-top:$base-d*0.5em;
+	@include adjust-font-size-to($sm);
 }
 .form-group_invalid{
 	& .form-group__message{
@@ -1542,15 +1571,24 @@ a:hover{
 }
 
 .form-group-extra{
+	visibility:hidden;
 	display: inline-block;
 	@media (max-width: $bp600) {
-		display:block;
+		display:none;
 		margin:$base-d*1em 0 $base-d*2em 0;
+	}
+	&.form-group-extra_isActive{
+		visibility:visible;
+		@media (max-width: $bp600) {
+			display: block;
+		}
 	}
 }
 .form-group__select{
 	padding:$base-d*1em;
+	//font-size:16px;
 }
+
 .form__total{
 	& p{
 		@include adjust-font-size-to($h4);
@@ -1578,4 +1616,110 @@ a:hover{
 }
 .order-form{
 	margin-bottom:$base-d*6em;
+}
+
+.form-success{
+	background:white;
+	margin:0 auto;
+	text-align:center;
+	max-width:$base-d*90em;
+	padding:$base-d*6em;
+}
+.form-success__title{
+	margin-top:$base-d*2em;
+	& p{
+		color:$black-90;
+		@include adjust-font-size-to($h2);
+	}
+}
+.form-success__footer{
+	margin-top:$base-d*4em;
+	& p{
+		@include adjust-font-size-to($sm2,3);
+	}
+}
+.form-success__soc-links{
+	margin:$base-d*4em 0;
+}
+.checkmark{
+  display:inline-block;
+  padding:0 $base-d*0.5em;
+  margin-right:$base-d*1em;
+  
+  &:after{
+    /*Add another block-level blank space*/
+    content: '';
+    display: block;
+ 
+    /*Make it a small rectangle so the border will create an L-shape*/
+    width: $base-d*10em;
+    height: $base-d*16em;
+ 
+    /*Add a white border on the bottom and left, creating that 'L' */
+    border: solid $accent;
+    border-width: 0 $base-d*4em $base-d*4em 0;
+ 
+    /*Rotate the L 45 degrees to turn it into a checkmark*/
+    transform: rotate(45deg);
+  }
+}
+.form-loader{
+	visibility:hidden;
+	display:inline-block;
+	margin-left:$base-d*4em;
+	margin-bottom: $base-d*0.4em;
+	vertical-align:middle;
+}
+.form-loader_isActive{
+	visibility:visible;
+}
+.spinner {
+  height: $base-d*8em;
+  width: $base-d*8em;
+  position: relative;
+  -webkit-animation: rotation .7s infinite linear;
+  -moz-animation: rotation .7s infinite linear;
+  -o-animation: rotation .7s infinite linear;
+  animation: rotation .7s infinite linear;
+  border-left: $base-d*1em solid $black-15;
+  border-right: $base-d*1em solid $black-15;
+  border-bottom: $base-d*1em solid $black-15;
+  border-top: $base-d*1em solid $accent;
+  border-radius: 100%;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@-moz-keyframes rotation {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(359deg);
+  }
+}
+
+@-o-keyframes rotation {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(359deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }

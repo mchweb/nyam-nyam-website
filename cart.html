@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		
 		<title>Ням-ням — доставка суши и пиццы в Томске</title>
 		<meta name="description" content="Описание">
@@ -163,9 +163,9 @@
 						<div class="circle-title__circle"><p>!</p></div>
 						<div class="circle-title__title circle-title__title_sm"><p>Добавьте соусы, закуски и напитки</p></div>
 					</div>
-					<div class="cart-extras__cancel"><span>Не нужно, спасибо</span></div>
+					<div class="cart-extras__cancel"><a href="#form"><span class="cart-extras-cancel__hide">Не нужно, спасибо</span></a><a><span class="cart-extras-cancel__show">Показать список</span></a></div>
 
-					<div class="products products_sm">
+					<div class="products products_sm js-cart-extras">
 						<article class="product-wrap product_sm">
 							<div class="product product_sm">
 								<div class="product__isOnCart"></div>
@@ -408,94 +408,128 @@
 						</article>
 					</div>
 				</div>
+
 				<div class="cart-form">
+					<a class="anchor" id="form"></a>
 					<div class="circle-title">
 						<div class="circle-title__circle"><p>2</p></div>
 						<div class="circle-title__title"><p>Информация о заказе</p></div>
 					</div>
 
-					<div class="form-remember"><p>Мы заполнили форму данными из вашего прошлого заказа. Если данные изменились, вы можете <a href="">очистить форму</a>.</p></div>
+					<div class="form-remember"><p>Мы заполнили форму данными из вашего прошлого заказа. Если данные изменились, вы можете <a>очистить форму</a>.</p></div>
 					
-					<form class="order-form">
+					<form class="order-form" method="POST" action="javascript:void(null);" onsubmit="sendOrder()">
 						<section class="form-section">
-							<div class="form-group form-group_left">
+							<div id="js-fg-name" class="form-group form-group_left">
 								<div class="form-group-title">
-									<label class="form-group__label form-group__label_left" for="">Представьтесь</label>
+									<label class="form-group__label form-group__label_left" for="f-name">Представьтесь</label>
 									<p class="form-group__message">Пожалуйста, укажите имя</p>
 								</div>
-								<input class="form-group__input" type="text" name="" id="" placeholder="Иванов Иван Иванович"></input>
+								<input class="form-group__input" type="text" name="f-name" id="f-name" placeholder="Иванов Иван Иванович" required></input>
 							</div>
-							<div class="form-group form-group_right">
+							<div id="js-fg-tel" class="form-group form-group_right">
 								<div class="form-group-title">
-									<label class="form-group__label form-group__label_left" for="">Телефон</label>
+									<label class="form-group__label form-group__label_left" for="f-tel">Телефон</label>
 									<p class="form-group__message">Пожалуйста, укажите телефон</p>
 								</div>
-								<input class="form-group__input" type="tel" name="" id="" placeholder="+7 905 904-59-58"></input>
+								<input class="form-group__input" pattern="+7 [0-9]{3} [0-9]{3}-[0-9]{2}-[0-9]{2}" type="tel" name="f-tel" id="f-tel" value="+7 " required></input>
 							</div>
 						</section>
 						<section class="form-section">
 							<div class="form-group form-group_radio">
-								<input type="radio" name="p1" checked id="t1" class="form-group__radio">
-								<label for="t1" class="form-group__label">Доставка по городу</label>
+								<input type="radio" name="f-deliv" checked id="f-deliv-0" value="0" class="form-group__radio">
+								<label for="f-deliv-0" class="form-group__label">Доставка по городу</label>
 							</div>
 							<div class="form-group form-group_radio">
-								<input type="radio" name="p1" id="t2" class="form-group__radio">
-								<label for="t2" class="form-group__label form-group__label_withExtra">Доставка в отдаленный район</label>
-								<div class="form-group-extra">
-									<select class="form-group__select">
-										  <option>Северское КПП (150&nbsp;₽)</option>
-										  <option>Жилмассив от Иркутского, 150 (50&nbsp;₽)</option>
-										  <option>Континентальная (50&nbsp;₽)</option>
+								<input type="radio" name="f-deliv" id="f-deliv-1" value="1" class="form-group__radio">
+								<label for="f-deliv-1" class="form-group__label form-group__label_withExtra">Доставка в отдаленный район</label>
+								<div class="form-group-extra js-delivery-areas">
+									<select class="form-group__select" name="f-deliv-area" id="f-deliv-area">
+										  <option value="1" data-price="150">Северское КПП (150 ₽)</option>
+										  <option value="2" data-price="50">Причальная (50 ₽)</option>
+										  <option value="3" data-price="50">Поселок ЛПК (50 ₽)</option>
+										  <option value="4" data-price="200">Светлый (200 ₽)</option>
+										  <option value="5" data-price="200">Нефтехим (200 ₽)</option>
+										  <option value="6" data-price="150">Тимирязево (150 ₽)</option>
+										  <option value="7" data-price="100">Зональный (100 ₽)</option>
+										  <option value="8" data-price="200">Нижний склад (200 ₽)</option>
+										  <option value="9" data-price="100">Аникино (100 ₽)</option>
+										  <option value="10" data-price="50">Сосновый бор (50 ₽)</option>
+										  <option value="11" data-price="100">Басандайка (100 ₽)</option>
+										  <option value="12" data-price="150">Богашево (150 ₽)</option>
+										  <option value="13" data-price="50">Жилмассив от Иркутского, 150 (50 ₽)</option>
+										  <option value="14" data-price="150">Предтеченск (150 ₽)</option>
+										  <option value="15" data-price="150">Спутник (150 ₽)</option>
+										  <option value="16" data-price="50">МПС (50 ₽)</option>
+										  <option value="17" data-price="50">Высоцкого (50 ₽)</option>
+										  <option value="18" data-price="50">Просторный (50 ₽)</option>
+										  <option value="19" data-price="100">Заварзино (100 ₽)</option>
+										  <option value="20" data-price="150">Кисловка (150 ₽)</option>
+										  <option value="21" data-price="50">Академический (50 ₽)</option>
+										  <option value="22" data-price="150">Корнилово (150 ₽)</option>
+										  <option value="23" data-price="150">Лоскутово (150 ₽)</option>
+										  <option value="24" data-price="50">Мокрушина (50 ₽)</option>
+										  <option value="25" data-price="50">Степановка (50 ₽)</option>
+										  <option value="26" data-price="50">Спичфабрика (50 ₽)</option>
+										  <option value="27" data-price="50">Бактин (50 ₽)</option>
+										  <option value="28" data-price="50">Нарановича (50 ₽)</option>
+										  <option value="29" data-price="50">Континентальная (50 ₽)</option>
+										  <option value="30" data-price="50">Сенная Курья (50 ₽)</option>
+										  <option value="31" data-price="150">Черная речка (150 ₽)</option>
+										  <option value="32" data-price="50">Мостовая (50 ₽)</option>
 									</select>
 								</div>
 							</div>
 							<div class="form-group form-group_radio">
-								<input type="radio" name="p1" id="t3" class="form-group__radio">
-								<label for="t3" class="form-group__label">Самовывоз на Котовского,&nbsp;17</label>
+								<input type="radio" name="f-deliv" id="f-deliv-2" value="2" class="form-group__radio">
+								<label for="f-deliv-2" class="form-group__label">Самовывоз на Котовского,&nbsp;17</label>
 							</div>
 
-							<div class="form-group form-group_indented">
+							<div id="js-fg-addr" class="form-group form-group_indented js-f-addr">
 								<div class="form-group-title">
-									<label class="form-group__label" for="">Адрес доставки</label>
+									<label class="form-group__label" for="f-addr">Адрес доставки</label>
 									<p class="form-group__message">Пожалуйста, укажите адрес</p>
 								</div>
-								<input class="form-group__input" type="text" name="" id="" placeholder="Адрес доставки"></input>
+								<input class="form-group__input" type="text" name="f-addr" id="f-addr" placeholder="Адрес доставки"></input>
 							</div>
 						</section>
 
 						<section class="form-section">
-							<div class="form__total"><p>К оплате: <strong>2136&nbsp;₽</strong></p></div>
-							<div class="form__total-info"><p>Заказ — <strong>1986&nbsp;₽</strong>, доставка — <strong>150&nbsp;₽</strong></p></div>
+							<div class="form__total"><p>К оплате: <strong><span id="js-form-total__sum">2136</span>&nbsp;₽</strong></p></div>
+							<div class="form__total-info"><p>Заказ — <strong><span id="js-form-order__sum">1986</span>&nbsp;₽</strong>, доставка — 
+								<strong id="js-form-deliv-free">бесплатно</strong>
+								<strong id="js-form-deliv-sum"><span id="js-form-deliv_sum">150</span>&nbsp;₽</strong></p></div>
 							<div class="form-group form-group_radio">
-								<input type="radio" name="p2" checked id="t23" class="form-group__radio">
-								<label for="t23" class="form-group__label form-group__label_withExtra">Оплата наличными, нужна сдача с</label>
-								<div class="form-group-extra">
-									<input class="form-group__input form-group__input_sm" type="text" name="" id="" value="500"></input>
-									<button class="form-group__switcher"><span>500</span></button>
-									<button class="form-group__switcher"><span>1000</span></button>
-									<button class="form-group__switcher"><span>5000</span></button>
+								<input type="radio" name="f-pay" checked id="f-pay-0" value="0" class="form-group__radio">
+								<label for="f-pay-0" class="form-group__label form-group__label_withExtra">Оплата наличными<span id="js-f-pay-0__label">, нужна сдача с</span></label>
+								<div class="form-group-extra form-group-extra_isActive js-payment-change">
+									<input class="form-group__input form-group__input_sm" type="text" name="f-cash" id="f-cash" ></input>
+									<button type="button" class="form-group__switcher"><span>500</span></button>
+									<button type="button" class="form-group__switcher"><span>1000</span></button>
+									<button type="button" class="form-group__switcher"><span>5000</span></button>
 								</div>
 							</div>
 							<div class="form-group form-group_radio">
-								<input type="radio" name="p2" id="t22" class="form-group__radio">
-								<label for="t22" class="form-group__label">Оплата банковской картой курьеру</label>
+								<input type="radio" name="f-pay" id="f-pay-1" value="1" class="form-group__radio">
+								<label for="f-pay-1" class="form-group__label">Оплата банковской картой курьеру</label>
 							</div>
 						</section>
 
 
 						<section class="form-section">
 							<div class="form-group">
-								<label for="t23" class="form-group__label form-group__label_withExtra">Число персон</label>
-								<input type="number" name="p2" checked id="t23" class="form-group__input form-group__input_sm">
+								<label for="f-person" class="form-group__label form-group__label_withExtra">Число персон</label>
+								<input type="number" name="f-person" id="f-person" class="form-group__input form-group__input_sm">
 							</div>
 							<div class="form-group form-group_indented">
-								<label for="t23" class="form-group__label">Комментарий к заказу</label>
-								<textarea name="p2" id="t23" rows="3" placeholder="Время доставки, наличие купона на скидку, дополнительная информация" class="form-group__input form-group__textarea"></textarea>
+								<label for="f-comment" class="form-group__label">Комментарий к заказу</label>
+								<textarea name="f-comment" id="f-comment" rows="3" placeholder="Время доставки, наличие купона на скидку, дополнительная информация" class="form-group__input form-group__textarea"></textarea>
 							</div>
 						</section>
 
 						<section class="form-section">
-							<button class="btn btn-lg"><span>Отправить на кухню</span></button>
+							<button class="btn btn-lg js-send-btn"><span>Отправить на кухню</span></button>
+							<div class="form-loader"><div class="spinner"></div></div>
 						</section>
 
 					</form>
@@ -522,6 +556,23 @@
 				</div>
 			</div>
 		</footer>
+
+		<div class="form-success mfp-hide zoom-anim-dialog">
+			<div class="checkmark checkmark_big"></div>
+			<div class="form-success__title"><p>Ваш заказ оформлен, спасибо!</p></div>
+			<div class="form-success__caption"><p>В&nbsp;течение 10&nbsp;минут вам перезвонит оператор.</p></div>
+			<div class="form-success__soc-links">
+				<p>Не пропустите регулярные акции и скидки: подпишитесь на наши аккаунты в социальных сетях.</p>
+				<ul>
+					<li class="soc-links__item"><a target="_blank" href="#"><div class="soc-link soc-link_instagram"></div></a></li>
+					<li class="soc-links__item"><a target="_blank" href="#"><div class="soc-link soc-link_facebook"></div></a></li>
+					<li class="soc-links__item"><a target="_blank" href="#"><div class="soc-link soc-link_vk"></div></a></li>
+				</ul>
+			</div>
+			
+			<div class="form-success__footer"><p>Пожалуйста, позвоните по&nbsp;телефону 342-999, если оператор вам не&nbsp;перезванивает.</p></div>
+
+		</div>
 
 
 		<!--
