@@ -105,7 +105,8 @@
 					</div>
 					<div class="cart-order__empty"><p>Чтобы оформить заказ, добавьте товары в корзину</p></div>
 
-					<ul class="cart-items">
+					<ul class="cart-items cart-items-final js-cart-items">
+						<!--
 						<li class="cart-item">
 							<div class="cart-item__image" style="background-image:url('assets/img/product.jpg');"></div>
 							<div class="cart-item-title">
@@ -122,41 +123,10 @@
 								<div class="btn-remove"></div>
 							</div>
 						</li>
-						<li class="cart-item">
-							<div class="cart-item__image" style="background-image:url('assets/img/product-4.jpg');"></div>
-							<div class="cart-item-title">
-								<p>Четыре сезона, а мы добавим еще строку и сейчас все развалится 45 см.</p>
-								<p class="cart-item__subtitle">250 г &nbsp;&nbsp;|&nbsp; 300&nbsp;₽/шт.</p>
-							</div>
-							<div class="cart-item-btn">
-								<button class="btn btn-sm"><span>–</span></button>
-								<input class="i-count i-count-sm" type="text" disabled value="2" maxlength="3">
-								<button class="btn btn-sm"><span>+</span></button>
-							</div>
-							<div class="cart-item__price"><p>2449&nbsp;₽</p></div>
-							<div class="cart-item-remove">
-								<div class="btn-remove"></div>
-							</div>
-						</li>
-						<li class="cart-item">
-							<div class="cart-item__image" style="background-image:url('assets/img/product-5.jpg');"></div>
-							<div class="cart-item-title">
-								<p>Четыре сезона 45 см.</p>
-								<p class="cart-item__subtitle">250 г &nbsp;&nbsp;|&nbsp; 300&nbsp;₽/шт.</p>
-							</div>
-							<div class="cart-item-btn">
-								<button class="btn btn-sm"><span>–</span></button>
-								<input class="i-count i-count-sm" type="text" disabled value="2" maxlength="3">
-								<button class="btn btn-sm"><span>+</span></button>
-							</div>
-							<div class="cart-item__price"><p>2449&nbsp;₽</p></div>
-							<div class="cart-item-remove">
-								<div class="btn-remove"></div>
-							</div>
-						</li>
+						-->
 					</ul>
 
-					<div class="cart-total__sum"><p>Сумма заказа: <strong>449&nbsp;₽</strong></p></div>
+					<div class="cart-total__sum"><p>Сумма заказа: <strong><span class="js-cart-total">0</span>&nbsp;₽</strong></p></div>
 				</div>
 				<div class="cart-extras">
 					<div class="cart-extras-title circle-title">
@@ -167,241 +137,21 @@
 
 					<div class="products products_sm js-cart-extras">
 						<article class="product-wrap product_sm">
-							<div class="product product_sm">
-								<div class="product__isOnCart"></div>
+							<div id="p-15" class="product product_sm">
+								<div class="product__isOnCart js-cart-rm" data-id="15"></div>
 								<div class="product__image" style="background-image:url('assets/img/product-9.jpg')"></div>
 								<div class="product-info product_sm">
 									<div class="product-info__title product_sm"><h3>Пиво Крюгер классическое</h3></div>
 								</div>
 
 								<footer class="product-footer product_sm">
-									<div class="product__price product_sm"><span>595&nbsp;₽</span></div>
-									<div class="product__extra product_sm">120 г</div>
+									<div class="product__price product_sm"><span>95&nbsp;₽</span></div>
+									<div class="product__extra product_sm">1 л</div>
 										
 									<div class="product-buttons__count product_sm">
-										<button class="btn btn-sm"><span>–</span></button>
-										<input class="i-count i-count-sm" type="text" disabled value="0" maxlength="3">
-										<button class="btn btn-sm"><span>+</span></button>
-									</div>
-								</footer>
-							</div>
-						</article>
-						<article class="product-wrap product_sm">
-							<div class="product product_sm product_isAdded">
-								<div class="product__isOnCart"></div>
-								<div class="product__image" style="background-image:url('assets/img/product.jpg')"></div>
-								<div class="product-info product_sm">
-									<div class="product-info__title product_sm"><h3>Крабовые палочки в кляре</h3></div>
-								</div>
-
-								<footer class="product-footer product_sm">
-									<div class="product__price product_sm"><span>595&nbsp;₽</span></div>
-									<div class="product__extra product_sm">120 г</div>
-										
-									<div class="product-buttons__count product_sm">
-										<button class="btn btn-sm"><span>–</span></button>
-										<input class="i-count i-count-sm" type="text" disabled value="2" maxlength="3">
-										<button class="btn btn-sm"><span>+</span></button>
-									</div>
-								</footer>
-							</div>
-						</article>
-						<article class="product-wrap product_sm">
-							<div class="product product_sm">
-								<div class="product__isOnCart"></div>
-								<div class="product__image" style="background-image:url('assets/img/product-11.jpg')"></div>
-								<div class="product-info product_sm">
-									<div class="product-info__title product_sm"><h3>Курица с грибами</h3></div>
-								</div>
-
-								<footer class="product-footer product_sm">
-									<div class="product__price product_sm"><span>595&nbsp;₽</span></div>
-									<div class="product__extra product_sm">120 г</div>
-										
-									<div class="product-buttons__count product_sm">
-										<button class="btn btn-sm"><span>–</span></button>
-										<input class="i-count i-count-sm" type="text" disabled value="0" maxlength="3">
-										<button class="btn btn-sm"><span>+</span></button>
-									</div>
-								</footer>
-							</div>
-						</article>
-						<article class="product-wrap product_sm">
-							<div class="product product_sm">
-								<div class="product__isOnCart"></div>
-								<div class="product__image" style="background-image:url('assets/img/product-2.jpg')"></div>
-								<div class="product-info product_sm">
-									<div class="product-info__title product_sm"><h3>Курица с грибами</h3></div>
-								</div>
-
-								<footer class="product-footer product_sm">
-									<div class="product__price product_sm"><span>595&nbsp;₽</span></div>
-									<div class="product__extra product_sm">120 г</div>
-										
-									<div class="product-buttons__count product_sm">
-										<button class="btn btn-sm"><span>–</span></button>
-										<input class="i-count i-count-sm" type="text" disabled value="0" maxlength="3">
-										<button class="btn btn-sm"><span>+</span></button>
-									</div>
-								</footer>
-							</div>
-						</article>
-						<article class="product-wrap product_sm">
-							<div class="product product_sm">
-								<div class="product__isOnCart"></div>
-								<div class="product__image" style="background-image:url('assets/img/product-3.jpg')"></div>
-								<div class="product-info product_sm">
-									<div class="product-info__title product_sm"><h3>Курица с грибами</h3></div>
-								</div>
-
-								<footer class="product-footer product_sm">
-									<div class="product__price product_sm"><span>595&nbsp;₽</span></div>
-									<div class="product__extra product_sm">120 г</div>
-										
-									<div class="product-buttons__count product_sm">
-										<button class="btn btn-sm"><span>–</span></button>
-										<input class="i-count i-count-sm" type="text" disabled value="0" maxlength="3">
-										<button class="btn btn-sm"><span>+</span></button>
-									</div>
-								</footer>
-							</div>
-						</article>
-						<article class="product-wrap product_sm">
-							<div class="product product_sm">
-								<div class="product__isOnCart"></div>
-								<div class="product__image" style="background-image:url('assets/img/product-4.jpg')"></div>
-								<div class="product-info product_sm">
-									<div class="product-info__title product_sm"><h3>Курица с грибами</h3></div>
-								</div>
-
-								<footer class="product-footer product_sm">
-									<div class="product__price product_sm"><span>595&nbsp;₽</span></div>
-									<div class="product__extra product_sm">120 г</div>
-										
-									<div class="product-buttons__count product_sm">
-										<button class="btn btn-sm"><span>–</span></button>
-										<input class="i-count i-count-sm" type="text" disabled value="0" maxlength="3">
-										<button class="btn btn-sm"><span>+</span></button>
-									</div>
-								</footer>
-							</div>
-						</article>
-						<article class="product-wrap product_sm">
-							<div class="product product_sm">
-								<div class="product__isOnCart"></div>
-								<div class="product__image" style="background-image:url('assets/img/product-5.jpg')"></div>
-								<div class="product-info product_sm">
-									<div class="product-info__title product_sm"><h3>Курица с грибами</h3></div>
-								</div>
-
-								<footer class="product-footer product_sm">
-									<div class="product__price product_sm"><span>595&nbsp;₽</span></div>
-									<div class="product__extra product_sm">120 г</div>
-										
-									<div class="product-buttons__count product_sm">
-										<button class="btn btn-sm"><span>–</span></button>
-										<input class="i-count i-count-sm" type="text" disabled value="0" maxlength="3">
-										<button class="btn btn-sm"><span>+</span></button>
-									</div>
-								</footer>
-							</div>
-						</article>
-						<article class="product-wrap product_sm">
-							<div class="product product_sm">
-								<div class="product__isOnCart"></div>
-								<div class="product__image" style="background-image:url('assets/img/product-6.jpg')"></div>
-								<div class="product-info product_sm">
-									<div class="product-info__title product_sm"><h3>Курица с грибами</h3></div>
-								</div>
-
-								<footer class="product-footer product_sm">
-									<div class="product__price product_sm"><span>595&nbsp;₽</span></div>
-									<div class="product__extra product_sm">120 г</div>
-										
-									<div class="product-buttons__count product_sm">
-										<button class="btn btn-sm"><span>–</span></button>
-										<input class="i-count i-count-sm" type="text" disabled value="0" maxlength="3">
-										<button class="btn btn-sm"><span>+</span></button>
-									</div>
-								</footer>
-							</div>
-						</article>
-						<article class="product-wrap product_sm">
-							<div class="product product_sm">
-								<div class="product__isOnCart"></div>
-								<div class="product__image" style="background-image:url('assets/img/product-7.jpg')"></div>
-								<div class="product-info product_sm">
-									<div class="product-info__title product_sm"><h3>Курица с грибами</h3></div>
-								</div>
-
-								<footer class="product-footer product_sm">
-									<div class="product__price product_sm"><span>595&nbsp;₽</span></div>
-									<div class="product__extra product_sm">120 г</div>
-										
-									<div class="product-buttons__count product_sm">
-										<button class="btn btn-sm"><span>–</span></button>
-										<input class="i-count i-count-sm" type="text" disabled value="0" maxlength="3">
-										<button class="btn btn-sm"><span>+</span></button>
-									</div>
-								</footer>
-							</div>
-						</article>
-						<article class="product-wrap product_sm">
-							<div class="product product_sm">
-								<div class="product__isOnCart"></div>
-								<div class="product__image" style="background-image:url('assets/img/product-8.jpg')"></div>
-								<div class="product-info product_sm">
-									<div class="product-info__title product_sm"><h3>Курица с грибами</h3></div>
-								</div>
-
-								<footer class="product-footer product_sm">
-									<div class="product__price product_sm"><span>595&nbsp;₽</span></div>
-									<div class="product__extra product_sm">120 г</div>
-										
-									<div class="product-buttons__count product_sm">
-										<button class="btn btn-sm"><span>–</span></button>
-										<input class="i-count i-count-sm" type="text" disabled value="0" maxlength="3">
-										<button class="btn btn-sm"><span>+</span></button>
-									</div>
-								</footer>
-							</div>
-						</article>
-						<article class="product-wrap product_sm">
-							<div class="product product_sm">
-								<div class="product__isOnCart"></div>
-								<div class="product__image" style="background-image:url('assets/img/product-9.jpg')"></div>
-								<div class="product-info product_sm">
-									<div class="product-info__title product_sm"><h3>Курица с грибами</h3></div>
-								</div>
-
-								<footer class="product-footer product_sm">
-									<div class="product__price product_sm"><span>595&nbsp;₽</span></div>
-									<div class="product__extra product_sm">120 г</div>
-										
-									<div class="product-buttons__count product_sm">
-										<button class="btn btn-sm"><span>–</span></button>
-										<input class="i-count i-count-sm" type="text" disabled value="0" maxlength="3">
-										<button class="btn btn-sm"><span>+</span></button>
-									</div>
-								</footer>
-							</div>
-						</article>
-						<article class="product-wrap product_sm">
-							<div class="product product_sm">
-								<div class="product__isOnCart"></div>
-								<div class="product__image" style="background-image:url('assets/img/product-10.jpg')"></div>
-								<div class="product-info product_sm">
-									<div class="product-info__title product_sm"><h3>Курица с грибами</h3></div>
-								</div>
-
-								<footer class="product-footer product_sm">
-									<div class="product__price product_sm"><span>595&nbsp;₽</span></div>
-									<div class="product__extra product_sm">120 г</div>
-										
-									<div class="product-buttons__count product_sm">
-										<button class="btn btn-sm"><span>–</span></button>
-										<input class="i-count i-count-sm" type="text" disabled value="0" maxlength="3">
-										<button class="btn btn-sm"><span>+</span></button>
+										<button class="btn btn-sm js-cart-minus" data-id="15"><span>–</span></button>
+										<input class="i-count i-count-sm" id="count-15" type="text" disabled value="0" maxlength="3">
+										<button class="btn btn-sm js-cart-add" data-id="15" data-gid="15" data-sid="1123" data-title="Пиво Крюгер классическое" data-price="95" data-sprice="95" data-weight="1 л" data-image="assets/img/product-9.jpg"><span>+</span></button>
 									</div>
 								</footer>
 							</div>
@@ -495,10 +245,13 @@
 						</section>
 
 						<section class="form-section">
-							<div class="form__total"><p>К оплате: <strong><span id="js-form-total__sum">2136</span>&nbsp;₽</strong></p></div>
-							<div class="form__total-info"><p>Заказ — <strong><span id="js-form-order__sum">1986</span>&nbsp;₽</strong>, доставка — 
-								<strong id="js-form-deliv-free">бесплатно</strong>
-								<strong id="js-form-deliv-sum"><span id="js-form-deliv_sum">150</span>&nbsp;₽</strong></p></div>
+							<div class="form__total"><p>К оплате: <strong><span id="js-final-sum">0</span>&nbsp;₽</strong></p></div>
+							<div class="form__total-info">
+								<p id="form-total-info">Заказ — <strong><span class="js-cart-total">0</span>&nbsp;₽</strong>, доставка — 
+									<strong id="js-form-deliv-free">бесплатно</strong>
+									<strong id="js-form-deliv-sum"><span id="js-form-deliv_sum">0</span>&nbsp;₽</strong>
+									<strong id="js-form-deliv-discount">самовывоз (скидка 10%)</strong>
+								</p></div>
 							<div class="form-group form-group_radio">
 								<input type="radio" name="f-pay" checked id="f-pay-0" value="0" class="form-group__radio">
 								<label for="f-pay-0" class="form-group__label form-group__label_withExtra">Оплата наличными<span id="js-f-pay-0__label">, нужна сдача с</span></label>
@@ -511,7 +264,7 @@
 							</div>
 							<div class="form-group form-group_radio">
 								<input type="radio" name="f-pay" id="f-pay-1" value="1" class="form-group__radio">
-								<label for="f-pay-1" class="form-group__label">Оплата банковской картой курьеру</label>
+								<label for="f-pay-1" class="form-group__label">Оплата банковской картой при получении заказа</label>
 							</div>
 						</section>
 

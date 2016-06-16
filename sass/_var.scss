@@ -11,6 +11,7 @@ $sm2:$font-size*0.666667px; //11px
 //breakpoints
 $cnt: 1660em/$font-size;
 $cnt-sm: 1200em/$font-size;
+$cnt-xs: 900em/$font-size;
 $def-font-size: 16;
 $bp1540:1540em/$def-font-size;
 $bp1440:1440em/$def-font-size;
@@ -20,13 +21,13 @@ $bp1200:1200em/$def-font-size;
 $bp1100:1100em/$def-font-size;
 $bp1000:1000em/$def-font-size;
 $bp940:940em/$def-font-size;
-$bp840:840em/$def-font-size;
-$bp839:839em/$def-font-size;
+$bp840:860em/$def-font-size;
+$bp839:859em/$def-font-size;
 $bp760:764em/$def-font-size;
 $bp740:740em/$def-font-size;
 $bp680:680em/$def-font-size;
 $bp600:600em/$def-font-size;
-$bp540:540em/$def-font-size;
+$bp540:556em/$def-font-size;
 $bp400:400em/$def-font-size;
 $bp340:340em/$def-font-size;
 

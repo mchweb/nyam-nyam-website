@@ -18,7 +18,7 @@ g));return this};b.fn.masked=function(a){return this.data("mask").getMaskedVal(a
 dataMaskAttr:"*[data-mask]",dataMask:!0,watchInterval:300,watchInputs:!0,useInput:function(a){var b=document.createElement("div"),d;a="on"+a;d=a in b;d||(b.setAttribute(a,"return;"),d="function"===typeof b[a]);return d}("input"),watchDataMask:!1,byPassKeys:[9,16,17,18,36,37,38,39,40,91],translation:{0:{pattern:/\d/},9:{pattern:/\d/,optional:!0},"#":{pattern:/\d/,recursive:!0},A:{pattern:/[a-zA-Z0-9]/},S:{pattern:/[a-zA-Z]/}}};b.jMaskGlobals=b.jMaskGlobals||{};p=b.jMaskGlobals=b.extend(!0,{},p,b.jMaskGlobals);
 p.dataMask&&b.applyDataMask();setInterval(function(){b.jMaskGlobals.watchDataMask&&b.applyDataMask()},p.watchInterval)});
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 /* fixed menu relocation */
 function sticky_relocate(){
 	if ($('.js-line-top').css('display') == 'none'){
@@ -45,29 +45,11 @@ function sticky_relocate(){
 $(window).scroll(sticky_relocate);
 $(window).resize(sticky_relocate);
 $(window).load(sticky_relocate);
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
 var isHappyHour = false;
 
-/*
-// mfp
-$(document).ready(function() {
-    $('.mfp-product').magnificPopup({
-        type: 'ajax',
-        preloader: true,
-        midClick: true,
-        removalDelay: 300,
-        mainClass: 'my-mfp-zoom-in'
-    });
-    $('.mfp-link').magnificPopup({
-        type: 'inline',
-        preloader: false,
-        midClick: true,
-        removalDelay: 300,
-        mainClass: 'my-mfp-zoom-in'
-    });
-});
-*/
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 // UTM remover
 function removeUtms() {
     if (history.replaceState) {
@@ -94,8 +76,9 @@ function getStrippedUrl(url) {
 $(document).ready(function() {
     setTimeout(removeUtms, 3 * 1000);
 });
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 // Ajax
 $(document).ajaxStart(function() {
     $(".form-loader").addClass("form-loader_isActive");
@@ -105,8 +88,12 @@ $(document).ajaxStop(function() {
     $(".form-loader").removeClass("form-loader_isActive");
     $(".js-send-btn").prop("disabled", false);
 });
-
-// front-end interactions
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// hamburger menu
+function closeMenuMobile(){
+	$(".hamburger").removeClass("is-active");
+	$(".nav-cat").removeClass("nav-cat_open");
+}
 $(document).ready(function() {
 
 	// hamburger menu
@@ -119,16 +106,16 @@ $(document).ready(function() {
             x.addClass("nav-cat_open");
         }
     });
-    function closeMenuMobile(){
-    	$(".hamburger").removeClass("is-active");
-        $(".nav-cat").removeClass("nav-cat_open");
-    }
+    
     $(".nav-mobile__item").each(function() {
         $(this).on("click", closeMenuMobile);
     });
+});
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // cart button
-    function openCart(){
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// cart button
+function openCart(){
     	if (!($(".header-cart__button-active").hasClass("header-cart__button-active_isActive"))){
     		$(".m-cart-wrap").removeClass("m-cart-wrap_isHidden");
     		$(".header-cart__button").addClass("header-cart__button_isActive");
@@ -140,6 +127,9 @@ $(document).ready(function() {
     	$(".header-cart__button").blur();
     	setTimeout(function(){$(".header-cart__button-active").removeClass("header-cart__button-active_isActive");}, 0.5*1000);
     }
+
+$(document).ready(function() {
+
     $(".header-cart__button").click(function(){
     	openCart();
     });
@@ -159,22 +149,11 @@ $(document).ready(function() {
     	$(".m-cart-wrap").addClass("m-cart-wrap_isHidden");
     	closeCart();
     });
+});
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // components filter
-    $(".components__switcher").click(function(){
-    	var c = $(".components");
-    	if (c.hasClass("components_isActive")){
-    		c.removeClass("components_isActive");
-    		$(".comp-caption__show").css("display","inline");
-    		$(".comp-caption__hide").css("display","none");
-    	}else{
-    		c.addClass("components_isActive");
-    		$(".comp-caption__hide").css("display","inline");
-    		$(".comp-caption__show").css("display","none");
-    	}
-    });
-
-    //cart-extras
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//cart-extras
     function cartExtras_resize(){
     	$(".js-cart-extras").css("max-height",$('.cart-order').height()+$('.cart-form').height()-$('.cart-extras-title').height());
     }
@@ -185,91 +164,16 @@ $(document).ready(function() {
 			$(".js-cart-extras").removeClass("js-cart-extras_isHidden");
 			$(".cart-extras-cancel__hide").css("display","inline");
 			$(".cart-extras-cancel__show").css("display","none");
-
 		}else{
 			$(".js-cart-extras").addClass("js-cart-extras_isHidden");
 			$(".cart-extras-cancel__hide").css("display","none");
 			$(".cart-extras-cancel__show").css("display","inline");
 		}
 	});
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-	//form
-	$("#f-tel").mask("+7 000 000-00-00", {placeholder: "+7 ___ ___-__-__"});
-	function setDeliv(x){
-		switch(x) {
-        	case '0':
-        	    $(".js-f-addr").css("display","block");
-        	    $(".js-delivery-areas").removeClass("form-group-extra_isActive");
-        	    break;
-        	case '1':
-        	    $(".js-f-addr").css("display","block");
-        	    $(".js-delivery-areas").addClass("form-group-extra_isActive");
-        	    break;
-        	case '2':
-        	    $(".js-f-addr").css("display","none");
-        	    $(".js-delivery-areas").removeClass("form-group-extra_isActive");
-        	    break;
-    	}
-	}
-	$('input[type=radio][name=f-deliv]').on('change', function() {
-    	setDeliv($(this).val());
-	});
-	$(".form-group__switcher").click(function(){
-		$("#f-cash").val($(this).children('span').first().html());
-	});
-	function setPay(x){
-		switch(x) {
-        	case '0':
-        	    $(".js-payment-change").addClass("form-group-extra_isActive");
-        	    $("#js-f-pay-0__label").css("display","inline");
-        	    break;
-        	case '1':
-        		$(".js-payment-change").removeClass("form-group-extra_isActive");
-        		$("#js-f-pay-0__label").css("display","none");
-        	    break;
-    	}
-	}
-	$('input[type=radio][name=f-pay]').on('change', function() {
-    	setPay($(this).val());
-	});
-	function clearForm() {
-    	$(".form-remember").fadeOut("fast");
-	
-    	$("#f-name").val("");
-    	$("#f-tel").val("");
-    	$('input[type=radio][name=f-deliv]').val(['0']);
-    	setDeliv('0');
-    	$('select[name=f-deliv-area]').val(['1']);
-    	$("#f-addr").val("");
-    	$('input[type=radio][name=f-pay]').val(['0']);
-    	setPay('0');
-    	$("#f-cash").val("");
-    	$("#f-person").val("");
-    	$("#f-comment").val("");
-	}
-	$(".form-remember").click(clearForm);
-
-
-	// вспоминание заказа
-	if (localStorage.getItem("lastorder") != null) {
-        $("#f-name").val(localStorage.getItem("f-name"));
-        $("#f-tel").val(localStorage.getItem("f-tel"));
-    
-        $('input[type=radio][name=f-deliv]').val([localStorage.getItem("f-deliv")]);
-    	setDeliv(localStorage.getItem("f-deliv"));
-
-    	$('select[name=f-deliv-area]').val([localStorage.getItem("f-deliv-area")]);
-
-    	$("#f-addr").val(localStorage.getItem("f-addr"));
-
-    	$('input[type=radio][name=f-pay]').val([localStorage.getItem("f-pay")]);
-    	setPay(localStorage.getItem("f-pay"));
-
-        $(".form-remember").css("display", "block");
-    }
-
-	// COMPONENTS
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// COMPONENTS
 	function clearComponents(){
 		$(".components__item").each(function(){
 			$(this).removeClass("components__item_isActive");
@@ -354,6 +258,7 @@ $(document).ready(function() {
 
 		});
 	}
+$(document).ready(function() {
 	$(".components__item").each(function(){
 		$(this).click(function(){
 			var c = $(this).data("component");
@@ -374,8 +279,23 @@ $(document).ready(function() {
 			}
 		});
 	});
+	// components filter
+    $(".components__switcher").click(function(){
+    	var c = $(".components");
+    	if (c.hasClass("components_isActive")){
+    		c.removeClass("components_isActive");
+    		$(".comp-caption__show").css("display","inline");
+    		$(".comp-caption__hide").css("display","none");
+    	}else{
+    		c.addClass("components_isActive");
+    		$(".comp-caption__hide").css("display","inline");
+    		$(".comp-caption__show").css("display","none");
+    	}
+    });
+});
 
-	// SUBCATS
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// SUBCATS
 	function clearSubcats(){
 		$(".subcat__item").each(function(){
 			$(this).removeClass("subcat__item_isActive");
@@ -404,56 +324,83 @@ $(document).ready(function() {
 
 		});
 	}
+$(document).ready(function() {
 	$(".subcat__item").each(function(){
 		$(this).click(function(){
 			clearSubcats();
 			$(this).addClass("subcat__item_isActive");
 			updateSubcatsResults();
 		});
-	});
-
-    
-	// TABS
-	function openMobileTabs() {
-	    $('.p-menu-nav').addClass("p-menu-nav_open");
-	}
-	
-	function closeMobileTabs() {
-	    $('.p-menu-nav').removeClass("p-menu-nav_open");
-	}
-
-	function openTab(x) {
-	    $('.menu-nav-list__item_current').removeClass('menu-nav-list__item_current');
-	    $('.p-menu-item_current').removeClass('p-menu-item_current');
-	    $('.menu-' + x).addClass('menu-nav-list__item_current');
-	    $('.b-' + x).addClass('p-menu-item_current');
-	    var y = "";
-	    switch (x) {
-	        case "promo":
-	            y = "Акции";
-	            break;
-	        case "feedback":
-	            y = "Отзывы";
-	            break;
-	        case "deliv":
-	            y = "Условия доставки";
-	            break;
-	        case "vacancy":
-	            y = "Вакансии";
-	            break;
-	    }
-	    $('.p-menu-item-mobile__title span').html(y);
-	}
-
-    $(".menu-nav-list__item").each(function() {
-        $(this).on("click", closeMobileTabs);
-    });
-    $(".p-menu-item").each(function() {
-        $(this).on("click", closeMobileTabs);
-    });
-
+	});  
 });
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// FORMS
+function setDeliv(x){
+		switch(x) {
+        	case '0':
+        	    $(".js-f-addr").css("display","block");
+        	    $(".js-delivery-areas").removeClass("form-group-extra_isActive");
+        	    break;
+        	case '1':
+        	    $(".js-f-addr").css("display","block");
+        	    $(".js-delivery-areas").addClass("form-group-extra_isActive");
+        	    break;
+        	case '2':
+        	    $(".js-f-addr").css("display","none");
+        	    $(".js-delivery-areas").removeClass("form-group-extra_isActive");
+        	    break;
+    	}
+    	calculateTotal();
+	}
+function setPay(x){
+		switch(x) {
+        	case '0':
+        	    $(".js-payment-change").addClass("form-group-extra_isActive");
+        	    $("#js-f-pay-0__label").css("display","inline");
+        	    break;
+        	case '1':
+        		$(".js-payment-change").removeClass("form-group-extra_isActive");
+        		$("#js-f-pay-0__label").css("display","none");
+        	    break;
+    	}
+	}
+function orderSuccess() {
+	$.magnificPopup.open({items: { src: $(".form-success") }, type: "inline",  removalDelay: 300, mainClass: 'my-mfp-zoom-in'});
+
+   	clearCart();
+   	updateCart();
+
+   	/* Запоминание заказа */
+   	localStorage.setItem("lastorder", "1");
+
+   	localStorage.setItem("f-name", $("#f-name").val());
+   	localStorage.setItem("f-tel", $("#f-tel").val());
+
+   	localStorage.setItem("f-deliv", $('input[type=radio][name=f-deliv]:checked').val());
+   	localStorage.setItem("f-deliv-area", $("#f-deliv-area").val());
+
+   	localStorage.setItem("f-addr", $("#f-addr").val());
+   	
+   	localStorage.setItem("f-pay", $('input[type=radio][name=f-pay]:checked').val());
+}
+
+function clearForm() {
+    	$(".form-remember").fadeOut("fast");
+	
+    	$("#f-name").val("");
+    	$("#f-tel").val("");
+    	$('input[type=radio][name=f-deliv]').val(['0']);
+    	setDeliv('0');
+    	$('select[name=f-deliv-area]').val(['1']);
+    	$("#f-addr").val("");
+    	$('input[type=radio][name=f-pay]').val(['0']);
+    	setPay('0');
+    	$("#f-cash").val("");
+    	$("#f-person").val("");
+    	$("#f-comment").val("");
+	}
 
 function sendOrder(){
     var f = false;
@@ -512,8 +459,8 @@ function sendOrder(){
                 ga('send', 'event', 'Order', 'done');
             } else {
                 var s = "Упс, произошла ошибка при отправке формы. ";
-                s += "Робот говорит, что " + answer + ". ";
-                s += "Вы точно заполнили все поля? Тогда проверьте, работает ли интернет? Если ничего не помогает, позвоните нам: 342-99. Обязательно сообщите, что вы не смогли сделать заказ с сайта :(";
+                s += "Робот говорит: " + answer + ". ";
+                s += "Вы точно заполнили все поля? Тогда проверьте, работает ли интернет? Если ничего не помогает, позвоните нам: 342-999. Обязательно сообщите, что вы не смогли сделать заказ с сайта :(";
                 alert(s);
             }
         },
@@ -522,33 +469,53 @@ function sendOrder(){
         }
 
     });
-
 }
 
-function orderSuccess() {
-	$.magnificPopup.open({items: { src: $(".form-success") }, type: "inline",  removalDelay: 300, mainClass: 'my-mfp-zoom-in'});
-
-   	clearCart();
-   	updateCart();
-
-   	/* Запоминание заказа */
-   	localStorage.setItem("lastorder", "1");
-
-   	localStorage.setItem("f-name", $("#f-name").val());
-   	localStorage.setItem("f-tel", $("#f-tel").val());
-
-   	localStorage.setItem("f-deliv", $('input[type=radio][name=f-deliv]:checked').val());
-   	localStorage.setItem("f-deliv-area", $("#f-deliv-area").val());
-
-   	localStorage.setItem("f-addr", $("#f-addr").val());
-   	
-   	localStorage.setItem("f-pay", $('input[type=radio][name=f-pay]:checked').val());
-}
+$(document).ready(function() {
+	$("#f-tel").mask("+7 000 000-00-00", {placeholder: "+7 ___ ___-__-__"});
+	
+	$('input[type=radio][name=f-deliv]').on('change', function() {
+    	setDeliv($(this).val());
+	});
+	$(".form-group__switcher").click(function(){
+		$("#f-cash").val($(this).children('span').first().html());
+	});
+	
+	$('input[type=radio][name=f-pay]').on('change', function() {
+    	setPay($(this).val());
+	});
+	
+	$(".form-remember").click(clearForm);
 
 
+	// вспоминание заказа
+	if (localStorage.getItem("lastorder") != null) {
+        $("#f-name").val(localStorage.getItem("f-name"));
+        $("#f-tel").val(localStorage.getItem("f-tel"));
+    
+        $('input[type=radio][name=f-deliv]').val([localStorage.getItem("f-deliv")]);
+    	setDeliv(localStorage.getItem("f-deliv"));
+
+    	$('select[name=f-deliv-area]').val([localStorage.getItem("f-deliv-area")]);
+
+    	$("#f-addr").val(localStorage.getItem("f-addr"));
+
+    	$('input[type=radio][name=f-pay]').val([localStorage.getItem("f-pay")]);
+    	setPay(localStorage.getItem("f-pay"));
+
+        $(".form-remember").css("display", "block");
+    }
+});
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 // КОРЗИНА
-// блок вывода данных корзины
-var cartCont = $('#cart_content');
+$(document).ready(function() {
+	updateCart();
+});
+$(window).bind('storage', function (e) {
+    updateCart();
+});
 // Получаем данные из LocalStorage
 function getCartData() {
     return JSON.parse(localStorage.getItem('cart'));
@@ -567,21 +534,24 @@ function addToCart(e, btn) {
 		document.getElementById("pr-"+$that.data('id')).scrollIntoView();
 	}
     var cartData = getCartData() || {}, // получаем данные корзины или создаём новый объект, если данных еще нет
-        itemId = $that.data('id'), // ID товара
-        itemTitle = $that.data('title'), // название товара
-        itemPrice = $that.data('price'),
-        itemSubPrice = $that.data('sprice'),
-        itemWeight = $that.data('weight'),
-        itemImage = $that.data('image'); // стоимость товара
+        id = $that.data('id'), // ID товара
+        gid = $that.data('gid'), // 0 ID группя
+        sid = $that.data('sid'), // 1 ID 1C
+        itemTitle = $that.data('title'), // 2 название товара
+        // 3 количество     
+        itemPrice = $that.data('price'), // 4 стоимость товара
+        itemSubPrice = $that.data('sprice'), // 5
+        itemWeight = $that.data('weight'),  // 6
+        itemImage = $that.data('image');  // 7
 
-    if (cartData.hasOwnProperty(itemId)) { // если такой товар уже в корзине, то добавляем +1 к его количеству
-        if (cartData[itemId][3] == 0) {
-            cartData[itemId] = [itemTitle, itemPrice, itemSubPrice, 1, itemImage, itemWeight];
+    if (cartData.hasOwnProperty(id)) { // если такой товар уже в корзине, то добавляем +1 к его количеству
+        if (cartData[id][3] == 0) {
+            cartData[id] = [gid, sid, itemTitle, 1, itemPrice, itemSubPrice, itemWeight, itemImage];
         } else {
-            cartData[itemId][3] += 1;
+            cartData[id][3] += 1;
         }
     } else { // если товара в корзине еще нет, то добавляем в объект
-        cartData[itemId] = [itemTitle, itemPrice, itemSubPrice, 1, itemImage, itemWeight];
+        cartData[id] = [gid, sid, itemTitle, 1, itemPrice, itemSubPrice, itemWeight, itemImage];
     }
     // Обновляем данные в LocalStorage
     if (!setCartData(cartData)) {
@@ -621,6 +591,9 @@ function minusToCart() {
     if (cartData.hasOwnProperty(itemId)) { // если такой товар уже в корзине, то добавляем +1 к его количеству 
         if (cartData[itemId][3] != 0) {
             cartData[itemId][3] -= 1;
+        }else{
+        	console.log("Товара 0 в корзине");
+        	return false;
         }
     } else { // если товара в корзине еще нет, то добавляем в объект
         console.log("Товара нет в корзине");
@@ -640,11 +613,19 @@ function removeFromCart() {
         cartData = getCartData() || {}, // получаем данные корзины или создаём новый объект, если данных еще нет
         itemId = $that.data('id');
 
-    if (cartData.hasOwnProperty(itemId)) { // если такой товар уже в корзине, то добавляем +1 к его количеству
-        cartData[itemId][3] = 0;
-    } else { // если товара в корзине еще нет, то добавляем в объект
-        console.log("Товара нет в корзине");
-        return false;
+    if (itemId == "-1"){
+    	gid = $that.data('gid');
+    	if (cartData.hasOwnProperty(gid+"_0")) { cartData[gid+"_0"][3] = 0; }
+    	if (cartData.hasOwnProperty(gid+"_1")) { cartData[gid+"_1"][3] = 0; }
+    	if (cartData.hasOwnProperty(gid+"_2")) { cartData[gid+"_2"][3] = 0; }
+    }else{
+
+    	if (cartData.hasOwnProperty(itemId)) {
+    	    cartData[itemId][3] = 0;
+    	} else {
+    	    console.log("Товара нет в корзине");
+    	    return false;
+    	}
     }
 
     if (!setCartData(cartData)) {
@@ -653,95 +634,87 @@ function removeFromCart() {
         console.log("Не удалось обновить корзину");
     }
 }
-
+var cartTotal = 0;
 function updateCart() {
     var cartData = getCartData(), // вытаскиваем все данные корзины
         total = 0,
         count = 0,
-        crt = $(".b-cart-list"),
-        n = '';
+        crt = $(".js-cart-items"),
+        n = '',
+        arr = [];
     // если что-то в корзине уже есть, начинаем формировать данные для вывода
     if (cartData !== null) {
         for (var items in cartData) {
             var i = items,
                 c = cartData[items][3];
 
-            $("#cnt-" + i).val(c);
+            $("#p-" + cartData[items][0]).removeClass("product_isAdded");
+
+            $("#count-" + i).val(c);
+            $("#m-count-" + i).val(c);
             if (c != 0) {
                 count++;
-                var price = cartData[items][1];
+                var price = cartData[items][4];
                 if (isHappyHour){
-                	if (cartData[items][2] != null){
-                		price = cartData[items][2];
-                	}
+                	price = cartData[items][5];
                 }
+
                 total += c * price;
-                if (crt.hasClass("b-cart-list_full")) {
-                    n += '<div class="b-cart-item">' +
-                        '<div class="b-cart-item__image"><img src="' + cartData[items][4] + '" alt=""></div>' +
-                        '<div class="b-cart-item-container">' +
-                        '<div class="b-cart-item__title b-cart-item__title_full"><span>' + cartData[items][0] + ' (' + cartData[items][5] + ')</span></div>' +
-                        '<div class="b-cart-item-counter">' +
-                        '<div class="b-count-switch b-count-switch_vis">' +
-                        '<div class="b-cart-item-counter__button b-count-switch__button b-cart-item-counter__button_nohide">' +
-                        '<button class="b-button n-cart-minus b-button_nohover b-button_sm" data-id="' + items + '"><span>–</span></button>' +
-                        '</div>' +
-                        '<div class="b-count-switch__input b-count-switch__input_sm">' +
-                        '<input id="c-cnt-' + items + '" type="text" maxlength="3" disabled value="' + c + '">' +
-                        '</div>' +
-                        '<div class="b-cart-item-counter__button b-count-switch__button b-cart-item-counter__button_nohide">' +
-                        '<button class="b-button n-cart-plus b-button_nohover b-button_sm" data-id="' + items + '"><span>+</span></button>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '<div class="b-cart-item__price"><span>' + price + '&#160;&#8381;</span></div>' +
-                        '<div class="b-cart-item-remove"><button class="b-cart-item-remove__button n-cart-rm" data-id="' + items + '"></button></div>' +
-                        '</div>' +
-                        '</div>';
+                
+                $("#pf-" + items).addClass("footer_isAdded");
+                arr.push(cartData[items][0]);
+
+                
+                if (crt.hasClass("cart-items-final")) {
+                    n += '' +
+                    '<li class="cart-item">'+
+					'	<div class="cart-item__image" style="background-image:url(' + cartData[items][7] + ');"></div>'+
+					'	<div class="cart-item-title">'+
+					'		<p>' + cartData[items][2] + '</p>'+
+					'		<p class="cart-item__subtitle">' + cartData[items][6] + ' &nbsp;&nbsp;|&nbsp; ' + price + '&nbsp;₽/шт</p>'+
+					'	</div>'+
+					'	<div class="cart-item-btn">'+
+					'		<button class="btn btn-sm n-cart-minus" data-id="' + i + '"><span>–</span></button>'+
+					'		<input class="i-count i-count-sm" id="m-count-' + i + '" value="' + c + '" type="text" disabled value="2" maxlength="3">'+
+					'		<button class="btn btn-sm n-cart-plus" data-id="' + i + '"><span>+</span></button>'+
+					'	</div>'+
+					'	<div class="cart-item__price"><p>' + c * price + '&nbsp;₽</p></div>'+
+					'	<div class="cart-item-remove">'+
+					'		<div class="btn-remove n-cart-rm" data-id="' + i + '"></div>'+
+					'	</div>'+
+					'</li>';
                 } else {
-                    n += '<div class="b-cart-item">' +
-                        '<div class="b-cart-item__title"><span>' + cartData[items][0] + ' (' + cartData[items][5] + ')</span></div>' +
-                        '<div class="b-cart-item-counter">' +
-                        '<div class="b-count-switch b-count-switch_vis">' +
-                        '<div class="b-cart-item-counter__button b-count-switch__button">' +
-                        '<button class="b-button n-cart-minus b-button_nohover b-button_sm" data-id="' + items + '"><span>–</span></button>' +
-                        '</div>' +
-                        '<div class="b-count-switch__input b-count-switch__input_sm">' +
-                        '<input id="c-cnt-' + items + '" type="text" maxlength="3" disabled value="' + c + '">' +
-                        '</div>' +
-                        '<div class="b-cart-item-counter__button b-count-switch__button">' +
-                        '<button class="b-button n-cart-plus b-button_nohover b-button_sm" data-id="' + items + '"><span>+</span></button>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '<div class="b-cart-item__price"><span>' + price + '&#160;&#8381;</span></div>' +
-                        '<div class="b-cart-item-remove"><button class="b-cart-item-remove__button n-cart-rm" data-id="' + items + '"></button></div>' +
-                        '</div>';
+                    n += '' +
+                    '<li class="m-cart-item">'+
+					'	<div class="m-cart-item__title"><p>' + cartData[items][2] + '</p></div>'+
+					'	<div class="m-cart-item-btn">'+
+					'		<button class="btn btn-sm n-cart-minus" data-id="' + i + '"><span>–</span></button>'+
+					'		<input class="i-count i-count-sm" id="m-count-' + i + '" value="' + c + '" type="text" disabled maxlength="3">'+
+					'		<button class="btn btn-sm n-cart-plus" data-id="' + i + '"><span>+</span></button>'+
+					'	</div>'+
+					'	<div class="m-cart-item__price"><p>' + price + '&nbsp;₽</p></div>'+
+					'	<div class="m-cart-item-remove">'+
+					'		<div class="btn-remove n-cart-rm" data-id="' + i + '"></div>'+
+					'	</div>'+
+					'</li>';
                 }
 
-                $("#add-" + i).addClass("b-button_invis");
-                $("#sw-" + i).addClass("b-count-switch_vis");
-
-
-                if ($("#p-add-" + i) != null) {
-                    $("#p-add-" + i).addClass("b-button_invis");
-                    $("#p-sw-" + i).addClass("b-count-switch_vis");
-                    $("#p-cnt-" + i).val(c);
-                }
+                
             } else {
-                $("#add-" + i).removeClass("b-button_invis");
-                $("#sw-" + i).removeClass("b-count-switch_vis");
-
-                if ($("#p-add-" + i) != null) {
-                    $("#p-add-" + i).removeClass("b-button_invis");
-                    $("#p-sw-" + i).removeClass("b-count-switch_vis");
-                }
+                $("#pf-" + items).removeClass("footer_isAdded");
             }
         }
-        if ($("#header-total") != null) {
-            var s = $("#header-total").html();
-            $("#header-total").animate({
-                num: total - 6 /* - начало */
+
+        for (var it in arr){
+        	$("#p-" + arr[it]).addClass("product_isAdded");
+        }
+        
+
+        // подставляем суммы
+        if ($("#js-header-total") != null) {
+            var s = $("#js-header-total").html();
+            $("#js-header-total").animate({
+                num: total - 6 // - начало
             }, {
                 duration: 250,
                 step: function(num) {
@@ -749,47 +722,114 @@ function updateCart() {
                 }
             });
         }
+
         crt.html(n);
+        if (crt.hasClass("cart-items-final")) {
+        	cartExtras_resize();
+    	}
 
-        if ($("#cart-total") != null) {
-            $("#cart-total").html(total);
 
-        }
-        if ($("#footer-total") != null) {
-            $("#footer-total").html(total);
-        }
-        if ($("#form-total") != null) {
-            $("#form-total").html(total);
-        }
+        $(".header-cart-button__counter p").html(count);
+        $(".js-cart-total").each(function(){$(this).html(total)});;
+        cartTotal = total;
+        calculateTotal();
+        
 
         if (total == 0) {
-            $(".b-cart__empty").addClass("b-cart__empty_vis");
-            $(".b-button_finish").addClass("b-button_invis");
-            $(".b-button_footer").addClass("b-button_invis");
-            $('.b-header-cart-button__counter').removeClass("b-header-cart-button__counter_vis");
+            $(".m-cart__empty").addClass("m-cart__empty_isActive");
+            $(".m-cart-total").addClass("m-cart-total_isHidden");
+            $(".js-cart-items").css("display","none");
+            $(".header-cart-button__counter").removeClass("header-cart-button__counter_isActive");
+            $(".cart-form").css("display","none");
+            $(".cart-order__empty").css("display","block");
+            
+
         } else {
-            $(".b-cart__empty").removeClass("b-cart__empty_vis");
-            $(".b-button_finish").removeClass("b-button_invis");
-            $(".b-button_footer").removeClass("b-button_invis");
+            $(".m-cart__empty").removeClass("m-cart__empty_isActive");
+            $(".m-cart-total").removeClass("m-cart-total_isHidden");
+            $(".js-cart-items").css("display","block");
+            $(".header-cart-button__counter").addClass("header-cart-button__counter_isActive");
+            $(".cart-form").css("display","block");
+            $(".cart-order__empty").css("display","none");
 
             $('.n-cart-plus').on('click', plusToCart);
             $('.n-cart-minus').on('click', minusToCart);
             $('.n-cart-rm').on('click', removeFromCart);
+    	}     
+	}
+}
 
-            $('.b-header-cart-button__counter').addClass("b-header-cart-button__counter_vis");
-            $('.b-header-cart-button__counter').html('<p>' + count + '</p>');
-        }
-    } else {
-        $(".b-cart__empty").addClass("b-cart__empty_vis");
-        $(".b-button_finish").addClass("b-button_invis");
-    }
+function calculateTotal(){
+	var type = $('input[type=radio][name=f-deliv]:checked').val();
+	var deliv = 0;
+	var final_sum = parseInt(cartTotal);
+	switch (type){
+		case '0':
+			$("#js-form-deliv-discount").css("display","none");
+			if (parseInt(cartTotal) > 400){
+				$("#js-form-deliv-free").css("display","inline");
+				$("#js-form-deliv-sum").css("display","none");
+			}else{
+				$("#js-form-deliv-free").css("display","none");
+				$("#js-form-deliv-sum").html("50&nbsp;₽");
+				deliv = 50;
+				$("#js-form-deliv-sum").css("display","inline");
+			}
+			break;
+		case '1':
+			$("#js-form-deliv-discount").css("display","none");
+			$("#js-form-deliv-free").css("display","none");
+			deliv = $("#f-deliv-area option:selected").data("price");
+			$("#js-form-deliv-sum").html(deliv + "&nbsp;₽");
+			$("#js-form-deliv-sum").css("display","inline");
+			break;
+		case '2':
+			if (isHappyHour){
+				$("#js-form-deliv-discount").css("display","none");
+				$("#js-form-deliv-free").css("display","inline");
+				$("#js-form-deliv-sum").css("display","none");
+			}else{
+				$("#js-form-deliv-discount").css("display","inline");
+				$("#js-form-deliv-free").css("display","none");
+				$("#js-form-deliv-sum").css("display","none");
+				deliv = -1;
+			}
+			break;
+	}
+	if (deliv == -1){
+		final_sum *= 0.9;
+	}else{
+		final_sum += parseInt(deliv);
+	}
+	$("#js-final-sum").html(final_sum.toFixed(2));
+	$("#f-cash").val(final_sum.toFixed(0));
+	$("#form-total-info").css("display", "block");
+}
+
+/* пересчиываем стоимость при изменении доставки */
+$('input[type=radio][name=f-deliv]').change(calculateTotal);
+$('select[name=f-deliv-area]').change(calculateTotal);
+
+function changeProductType(){
+	var gid = $('input[type=radio][name='+$(this).attr("name")+']:checked').data('gid');
+	var id = $('input[type=radio][name='+$(this).attr("name")+']:checked').val();
+	for(var i = 0; i<3; i++){
+		$("#pf-"+gid+"_"+id).removeClass("product-footer_isHidden");
+		var x = parseInt(id);
+		if (i != x){
+			$("#pf-"+gid+"_"+i).addClass("product-footer_isHidden");
+		}
+	}
 }
 
 /* Добавляем товар в корзину */
-$('.cart-add').on('click', addToCart);
-$('.cart-plus').on('click', plusToCart);
-$('.cart-minus').on('click', minusToCart);
-$('.cart-rm').on('click', removeFromCart);
+$('.js-cart-add').on('click', addToCart);
+$('.js-cart-plus').on('click', plusToCart);
+$('.js-cart-minus').on('click', minusToCart);
+$('.js-cart-rm').on('click', removeFromCart);
+$('.js-pt-change').on('change', changeProductType);
+
+
 
 /* Очистить корзину */
 function clearCart() {
@@ -802,3 +842,4 @@ function clearCart() {
         setCartData(cartData);
     }
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////////
