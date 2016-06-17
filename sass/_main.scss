@@ -1781,7 +1781,7 @@ a:hover{
 }
 
 .promo-item{
-	margin-bottom:$base-d*6em;
+	margin-bottom:$base-d*4em;
 	&::after{
 		content: " ";
     	display: block;
@@ -1808,5 +1808,52 @@ a:hover{
 	}
 }
 .promo-item__title{
-	@include adjust-font-size-to($h3);
+	@include adjust-font-size-to($h2);
+	
+}
+.promo-item__desc{
+	@include adjust-font-size-to($h5);
+	
+	@media (max-width: $bp540) {
+		padding-bottom:$base-d*2em;
+		border-bottom:$base-d*0.2em solid $black-35;
+	}
+}
+.page-title{
+	margin-bottom:$base-d*3em;
+	text-align:center;
+	& h2{
+		font-weight:bold;
+		@include adjust-font-size-to($h1);
+	}
+}
+
+.vacancy-list__item{
+	@include span(6);
+	@media (max-width: $bp760) {
+		@include span(12);
+		padding:0 $base-d*6em;
+	}
+	margin-bottom:$base-d*6em;
+	padding:0 $base-d*6em;
+
+	& h3{
+		@include adjust-font-size-to($h2);
+		font-weight:bold;
+		color:$accent;
+	}
+	& h4{
+
+		@include adjust-font-size-to($h4);
+	}
+	& ul{
+		margin-bottom:$base-d*2rem;
+	}
+	& ul li{
+		@include adjust-font-size-to($h5);
+		list-style-type:disc;
+	}
+}
+.js-send-btn:disabled{
+	background-color:$accent-25 !important;
 }

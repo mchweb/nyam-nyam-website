@@ -511,10 +511,7 @@ $(document).ready(function() {
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // КОРЗИНА
 $(document).ready(function() {
-	updateCart();
-});
-$(window).bind('storage', function (e) {
-    updateCart();
+	updateCart(1);
 });
 // Получаем данные из LocalStorage
 function getCartData() {
@@ -635,7 +632,7 @@ function removeFromCart() {
     }
 }
 var cartTotal = 0;
-function updateCart() {
+function updateCart(x) {
     var cartData = getCartData(), // вытаскиваем все данные корзины
         total = 0,
         count = 0,
@@ -661,8 +658,15 @@ function updateCart() {
 
                 total += c * price;
                 
-                $("#pf-" + items).addClass("footer_isAdded");
+                $("#pf-" + i).addClass("footer_isAdded");
                 arr.push(cartData[items][0]);
+                if ((x == 1) && (i != cartData[items][0])){
+                	$("#pt-"+i).attr('checked', 'checked');
+                	for(var j = 0; j<3; j++){
+						$("#pf-"+cartData[items][0]+"_"+j).addClass("product-footer_isHidden");
+					}
+					$("#pf-"+i).removeClass("product-footer_isHidden");
+                }
 
                 
                 if (crt.hasClass("cart-items-final")) {
@@ -814,7 +818,7 @@ function changeProductType(){
 	var gid = $('input[type=radio][name='+$(this).attr("name")+']:checked').data('gid');
 	var id = $('input[type=radio][name='+$(this).attr("name")+']:checked').val();
 	for(var i = 0; i<3; i++){
-		$("#pf-"+gid+"_"+id).removeClass("product-footer_isHidden");
+		$("#pf-"+gid+"_"+i).removeClass("product-footer_isHidden");
 		var x = parseInt(id);
 		if (i != x){
 			$("#pf-"+gid+"_"+i).addClass("product-footer_isHidden");
