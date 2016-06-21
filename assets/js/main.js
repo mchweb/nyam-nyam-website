@@ -402,75 +402,6 @@ function clearForm() {
     	$("#f-comment").val("");
 	}
 
-function sendOrder(){
-    var f = false;
-
-    var cartData = getCartData();
-    $("#js-fg-name").removeClass("form-group_invalid");
-    $("#js-fg-tel").removeClass("form-group_invalid");
-    $("#js-fg-addr").removeClass("form-group_invalid");
-
-    if ($("#f-name").val() == "") {
-        $("#js-fg-name").addClass("form-group_invalid");
-        $("#f-name").focus();
-        f = true;
-    }
-    if ($("#f-tel").val() == "") {
-        $("#js-fg-tel").addClass("form-group_invalid");
-        $("#f-tel").focus();
-        f = true;
-    }
-    if ($('input[type=radio][name=f-deliv]:checked').val() != 2){
-    	if ($("#f-addr").val() == "") {
-    		$("#js-fg-addr").addClass("form-group_invalid");
-        	$("#f-addr").focus();
-        	f = true;
-    	}
-    }
-
-    if (f) {
-        return
-    }
-
-    $.ajax({
-        url: "!!!!!SETURL",
-        data: {
-            "f-name": $("#f-name").val(),
-            "f-phone": $("#f-tel").val(),
-            "f-deliv": $('input[type=radio][name=f-deliv]:checked').val(),
-
-            "f-deliv-area": $("#f-deliv-area option:selected").text(),
-            "f-addr": $("#f-addr").val(),
-
-            "f-pay": $('input[type=radio][name=f-pay]:checked').val(),
-
-            "f-cash": $("#f-cash").val(),
-            "f-person": $("#f-person").val(),
-            "f-comment": $("#f-comment").val(),
-            "cart": cartData
-        },
-        type: "POST",
-        dataType: "xml",
-        error: function(data) {
-            answer = data["responseText"];
-            if (answer == "") {
-                orderSuccess();
-                yaCounter36933535.reachGoal('order');
-                ga('send', 'event', 'Order', 'done');
-            } else {
-                var s = "Упс, произошла ошибка при отправке формы. ";
-                s += "Робот говорит: " + answer + ". ";
-                s += "Вы точно заполнили все поля? Тогда проверьте, работает ли интернет? Если ничего не помогает, позвоните нам: 342-999. Обязательно сообщите, что вы не смогли сделать заказ с сайта :(";
-                alert(s);
-            }
-        },
-        success: function(data) {
-            orderSuccess();
-        }
-
-    });
-}
-
 $(document).ready(function() {
 	$("#f-tel").mask("+7 000 000-00-00", {placeholder: "+7 ___ ___-__-__"});
 	
@@ -553,7 +484,7 @@ function addToCart(e, btn) {
     // Обновляем данные в LocalStorage
     if (!setCartData(cartData)) {
         updateCart();
-        yaCounter36933535.reachGoal('add');
+        yaCounter36628560.reachGoal('add');
     } else {
         console.log("Не удалось обновить корзину");
     }
@@ -847,3 +778,59 @@ function clearCart() {
     }
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Updown */
+
+  $(function () { 
+$(document).ready(updownResize);
+$(window).resize(updownResize);
+});
+  function updownResize(){
+  $( "#updown" ).width(($( window ).width() - 1660)/2);
+  }
+    var updownElem = document.getElementById('updown');
+
+    var pageYLabel = 0;
+
+    updownElem.onclick = function() {
+      var pageY = window.pageYOffset || document.documentElement.scrollTop;
+	  	  
+      switch (this.className) {
+        case 'up':
+          pageYLabel = pageY;
+          window.scrollTo(0, 0);
+          this.className = 'down';
+          break;
+
+        case 'down':
+          window.scrollTo(0, pageYLabel);
+          this.className = 'up';
+      }
+
+    }
+
+    window.onscroll = function() {
+      var pageY = window.pageYOffset || document.documentElement.scrollTop;
+      var innerHeight = document.documentElement.clientHeight;
+	  
+      switch (updownElem.className) {
+        case '':
+          if (pageY < innerHeight) {
+            updownElem.className = 'up';
+          }
+          break;
+
+        case 'up':
+          if (pageY == 0) {
+            updownElem.className = '';
+          }
+          break;
+
+        case 'down':
+            if (pageY != 0){ updownElem.className = 'up';
+			pageYLabel = 0;
+			}
+          break;
+
+      }
+    }

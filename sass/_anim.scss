@@ -11,7 +11,17 @@
 	transition: all 0.2s ease-in-out;
 }
 
-.soc-link, .header-cart__button, .main-logo__title, .nav-cat, .m-cart-wrap, .product__isOnCart, .product, .prorudct__promo-price, .header-cart-button__counter
+.soc-link, 
+.header-cart__button, 
+.main-logo__title, 
+.nav-cat, 
+.m-cart-wrap, 
+.product__isOnCart, 
+.product, 
+.prorudct__promo-price, 
+.header-cart-button__counter,
+#updown, 
+#updown-container
 {
     -webkit-transition: all 0.1s ease-in-out;
     -moz-transition: all 0.1s ease-in-out;

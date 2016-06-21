@@ -40,3 +40,50 @@ strong {font-weight:bold}
     animation-iteration-count: infinite; 
 }
 
+
+/* Up-down button */
+#updown, 
+#updown-container{
+	position: fixed;
+	top: 0px;
+	height:100%;
+	z-index:100;
+	font-family:Helvetica,Arial,sans-serif;
+}
+#updown-container {
+	width:2.25em;
+	padding-top: 0.5em;
+	opacity:0;
+	color:white;
+	text-align:center;
+}
+#updown.up, 
+#updown.down {
+	cursor:pointer;
+}
+#updown.up #updown-container::before  {
+	content:'\2191';
+	font-size:1.75em;
+	
+}
+#updown.up #updown-container, #updown.down #updown-container  {
+	background:rgba(0,0,0,0.5);
+}
+#updown.down #updown-container::before {
+	content:'\2193';
+	font-size:1.75em;
+}
+#updown:hover #updown-container{
+	opacity:1;
+}
+@media (max-width: $cnt) {
+	#updown {
+		width:1.75em;
+	};
+}
+@media (max-width: $cnt-xs) {
+	#updown,
+	#updown-container {
+		display:none;
+	}
+}

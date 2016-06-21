@@ -14,6 +14,12 @@ a:hover{
 }
 
 
+.main {
+	padding-top:$base-d*4em;
+	@media (max-width: $bp1260) {
+		padding-top:0;
+	}
+}
 //HEADER
 .main-logo-wrap{
 	position:relative;
@@ -56,6 +62,7 @@ a:hover{
 }
 .main-logo__image{
 	max-width:100%;
+	height:auto;
 	padding:0 $base-d*2em;
 	@media (max-width: $bp840) {
 		padding:0 $base-d*1em;
@@ -958,7 +965,6 @@ a:hover{
 
 .delivery-bottom{
 	margin-top:$base-d*3em;
-	margin-bottom:$base-d*6em;
 	& .container-sm{
 		@media (max-width: $bp1000) {
    			max-width:$base-d*120em;
@@ -1017,6 +1023,7 @@ a:hover{
 }
 
 .delivery-bottom__button{
+	margin-bottom:$base-d*6em;
 	text-align:center;
 	padding:$base-d*3em;
 }
@@ -1262,7 +1269,11 @@ a:hover{
 	margin-bottom:$base-d*3em;
 	padding:0 $base-d*3em;
 	
-	& a{
+	& button{
+		-webkit-appearance: none;
+		background:none;
+	    border:none;
+	    padding:0;
 		cursor:pointer;
 		color:$accent-90;
 		border-bottom:$base-d*0.2em solid $accent-25;
