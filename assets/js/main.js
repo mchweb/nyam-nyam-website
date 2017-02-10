@@ -395,7 +395,7 @@ function clearForm() {
     	setDeliv('0');
     	$('select[name=f-deliv-area]').val(['1']);
     	$("#f-addr").val("");
-    	$('input[type=radio][name=f-pay]').val(['0']);
+    	$('input[type=radio][name=f-pay]').val(['1']);
     	setPay('0');
     	$("#f-cash").val("");
     	$("#f-person").val("");
