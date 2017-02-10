@@ -408,8 +408,11 @@ $(document).ready(function() {
 	$('input[type=radio][name=f-deliv]').on('change', function() {
     	setDeliv($(this).val());
 	});
-	$(".form-group__switcher").click(function(){
+	$(".js-payment-change .form-group__switcher").click(function(){
 		$("#f-cash").val($(this).children('span').first().html());
+	});
+	$(".js-person-count .form-group__switcher").click(function(){
+		$("#f-person").val($(this).children('span').first().html());
 	});
 	
 	$('input[type=radio][name=f-pay]').on('change', function() {
