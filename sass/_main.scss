@@ -647,6 +647,7 @@ a:hover{
 
 .promo{
 	margin:0 auto;
+	margin-bottom:rhythm(4);
 	width:100%;
 	max-width:$base-d*384em;
 	& img{
@@ -1933,4 +1934,21 @@ a:hover{
 	@include rhythm(0, 1.5, 1.5, 0);
 	padding-left:$base-d*6em;
 	padding-right:$base-d*6em;
+}
+
+.cafe__title{
+	text-align:center;
+	@include adjust-font-size-to($h3);
+	margin-bottom:rhythm(2, $h3);
+}
+
+.cafe__map iframe{
+	max-width:100%;
+}
+
+.cafe{
+	@media (max-width: $bp740) {
+    	padding-left:0;
+    	padding-right:0;
+  	}
 }
