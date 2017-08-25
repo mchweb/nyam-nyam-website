@@ -872,7 +872,7 @@ a:hover{
 }
 .product-info__title{
 	margin-bottom:$base-d*2em;
-	& h3{
+	& p{
 		font-family:Appetite;
 		color:$accent;
 		@include adjust-font-size-to($h2,5);
@@ -1496,7 +1496,7 @@ a:hover{
 	min-height:$base-d*12em;
 }
 .product-info__title.product_sm{
-	& h3{
+	& p{
 		color:$black-75;
 		@include adjust-font-size-to($h4,4);
 	}
@@ -1947,8 +1947,27 @@ a:hover{
 }
 
 .cafe{
+	padding-left:15px;
+	padding-right:15px;
 	@media (max-width: $bp740) {
     	padding-left:0;
     	padding-right:0;
   	}
+}
+
+.cafe__item{
+	margin-bottom:rhythm(2);
+	display: inline-block;
+}
+
+.vacancy-list:after{
+	content: " ";
+    display: block;
+    clear: both;
+}
+
+.cafe__icon{
+	display: inline-block;
+    padding: rhythm(1/2);
+    vertical-align: top;
 }

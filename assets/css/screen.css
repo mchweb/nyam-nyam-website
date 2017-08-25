@@ -2984,7 +2984,7 @@ body.modal_open {
   margin-bottom: 0.71429em;
 }
 /* line 875, ../../sass/_main.scss */
-.product-info__title h3 {
+.product-info__title p {
   font-family: Appetite;
   color: #f15f22;
   font-size: 1.57143em;
@@ -3975,7 +3975,7 @@ body.modal_open {
 }
 
 /* line 1499, ../../sass/_main.scss */
-.product-info__title.product_sm h3 {
+.product-info__title.product_sm p {
   color: #404040;
   font-size: 1.28571em;
   line-height: 1.11111em;
@@ -4618,12 +4618,37 @@ body.modal_open {
   max-width: 100%;
 }
 
+/* line 1949, ../../sass/_main.scss */
+.cafe {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 @media (max-width: 46.25em) {
   /* line 1949, ../../sass/_main.scss */
   .cafe {
     padding-left: 0;
     padding-right: 0;
   }
+}
+
+/* line 1958, ../../sass/_main.scss */
+.cafe__item {
+  margin-bottom: 0.71429em;
+  display: inline-block;
+}
+
+/* line 1963, ../../sass/_main.scss */
+.vacancy-list:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/* line 1969, ../../sass/_main.scss */
+.cafe__icon {
+  display: inline-block;
+  padding: 0.17857em;
+  vertical-align: top;
 }
 
 /* line 1, ../../sass/_buttons.scss */
