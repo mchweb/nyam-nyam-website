@@ -96,5 +96,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-inline-imgsize');
 
     grunt.registerTask('default', ['compass', 'uglify', 'imagemin', 'cssmin', 'processhtml', 'copy']);
+    grunt.registerTask('js', ['uglify', 'copy']);
 
 };

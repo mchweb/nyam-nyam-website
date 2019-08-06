@@ -628,7 +628,7 @@ function updateCart(x) {
                 if (crt.hasClass("cart-items-final")) {
                     n += '' +
                     '<li class="cart-item">'+
-					'	<div class="cart-item__image" style="background-image:url(' + cartData[items][7] + ');"></div>'+
+					'	<div class="cart-item__image" style="background-image:url(\'' + cartData[items][7] + '\');"></div>'+
 					'	<div class="cart-item-title">'+
 					'		<p>' + cartData[items][2] + '</p>'+
 					'		<p class="cart-item__subtitle">' + cartData[items][6] + ' &nbsp;&nbsp;|&nbsp; ' + price + '&nbsp;₽/шт</p>'+
@@ -709,12 +709,24 @@ function updateCart(x) {
             $(".m-cart-total").removeClass("m-cart-total_isHidden");
             $(".js-cart-items").css("display","block");
             $(".header-cart-button__counter").addClass("header-cart-button__counter_isActive");
-            $(".cart-form").css("display","block");
+            
             $(".cart-order__empty").css("display","none");
 
             $('.n-cart-plus').on('click', plusToCart);
             $('.n-cart-minus').on('click', minusToCart);
-            $('.n-cart-rm').on('click', removeFromCart);
+			$('.n-cart-rm').on('click', removeFromCart);
+			
+			if (total < 400){
+				$(".cart-form").css("display","none");
+				$(".js-cart-sum-message").css("display","block");
+				$(".m-cart-total__button").hide();
+				$(".m-cart-total__message").show();
+			} else {
+				$(".cart-form").css("display","block");
+				$(".js-cart-sum-message").css("display","none");
+				$(".m-cart-total__button").show();
+				$(".m-cart-total__message").hide();
+			}
     	}     
 	}
 }

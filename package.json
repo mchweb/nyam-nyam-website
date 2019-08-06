@@ -16,6 +16,8 @@
   },
   "main": "Gruntfile.js",
   "scripts": {
+    "build": "grunt",
+    "js": "grunt js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
