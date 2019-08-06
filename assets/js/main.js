@@ -595,7 +595,7 @@ function updateCart(x) {
         crt = $(".js-cart-items"),
         n = '',
         arr = [];
-    // если что-то в корзине уже есть, начинаем формировать данные для вывода
+	// если что-то в корзине уже есть, начинаем формировать данные для вывода
     if (cartData !== null) {
         for (var items in cartData) {
             var i = items,
@@ -692,42 +692,40 @@ function updateCart(x) {
         $(".header-cart-button__counter p").html(count);
         $(".js-cart-total").each(function(){$(this).html(total)});;
         cartTotal = total;
-        calculateTotal();
-        
+		calculateTotal();
+	}
+		
 
-        if (total == 0) {
-            $(".m-cart__empty").addClass("m-cart__empty_isActive");
-            $(".m-cart-total").addClass("m-cart-total_isHidden");
-            $(".js-cart-items").css("display","none");
-            $(".header-cart-button__counter").removeClass("header-cart-button__counter_isActive");
-            $(".cart-form").css("display","none");
-            $(".cart-order__empty").css("display","block");
-            
+	if (total == 0) {
+		$(".m-cart__empty").addClass("m-cart__empty_isActive");
+		$(".m-cart-total").addClass("m-cart-total_isHidden");
+		$(".js-cart-items").css("display","none");
+		$(".header-cart-button__counter").removeClass("header-cart-button__counter_isActive");
+		$(".cart-form").css("display","none");
+		$(".cart-order__empty").css("display","block");
+	} else {
+		$(".m-cart__empty").removeClass("m-cart__empty_isActive");
+		$(".m-cart-total").removeClass("m-cart-total_isHidden");
+		$(".js-cart-items").css("display","block");
+		$(".header-cart-button__counter").addClass("header-cart-button__counter_isActive");
+		
+		$(".cart-order__empty").css("display","none");
 
-        } else {
-            $(".m-cart__empty").removeClass("m-cart__empty_isActive");
-            $(".m-cart-total").removeClass("m-cart-total_isHidden");
-            $(".js-cart-items").css("display","block");
-            $(".header-cart-button__counter").addClass("header-cart-button__counter_isActive");
-            
-            $(".cart-order__empty").css("display","none");
-
-            $('.n-cart-plus').on('click', plusToCart);
-            $('.n-cart-minus').on('click', minusToCart);
-			$('.n-cart-rm').on('click', removeFromCart);
-			
-			if (total < 400){
-				$(".cart-form").css("display","none");
-				$(".js-cart-sum-message").css("display","block");
-				$(".m-cart-total__button").hide();
-				$(".m-cart-total__message").show();
-			} else {
-				$(".cart-form").css("display","block");
-				$(".js-cart-sum-message").css("display","none");
-				$(".m-cart-total__button").show();
-				$(".m-cart-total__message").hide();
-			}
-    	}     
+		$('.n-cart-plus').on('click', plusToCart);
+		$('.n-cart-minus').on('click', minusToCart);
+		$('.n-cart-rm').on('click', removeFromCart);
+		
+		if (total < 400){
+			$(".cart-form").css("display","none");
+			$(".js-cart-sum-message").css("display","block");
+			$(".m-cart-total__button").hide();
+			$(".m-cart-total__message").show();
+		} else {
+			$(".cart-form").css("display","block");
+			$(".js-cart-sum-message").css("display","none");
+			$(".m-cart-total__button").show();
+			$(".m-cart-total__message").hide();
+		}
 	}
 }
 
