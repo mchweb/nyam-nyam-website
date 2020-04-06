@@ -7,12 +7,12 @@ module.exports = function(grunt) {
                 dest: 'assets/js/main.min.js'
             }
         },
-        imagemin: {
+        /*imagemin: {
             dynamic: {
                 files: [{
                     expand: true,
                     cwd: 'assets/img/',
-                    src: ['**/*.{png,jpg,gif}'],
+                    //src: ['**//*.{png,jpg,gif}'],
                     dest: 'prod/assets/img/'
                 }]
             }
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
                     cssDir: 'assets/css'
                 }
             }
-        },
+        },*/
         /*sass: {
             options: {
                 sourceMap: false
@@ -42,14 +42,14 @@ module.exports = function(grunt) {
                 }
             }
         },*/
-        processhtml: {
+        /*processhtml: {
             build: {
                 files: {
                     'prod/index.html': ['index.html'],
                     'prod/cart.html': ['cart.html']
                 }
             }
-        },
+        },*/
         copy: {
             main: {
                 files: [
@@ -60,14 +60,14 @@ module.exports = function(grunt) {
                 ],
             },
         },
-        watch: {
+        /*watch: {
             options: { livereload: true, },
             css: {
                 files: ['sass/*.scss'],
                 tasks: ['compass']
             },
             html: {
-                files: ['*.html','**/*.css']
+                files: ['*.html','**//*.css']
             }
         },
         uncss: {
@@ -81,21 +81,22 @@ module.exports = function(grunt) {
             files: {
                 src: ['index.html']
             }
-        }
+        }*/
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    /*grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    
     //grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-processhtml');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-uncss');
     grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-inline-imgsize');
+    grunt.loadNpmTasks('grunt-inline-imgsize');*/
 
-    grunt.registerTask('default', ['compass', 'uglify', 'imagemin', 'cssmin', 'processhtml', 'copy']);
+    //grunt.registerTask('default', ['compass', 'uglify', 'imagemin', 'cssmin', 'processhtml', 'copy']);
     grunt.registerTask('js', ['uglify', 'copy']);
 
 };
