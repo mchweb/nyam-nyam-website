@@ -718,12 +718,12 @@ function updateCart(x) {
 		if (total < 400){
 			$(".cart-form").css("display","none");
 			$(".js-cart-sum-message").css("display","block");
-			$(".m-cart-total__button").hide();
+			//$(".m-cart-total__button").hide();
 			$(".m-cart-total__message").show();
 		} else {
 			$(".cart-form").css("display","block");
 			$(".js-cart-sum-message").css("display","none");
-			$(".m-cart-total__button").show();
+			//$(".m-cart-total__button").show();
 			$(".m-cart-total__message").hide();
 		}
 	}
