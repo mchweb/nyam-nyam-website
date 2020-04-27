@@ -52,22 +52,30 @@
 		</div>
 
 		<header class="header">
+			<form id="searchForm" name="searchForm" method="get" action="search" onsubmit="submitSearch()">
+			<input type="hidden" name="query">
 			<div class="header-line-top js-line-top">
 				<div class="container">
 					<nav class="nav-main">
 						<ul class="nav-main-list">
 							<li class="nav-main-list__item nav-main-list__item_current"><a href="#">Меню</a></li>
-							<li class="nav-main-list__item"><a href="#">Условия доставки</a></li>
+							<li class="nav-main-list__item"><a href="#">Доставка</a></li>
 							<li class="nav-main-list__item"><a href="#">Акции</a></li>
 							<li class="nav-main-list__item"><a href="#">Отзывы</a></li>
 							<li class="nav-main-list__item"><a href="#">Вакансии</a></li>
 						</ul>
 					</nav>
-					<ul class="soc-links">
-						<li class="soc-links__item"><a target="_blank" href="#"><div class="soc-link soc-link_instagram"></div></a></li>
-						<li class="soc-links__item"><a target="_blank" href="#"><div class="soc-link soc-link_facebook"></div></a></li>
-						<li class="soc-links__item"><a target="_blank" href="#"><div class="soc-link soc-link_vk"></div></a></li>
-					</ul>
+					<div class="side-actions">
+						<div class="search-input">
+							<input class="form-group__input" type="text" id="f-search" placeholder="Поиск..." required="">
+							<button class="search-btn" type="submit"></button>
+						</div>
+					
+						<ul class="soc-links"><li class="soc-links__item"><a target="_blank" href="#"><div class="soc-link soc-link_instagram"></div></a></li>
+							<!--<li class="soc-links__item"><a target="_blank" href="#"><div class="soc-link soc-link_facebook"></div></a></li>-->
+							<li class="soc-links__item"><a target="_blank" href="#"><div class="soc-link soc-link_vk"></div></a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<div class="header-line-bottom js-line-bottom">
@@ -90,12 +98,18 @@
 							<li class="nav-mobile__item"><a href="#">Отзывы</a></li>
 							<li class="nav-mobile__item"><a href="#">Вакансии</a></li>
 						</ul>
+						
 						<p class="nav-mobile__paragraph">Мы в социальных сетях:</p>
 						<ul class="nav-mobile">
 							<li class="nav-mobile__item"><a href="#">Instagram</a></li>
 							<li class="nav-mobile__item"><a href="#">ВКонтакте</a></li>
 							<li class="nav-mobile__item"><a href="#">Facebook</a></li>
 						</ul>
+
+						<div class="search-mobile search-input">
+							<input class="form-group__input" type="text" id="f-search-mob" placeholder="Поиск..." required="">
+							<button class="search-btn" type="submit"></button>
+						</div>
 					</nav>
 
 					<div class="header-mobile__menu-button">
@@ -148,14 +162,15 @@
 					</div>
 				</div>
 			</div>
+			</form>
 		</header>
 
 		<div class="content">
-		<!--<div class="promo main-carousel">
+		<div class="promo main-carousel">
 			<img class="promo__item carousel-cell" style="cursor:pointer" onclick="document.location.href = 'brands#winbd'" width=1920 height=360 src="assets/img/promo.jpg" alt="">
 			<img class="promo__item carousel-cell" width=1920 height=360 src="assets/img/promo.jpg" alt="">
-			<!--<img class="promo__item carousel-cell" width=1920 height=360 src="assets/img/promo.jpg" alt="">->
-		</div> -->
+			<!--<img class="promo__item carousel-cell" width=1920 height=360 src="assets/img/promo.jpg" alt="">-->
+		</div>
 
 		<section class="container">
 			<header class="heading">
@@ -907,6 +922,14 @@
 		
 
 		<div id="updown"><div id="updown-container"></div></div>
+		<script>
+		function submitSearch(){
+			var form = document.searchForm;
+			var query = document.getElementById('f-search').value || document.getElementById('f-search-mob').value;
+			form.query.value = query;
+			return true;
+		}
+		</script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
