@@ -16,7 +16,7 @@ module.exports = function(grunt) {
                     dest: 'prod/assets/img/'
                 }]
             }
-        },
+        },*/
         cssmin: {
             dist: {
                 files: {
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-        compass: {
+        /*compass: {
             dist: {
                 options: {
                     sassDir: 'sass',
@@ -86,17 +86,18 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    /*grunt.loadNpmTasks('grunt-contrib-imagemin');
+    //grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     
     //grunt.loadNpmTasks('grunt-sass');
-    grunt.loadNpmTasks('grunt-processhtml');
+    /*grunt.loadNpmTasks('grunt-processhtml');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-uncss');
+    grunt.loadNpmTasks('grunt-uncss');*/
     grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-inline-imgsize');*/
+    //grunt.loadNpmTasks('grunt-inline-imgsize');
 
     //grunt.registerTask('default', ['compass', 'uglify', 'imagemin', 'cssmin', 'processhtml', 'copy']);
     grunt.registerTask('js', ['uglify', 'copy']);
+    grunt.registerTask('css', ['cssmin']);
 
 };

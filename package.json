@@ -10,9 +10,13 @@
   "scripts": {
     "build": "grunt",
     "js": "grunt js",
+    "css": "grunt css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "grunt-contrib-cssmin": "^3.0.0"
+  }
 }
