@@ -638,12 +638,13 @@ function addToCart(e, btn) {
         cartData[id] = [gid, sid, itemTitle, 1, itemPrice, itemSubPrice, itemWeight, itemImage];
 	}
 
-	eCommerceEvent(id, 'add', 1);
+	
 
     // Обновляем данные в LocalStorage
     if (!setCartData(cartData)) {
         updateCart();
-        yaCounter36628560.reachGoal('add');
+		if (typeof yaCounter36628560 != 'undefined' && typeof yaCounter36628560.reachGoal == 'function') { yaCounter36628560.reachGoal('add'); }
+		eCommerceEvent(id, 'add', 1);
     } else {
         console.log("Не удалось обновить корзину");
 	}
