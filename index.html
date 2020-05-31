@@ -1,142 +1,247 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>Ням-ням — доставка суши и пиццы в Томске</title>
-		<meta name="description" content="Описание">
-		
-		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-		<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-		
-		<!--[if lt IE 9]>
-			<script src="js/vendor/html5shiv.min.js"></script>
-		<![endif]-->
+    <title>Ням-ням — доставка суши и пиццы в Томске</title>
+    <meta name="description" content="Описание" />
 
-		<!-- build:css assets/css/screen.min.css -->
-		<link rel="stylesheet" media="screen" href="assets/css/screen.css">
-		<!-- /build -->
-	</head>
-	<body>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 
-		<!--[if lt IE 10]>
-			<p style="text-align:center;font-size:20px;background:white;width:100%;z-index:10000;padding:20px 0px"><strong>Кажется, ваш браузер безнадежно устарел.</strong> Скорее всего, сайт будет отображаться и работать некорректно.<br/>Пожалуйста, <a style="color:red" href="http://browsehappy.com/" target="_blank">установите с одного из официальных сайтов</a> новую версию своего браузера.<br/></p>
-		<![endif]-->
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.min.js"></script>
+    <![endif]-->
 
-		<div itemscope itemtype="http://schema.org/Organization">
-			<meta itemprop="name" content="Ням-Ням">
-				<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					<meta itemprop="streetAddress" content="Котовского, 17">
-					<meta itemprop="postalCode" content="634034">
-					<meta itemprop="addressLocality" content="Томск">
-				</div>
-			<meta itemprop="telephone" content="+73822342999">
-		</div>
+    <!-- build:css assets/css/screen.min.css -->
+    <link rel="stylesheet" media="screen" href="assets/css/screen.css" />
+    <!-- /build -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p
+        style="
+          text-align: center;
+          font-size: 20px;
+          background: white;
+          width: 100%;
+          z-index: 10000;
+          padding: 20px 0px;
+        "
+      >
+        <strong>Кажется, ваш браузер безнадежно устарел.</strong> Скорее всего,
+        сайт будет отображаться и работать некорректно.<br />Пожалуйста,
+        <a style="color: red;" href="http://browsehappy.com/" target="_blank"
+          >установите с одного из официальных сайтов</a
+        >
+        новую версию своего браузера.<br />
+      </p>
+    <![endif]-->
 
-		<!-- BEGIN of b-call -->
-		<div class="b-call">
-			<a href="tel:+73822342999"><img width=144 height=144 class="b-call__icon" src="assets/img/b-call.png" alt="Ням-ням — Доставка суши и пиццы в Томске. 342-999"></a>
-		</div>
-		<!-- END of b-call -->
+    <div itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ням-Ням" />
+      <div
+        itemprop="address"
+        itemscope
+        itemtype="http://schema.org/PostalAddress"
+      >
+        <meta itemprop="streetAddress" content="Котовского, 17" />
+        <meta itemprop="postalCode" content="634034" />
+        <meta itemprop="addressLocality" content="Томск" />
+      </div>
+      <meta itemprop="telephone" content="+73822342999" />
+    </div>
 
-		<div class="wrap main-logo-wrap">
-			<div class="main-logo">
-				<div class="main-logo-top">
-					<a href="#"><img width=460 height=94 src="assets/img/logo.png" alt="" class="main-logo__image"></a>
-					<div class="main-logo__title"><p>Доставка суши и&nbsp;пиццы<span class="title__hiding"> в&nbsp;Томске</span></p></div>
-				</div>
-				<a href="tel:+73822342999"><div class="main-logo__phone"><div class="main-logo__phone-icon"></div><p>&nbsp;342-999</p></div></a>
-			</div>
-		</div>
+    <!-- BEGIN of b-call -->
+    <div class="b-call">
+      <a href="tel:+73822342999"
+        ><img
+          width="144"
+          height="144"
+          class="b-call__icon"
+          src="assets/img/b-call.png"
+          alt="Ням-ням — Доставка суши и пиццы в Томске. 342-999"
+      /></a>
+    </div>
+    <!-- END of b-call -->
 
-		<header class="header">
-			<form id="searchForm" name="searchForm" method="get" action="search" onsubmit="submitSearch()">
-			<input type="hidden" name="query">
-			<div class="header-line-top js-line-top">
-				<div class="container">
-					<nav class="nav-main">
-						<ul class="nav-main-list">
-							<li class="nav-main-list__item nav-main-list__item_current"><a href="#">Меню</a></li>
-							<li class="nav-main-list__item"><a href="#">Доставка</a></li>
-							<li class="nav-main-list__item"><a href="#">Акции</a></li>
-							<li class="nav-main-list__item"><a href="#">Отзывы</a></li>
-							<li class="nav-main-list__item"><a href="#">Вакансии</a></li>
-						</ul>
-					</nav>
-					<div class="side-actions">
-						<div class="search-input">
-							<input class="form-group__input" type="text" id="f-search" placeholder="Поиск..." required="">
-							<button class="search-btn" type="submit"></button>
-						</div>
-					
-						<ul class="soc-links"><li class="soc-links__item"><a target="_blank" href="#"><div class="soc-link soc-link_instagram"></div></a></li>
-							<!--<li class="soc-links__item"><a target="_blank" href="#"><div class="soc-link soc-link_facebook"></div></a></li>-->
-							<li class="soc-links__item"><a target="_blank" href="#"><div class="soc-link soc-link_vk"></div></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="header-line-bottom js-line-bottom">
-				<div class="container">
-					<nav class="nav-cat">
-						<div class="nav-mobile-heading"><a href="tel:+73822342999"><strong>Позвонить: 342-999</strong></a></div>
-						<ul class="nav-cat-list">
-							<li class="nav-cat-list__item nav-mobile__item nav-cat-list__item_current"><a href="#">Пицца</a></li>
-							<li class="nav-cat-list__item nav-mobile__item"><a href="#">Суши</a></li>
-							<li class="nav-cat-list__item nav-mobile__item"><a href="#">Салаты</a></li>
-							<li class="nav-cat-list__item nav-mobile__item"><a href="#">Горячее</a></li>
-							<li class="nav-cat-list__item nav-mobile__item"><a href="#">Закуски</a></li>
-							<li class="nav-cat-list__item nav-mobile__item"><a href="#">Напитки</a></li>
-							<li class="nav-cat-list__item nav-mobile__item"><a href="#">Десерты</a></li>
-							<li class="nav-cat-list__item nav-mobile__item"><a href="#">Бизнес-ланч</a></li>
-						</ul>
-						<ul class="nav-mobile">
-							<li class="nav-mobile__item"><a href="#">Условия доставки</a></li>
-							<li class="nav-mobile__item"><a href="#">Акции</a></li>
-							<li class="nav-mobile__item"><a href="#">Отзывы</a></li>
-							<li class="nav-mobile__item"><a href="#">Вакансии</a></li>
-						</ul>
-						
-						<p class="nav-mobile__paragraph">Мы в социальных сетях:</p>
-						<ul class="nav-mobile">
-							<li class="nav-mobile__item"><a href="#">Instagram</a></li>
-							<li class="nav-mobile__item"><a href="#">ВКонтакте</a></li>
-							<li class="nav-mobile__item"><a href="#">Facebook</a></li>
-						</ul>
+    <div class="wrap main-logo-wrap">
+      <div class="main-logo">
+        <div class="main-logo-top">
+          <a href="#"
+            ><img
+              width="460"
+              height="94"
+              src="assets/img/logo.png"
+              alt=""
+              class="main-logo__image"
+          /></a>
+          <div class="main-logo__title">
+            <p>
+              Доставка суши и&nbsp;пиццы<span class="title__hiding">
+                в&nbsp;Томске</span
+              >
+            </p>
+          </div>
+        </div>
+        <a href="tel:+73822342999"
+          ><div class="main-logo__phone">
+            <div class="main-logo__phone-icon"></div>
+            <p>&nbsp;342-999</p>
+          </div></a
+        >
+      </div>
+    </div>
 
-						<div class="search-mobile search-input">
-							<input class="form-group__input" type="text" id="f-search-mob" placeholder="Поиск..." required="">
-							<button class="search-btn" type="submit"></button>
-						</div>
-					</nav>
+    <header class="header">
+      <form
+        id="searchForm"
+        name="searchForm"
+        method="get"
+        action="search"
+        onsubmit="submitSearch()"
+      >
+        <input type="hidden" name="query" />
+        <div class="header-line-top js-line-top">
+          <div class="container">
+            <nav class="nav-main">
+              <ul class="nav-main-list">
+                <li class="nav-main-list__item nav-main-list__item_current">
+                  <a href="#">Меню</a>
+                </li>
+                <li class="nav-main-list__item"><a href="#">Доставка</a></li>
+                <li class="nav-main-list__item"><a href="#">Акции</a></li>
+                <li class="nav-main-list__item"><a href="#">Отзывы</a></li>
+                <li class="nav-main-list__item"><a href="#">Вакансии</a></li>
+              </ul>
+            </nav>
+            <div class="side-actions">
+              <div class="search-input">
+                <input
+                  class="form-group__input"
+                  type="text"
+                  id="f-search"
+                  placeholder="Поиск..."
+                  required=""
+                />
+                <button class="search-btn" type="submit"></button>
+              </div>
 
-					<div class="header-mobile__menu-button">
-						<button class="hamburger hamburger--slider" type="button">
-						  <span class="hamburger-box">
-						    <span class="hamburger-inner"></span>
-						  </span>
-						</button>
-					</div>
-					<div class="header-mobile__logo">
-						<img width=460 height=94 src="assets/img/logo.png" alt="">
-					</div>
-					<div class="header-cart">
-						<div class="header-cart__sum"><span id="js-header-total">0</span><span>&nbsp;₽</span></div>&nbsp;
-						<div class="header-cart__button">
-							<div class="header-cart__title"><p>Корзина</p></div>
-							<div class="header-cart-button__counter"><p>4</p></div>
-						</div>
-						<div class="header-cart__button-active"></div>
+              <ul class="soc-links">
+                <li class="soc-links__item">
+                  <a target="_blank" href="#"
+                    ><div class="soc-link soc-link_instagram"></div
+                  ></a>
+                </li>
+                <!--<li class="soc-links__item"><a target="_blank" href="#"><div class="soc-link soc-link_facebook"></div></a></li>-->
+                <li class="soc-links__item">
+                  <a target="_blank" href="#"
+                    ><div class="soc-link soc-link_vk"></div
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="header-line-bottom js-line-bottom">
+          <div class="container">
+            <nav class="nav-cat">
+              <div class="nav-mobile-heading">
+                <a href="tel:+73822342999"
+                  ><strong>Позвонить: 342-999</strong></a
+                >
+              </div>
+              <ul class="nav-cat-list">
+                <li
+                  class="nav-cat-list__item nav-mobile__item nav-cat-list__item_current"
+                >
+                  <a href="#">Пицца</a>
+                </li>
+                <li class="nav-cat-list__item nav-mobile__item">
+                  <a href="#">Суши</a>
+                </li>
+                <li class="nav-cat-list__item nav-mobile__item">
+                  <a href="#">Салаты</a>
+                </li>
+                <li class="nav-cat-list__item nav-mobile__item">
+                  <a href="#">Горячее</a>
+                </li>
+                <li class="nav-cat-list__item nav-mobile__item">
+                  <a href="#">Закуски</a>
+                </li>
+                <li class="nav-cat-list__item nav-mobile__item">
+                  <a href="#">Напитки</a>
+                </li>
+                <li class="nav-cat-list__item nav-mobile__item">
+                  <a href="#">Десерты</a>
+                </li>
+                <li class="nav-cat-list__item nav-mobile__item">
+                  <a href="#">Бизнес-ланч</a>
+                </li>
+              </ul>
+              <ul class="nav-mobile">
+                <li class="nav-mobile__item">
+                  <a href="#">Условия доставки</a>
+                </li>
+                <li class="nav-mobile__item"><a href="#">Акции</a></li>
+                <li class="nav-mobile__item"><a href="#">Отзывы</a></li>
+                <li class="nav-mobile__item"><a href="#">Вакансии</a></li>
+              </ul>
 
-						<div class="m-cart-wrap m-cart-wrap_isHidden">
-							<div class="m-cart">
-								<div class="m-cart__heading"><p>В вашей корзине:</p></div>
-								<div class="m-cart__empty"><p>Здесь будет отображаться ваш заказ.</p></div>
+              <p class="nav-mobile__paragraph">Мы в социальных сетях:</p>
+              <ul class="nav-mobile">
+                <li class="nav-mobile__item"><a href="#">Instagram</a></li>
+                <li class="nav-mobile__item"><a href="#">ВКонтакте</a></li>
+                <li class="nav-mobile__item"><a href="#">Facebook</a></li>
+              </ul>
 
-								<ul class="m-cart-items js-cart-items">
-									<!--
+              <div class="search-mobile search-input">
+                <input
+                  class="form-group__input"
+                  type="text"
+                  id="f-search-mob"
+                  placeholder="Поиск..."
+                  required=""
+                />
+                <button class="search-btn" type="submit"></button>
+              </div>
+            </nav>
+
+            <div class="header-mobile__menu-button">
+              <button class="hamburger hamburger--slider" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+            </div>
+            <div class="header-mobile__logo">
+              <img width="460" height="94" src="assets/img/logo.png" alt="" />
+            </div>
+            <div class="header-cart">
+              <div class="header-cart__sum">
+                <span id="js-header-total">0</span><span>&nbsp;₽</span>
+              </div>
+              &nbsp;
+              <div class="header-cart__button">
+                <div class="header-cart__title"><p>Корзина</p></div>
+                <div class="header-cart-button__counter"><p>4</p></div>
+              </div>
+              <div class="header-cart__button-active"></div>
+
+              <div class="m-cart-wrap m-cart-wrap_isHidden">
+                <div class="m-cart">
+                  <div class="m-cart__heading"><p>В вашей корзине:</p></div>
+                  <div class="m-cart__empty">
+                    <p>Здесь будет отображаться ваш заказ.</p>
+                  </div>
+
+                  <ul class="m-cart-items js-cart-items">
+                    <!--
 									<li class="m-cart-item">
 										<div class="m-cart-item__title"><p>Четыре сезона 45 см.</p></div>
 										<div class="m-cart-item-btn">
@@ -150,148 +255,371 @@
 										</div>
 									</li>
 									-->
-								</ul>
+                  </ul>
 
-								<div class="m-cart-total">
-									<div class="m-cart-total__sum"><p>Сумма заказа: <strong><span class="js-cart-total">0</span>&nbsp;₽</strong></p></div>
-									<div class="m-cart-total__button"><a href="cart.html" class="btn"><span>Перейти к оформлению</span></a></div>
-									<p class="m-cart-total__message" style="display:block;clear:both;font-size: .85714em;line-height: 1.66667em;">Минимальная сумма заказа — 400₽. Добавьте ещё продуктов, чтобы перейти к оформлению заказа</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			</form>
-		</header>
+                  <div class="m-cart-total">
+                    <div class="m-cart-total__sum">
+                      <p>
+                        Сумма заказа:
+                        <strong
+                          ><span class="js-cart-total">0</span>&nbsp;₽</strong
+                        >
+                      </p>
+                    </div>
+                    <div class="m-cart-total__button">
+                      <a href="cart.html" class="btn"
+                        ><span>Перейти к оформлению</span></a
+                      >
+                    </div>
+                    <p
+                      class="m-cart-total__message"
+                      style="
+                        display: block;
+                        clear: both;
+                        font-size: 0.85714em;
+                        line-height: 1.66667em;
+                      "
+                    >
+                      Минимальная сумма заказа — 400₽. Добавьте ещё продуктов,
+                      чтобы перейти к оформлению заказа
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </header>
 
-		<div class="content">
-		<div class="promo main-carousel">
-			<img class="promo__item carousel-cell" style="cursor:pointer" onclick="document.location.href = 'brands#winbd'" width=1920 height=360 src="assets/img/promo.jpg" alt="">
-			<img class="promo__item carousel-cell" width=1920 height=360 src="assets/img/promo.jpg" alt="">
-			<!--<img class="promo__item carousel-cell" width=1920 height=360 src="assets/img/promo.jpg" alt="">-->
-		</div>
+    <div class="content">
+      <div class="promo main-carousel">
+        <img
+          class="promo__item carousel-cell"
+          style="cursor: pointer;"
+          onclick="document.location.href = 'brands#winbd'"
+          width="1920"
+          height="360"
+          src="assets/img/promo.jpg"
+          alt=""
+        />
+        <img
+          class="promo__item carousel-cell"
+          width="1920"
+          height="360"
+          src="assets/img/promo.jpg"
+          alt=""
+        />
+        <!--<img class="promo__item carousel-cell" width=1920 height=360 src="assets/img/promo.jpg" alt="">-->
+      </div>
 
-		<section class="container">
-			<header class="heading">
-				<div class="heading__title"><h2>Пицца</h2></div>
-				<div class="components__switcher"><a><span class="comp-caption__show">Показать</span><span class="comp-caption__hide">Скрыть</span> фильтры</a></div>
-				<ul class="components">
-					<li data-component="-1" class="components__item components__item_clear components__item_isActive"><span>Любые ингридиенты</span></li>
-					<li data-component="1" class="components__item"><span>Бекон</span></li>
-					<li data-component="2" class="components__item"><span>Говядина</span></li>
-					<li data-component="3" class="components__item"><span>Грибы</span></li>
-					<li data-component="4" class="components__item"><span>Колбаса</span></li>
-					<li data-component="5" class="components__item"><span>Курица</span></li>
-					<li data-component="6" class="components__item"><span>Морепродукты</span></li>
-					<li data-component="7" class="components__item"><span>Томаты</span></li>
-					<li data-component="8" class="components__item"><span>Перец</span></li>
-				</ul>
-				<div class="components__caption">
-					<p>Показана пицца, в которой есть <span id="js-components-caption"></span></p>
-				</div>
-				<div class="components__empty">
-					<p>Выбранному набору ингридиентов не соответствует ни одно блюдо в меню.</p>
-				</div>
-			</header>
+      <section class="container">
+        <header class="heading">
+          <div class="heading__title"><h2>Пицца</h2></div>
+          <div class="components__switcher">
+            <a
+              ><span class="comp-caption__show">Показать</span
+              ><span class="comp-caption__hide">Скрыть</span> фильтры</a
+            >
+          </div>
+          <ul class="components">
+            <li
+              data-component="-1"
+              class="components__item components__item_clear components__item_isActive"
+            >
+              <span>Любые ингридиенты</span>
+            </li>
+            <li data-component="1" class="components__item">
+              <span>Бекон</span>
+            </li>
+            <li data-component="2" class="components__item">
+              <span>Говядина</span>
+            </li>
+            <li data-component="3" class="components__item">
+              <span>Грибы</span>
+            </li>
+            <li data-component="4" class="components__item">
+              <span>Колбаса</span>
+            </li>
+            <li data-component="5" class="components__item">
+              <span>Курица</span>
+            </li>
+            <li data-component="6" class="components__item">
+              <span>Морепродукты</span>
+            </li>
+            <li data-component="7" class="components__item">
+              <span>Томаты</span>
+            </li>
+            <li data-component="8" class="components__item">
+              <span>Перец</span>
+            </li>
+          </ul>
+          <div class="components__caption">
+            <p>
+              Показана пицца, в которой есть
+              <span id="js-components-caption"></span>
+            </p>
+          </div>
+          <div class="components__empty">
+            <p>
+              Выбранному набору ингридиентов не соответствует ни одно блюдо в
+              меню.
+            </p>
+          </div>
+        </header>
 
-			<div class="products">
-				<article class="product-wrap" data-components='["1","2","3"]'>
-					<div class="product" id="p-12">
-						<div class="product__isOnCart js-cart-rm" data-id="-1" data-gid="12"></div>
-						<div class="product__image" style="background-image:url('assets/img/product.jpg')">
-							<ul class="product-promo">
-								<li class="product-promo__item product-promo__item_promo1"><span>Вегетерианское</span></li>
-							</ul>
-						</div>
-						<div class="product-info">
-							<div class="product-info__title"><h3>Курица с грибами</h3></div>
-							<div class="product-info__desc"><p>Соус томатный, сыр, ветчина, салями, курица, пепперони, помидоры.</p></div>
-						 
-							<ul class="product-types">
-								<li class="product-type"><input type="radio" name="pt-12" id="pt-12_0" data-gid="12" value="0" class="js-pt-change product-type__radio"><label for="pt-12_0" class="product-type__label">45 см (1420 г) — 910&nbsp;₽</label></li>
-								<li class="product-type"><input type="radio" name="pt-12" id="pt-12_1" data-gid="12" checked value="1" class="js-pt-change product-type__radio"><label for="pt-12_1" class="product-type__label">36 см (765 г) — 589&nbsp;₽</label></li>
-								<li class="product-type"><input type="radio" name="pt-12" id="pt-12_2" data-gid="12" value="2" class="js-pt-change product-type__radio"><label for="pt-12_2" class="product-type__label">28 см (555 г) — 395&nbsp;₽</label></li>
-							</ul>
-						</div>
+        <div class="products">
+          <article class="product-wrap" data-components='["1","2","3"]'>
+            <div class="product" id="p-12">
+              <div
+                class="product__isOnCart js-cart-rm"
+                data-id="-1"
+                data-gid="12"
+              ></div>
+              <div
+                class="product__image"
+                style="background-image: url('assets/img/product.jpg');"
+              >
+                <ul class="product-promo">
+                  <li class="product-promo__item product-promo__item_promo1">
+                    <span>Вегетерианское</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-info">
+                <div class="product-info__title"><h3>Курица с грибами</h3></div>
+                <div class="product-info__desc">
+                  <p>
+                    Соус томатный, сыр, ветчина, салями, курица, пепперони,
+                    помидоры.
+                  </p>
+                </div>
 
-						
-						
-						<footer class="product-footer product-footer_isHidden" id="pf-12_0">
-							<div class="product__price">
-								<span>695&nbsp;₽*</span>
-								<div class="prorudct__promo-price"><p>Цена по акции «Счастливые часы»</p></div>
-							</div>
-							<div class="product-buttons">
-								<button class="btn js-cart-add" data-id="12_0" data-gid="12" data-sid="1123" data-title="Курица с грибами 45 см" data-price="310" data-sprice="645" data-weight="300 г" data-image="assets/img/piece.jpg">В корзину</button>
-								<div class="product-buttons__count">
-									<button class="btn btn-md js-cart-minus" data-id="12_0"><span>–</span></button>
-									<input class="i-count i-count" id="count-12_0" type="text" disabled value="1" maxlength="3">
-									<button class="btn btn-md js-cart-plus" data-id="12_0"><span>+</span></button>
-								</div>
-							</div>
-						</footer>
-						<footer class="product-footer" id="pf-12_1">
-							<div class="product__price">
-								<span>595&nbsp;₽*</span>
-								<div class="prorudct__promo-price"><p>Цена по акции «Счастливые часы»</p></div>
-							</div>
-							<div class="product-buttons">
-								<button class="btn js-cart-add" data-id="12_1" data-gid="12" data-sid="1123" data-title="Курица с грибами 36 см" data-price="310" data-sprice="645" data-weight="300 г" data-image="assets/img/piece.jpg">В корзину</button>
-								<div class="product-buttons__count">
-									<button class="btn btn-md js-cart-minus" data-id="12_1"><span>–</span></button>
-									<input class="i-count i-count" id="count-12_1" type="text" disabled value="1" maxlength="3">
-									<button class="btn btn-md js-cart-plus" data-id="12_1"><span>+</span></button>
-								</div>
-							</div>
-						</footer>
-						<footer class="product-footer product-footer_isHidden" id="pf-12_2">
-							<div class="product__price">
-								<span>495&nbsp;₽*</span>
-								<div class="prorudct__promo-price"><p>Цена по акции «Счастливые часы»</p></div>
-							</div>
-							<div class="product-buttons">
-								<button class="btn js-cart-add" data-id="12_2" data-gid="12" data-sid="1123" data-title="Курица с грибами 28 см" data-price="310" data-sprice="645" data-weight="300 г" data-image="assets/img/piece.jpg">В корзину</button>
-								<div class="product-buttons__count">
-									<button class="btn btn-md js-cart-minus" data-id="12_2"><span>–</span></button>
-									<input class="i-count i-count" id="count-12_2" type="text" disabled value="1" maxlength="3">
-									<button class="btn btn-md js-cart-plus" data-id="12_2"><span>+</span></button>
-								</div>
-							</div>
-						</footer>
-					</div>
-				</article>
+                <ul class="product-types">
+                  <li class="product-type">
+                    <input
+                      type="radio"
+                      name="pt-12"
+                      id="pt-12_0"
+                      data-gid="12"
+                      value="0"
+                      class="js-pt-change product-type__radio"
+                    /><label for="pt-12_0" class="product-type__label"
+                      >45 см (1420 г) — 910&nbsp;₽</label
+                    >
+                  </li>
+                  <li class="product-type">
+                    <input
+                      type="radio"
+                      name="pt-12"
+                      id="pt-12_1"
+                      data-gid="12"
+                      checked
+                      value="1"
+                      class="js-pt-change product-type__radio"
+                    /><label for="pt-12_1" class="product-type__label"
+                      >36 см (765 г) — 589&nbsp;₽</label
+                    >
+                  </li>
+                  <li class="product-type">
+                    <input
+                      type="radio"
+                      name="pt-12"
+                      id="pt-12_2"
+                      data-gid="12"
+                      value="2"
+                      class="js-pt-change product-type__radio"
+                    /><label for="pt-12_2" class="product-type__label"
+                      >28 см (555 г) — 395&nbsp;₽</label
+                    >
+                  </li>
+                </ul>
+              </div>
 
-				<article class="product-wrap" data-components='["1","2","3"]'>
-					<div class="product" id="p-13">
-						<div class="product__isOnCart js-cart-rm" data-id="13"></div>
-						<div class="product__image" style="background-image:url('assets/img/product-0.jpg')">
-						</div>
-						<div class="product-info">
-							<div class="product-info__title"><h3>Цезарь</h3></div>
-							<div class="product-info__desc"><p>Соус томатный, сыр, ветчина, салями, курица, пепперони, помидоры.</p></div>
-							<div class="product-info__extra"><p>240 г, 250 кКал</p></div>
-						</div>
+              <footer
+                class="product-footer product-footer_isHidden"
+                id="pf-12_0"
+              >
+                <div class="product__price">
+                  <span>695&nbsp;₽*</span>
+                  <div class="prorudct__promo-price">
+                    <p>Цена по акции «Счастливые часы»</p>
+                  </div>
+                </div>
+                <div class="product-buttons">
+                  <button
+                    class="btn js-cart-add"
+                    data-id="12_0"
+                    data-gid="12"
+                    data-sid="1123"
+                    data-title="Курица с грибами 45 см"
+                    data-price="310"
+                    data-sprice="645"
+                    data-weight="300 г"
+                    data-image="assets/img/piece.jpg"
+                  >
+                    В корзину
+                  </button>
+                  <div class="product-buttons__count">
+                    <button class="btn btn-md js-cart-minus" data-id="12_0">
+                      <span>–</span>
+                    </button>
+                    <input
+                      class="i-count i-count"
+                      id="count-12_0"
+                      type="text"
+                      disabled
+                      value="1"
+                      maxlength="3"
+                    />
+                    <button class="btn btn-md js-cart-plus" data-id="12_0">
+                      <span>+</span>
+                    </button>
+                  </div>
+                </div>
+              </footer>
+              <footer class="product-footer" id="pf-12_1">
+                <div class="product__price">
+                  <span>595&nbsp;₽*</span>
+                  <div class="prorudct__promo-price">
+                    <p>Цена по акции «Счастливые часы»</p>
+                  </div>
+                </div>
+                <div class="product-buttons">
+                  <button
+                    class="btn js-cart-add"
+                    data-id="12_1"
+                    data-gid="12"
+                    data-sid="1123"
+                    data-title="Курица с грибами 36 см"
+                    data-price="310"
+                    data-sprice="645"
+                    data-weight="300 г"
+                    data-image="assets/img/piece.jpg"
+                  >
+                    В корзину
+                  </button>
+                  <div class="product-buttons__count">
+                    <button class="btn btn-md js-cart-minus" data-id="12_1">
+                      <span>–</span>
+                    </button>
+                    <input
+                      class="i-count i-count"
+                      id="count-12_1"
+                      type="text"
+                      disabled
+                      value="1"
+                      maxlength="3"
+                    />
+                    <button class="btn btn-md js-cart-plus" data-id="12_1">
+                      <span>+</span>
+                    </button>
+                  </div>
+                </div>
+              </footer>
+              <footer
+                class="product-footer product-footer_isHidden"
+                id="pf-12_2"
+              >
+                <div class="product__price">
+                  <span>495&nbsp;₽*</span>
+                  <div class="prorudct__promo-price">
+                    <p>Цена по акции «Счастливые часы»</p>
+                  </div>
+                </div>
+                <div class="product-buttons">
+                  <button
+                    class="btn js-cart-add"
+                    data-id="12_2"
+                    data-gid="12"
+                    data-sid="1123"
+                    data-title="Курица с грибами 28 см"
+                    data-price="310"
+                    data-sprice="645"
+                    data-weight="300 г"
+                    data-image="assets/img/piece.jpg"
+                  >
+                    В корзину
+                  </button>
+                  <div class="product-buttons__count">
+                    <button class="btn btn-md js-cart-minus" data-id="12_2">
+                      <span>–</span>
+                    </button>
+                    <input
+                      class="i-count i-count"
+                      id="count-12_2"
+                      type="text"
+                      disabled
+                      value="1"
+                      maxlength="3"
+                    />
+                    <button class="btn btn-md js-cart-plus" data-id="12_2">
+                      <span>+</span>
+                    </button>
+                  </div>
+                </div>
+              </footer>
+            </div>
+          </article>
 
-						<footer class="product-footer" id="pf-13">
-							<div class="product__price">
-								<span>595&nbsp;₽</span>
-							</div>
-							<div class="product-buttons">
-								<button class="btn js-cart-add" data-id="13" data-gid="13" data-sid="1123" data-title="Цезарь" data-price="545" data-sprice="545" data-weight="300 г" data-image="assets/img/product-0.jpg">В корзину</button>
-								<div class="product-buttons__count">
-									<button class="btn btn-md js-cart-minus" data-id="13"><span>–</span></button>
-									<input class="i-count i-count" type="text" id="count-13" disabled value="1" maxlength="3">
-									<button class="btn btn-md js-cart-plus" data-id="13"><span>+</span></button>
-								</div>
-							</div>
-						</footer>
-					</div>
-				</article>
+          <article class="product-wrap" data-components='["1","2","3"]'>
+            <div class="product" id="p-13">
+              <div class="product__isOnCart js-cart-rm" data-id="13"></div>
+              <div
+                class="product__image"
+                style="background-image: url('assets/img/product-0.jpg');"
+              ></div>
+              <div class="product-info">
+                <div class="product-info__title"><h3>Цезарь</h3></div>
+                <div class="product-info__desc">
+                  <p>
+                    Соус томатный, сыр, ветчина, салями, курица, пепперони,
+                    помидоры.
+                  </p>
+                </div>
+                <div class="product-info__extra"><p>240 г, 250 кКал</p></div>
+              </div>
 
+              <footer class="product-footer" id="pf-13">
+                <div class="product__price">
+                  <span>595&nbsp;₽</span>
+                </div>
+                <div class="product-buttons">
+                  <button
+                    class="btn js-cart-add"
+                    data-id="13"
+                    data-gid="13"
+                    data-sid="1123"
+                    data-title="Цезарь"
+                    data-price="545"
+                    data-sprice="545"
+                    data-weight="300 г"
+                    data-image="assets/img/product-0.jpg"
+                  >
+                    В корзину
+                  </button>
+                  <div class="product-buttons__count">
+                    <button class="btn btn-md js-cart-minus" data-id="13">
+                      <span>–</span>
+                    </button>
+                    <input
+                      class="i-count i-count"
+                      type="text"
+                      id="count-13"
+                      disabled
+                      value="1"
+                      maxlength="3"
+                    />
+                    <button class="btn btn-md js-cart-plus" data-id="13">
+                      <span>+</span>
+                    </button>
+                  </div>
+                </div>
+              </footer>
+            </div>
+          </article>
 
-
-				<!--
+          <!--
 				<li class="product-promo__item product-promo__item_promo1"><span>Вегетерианское</span></li>
 				<li class="product-promo__item product-promo__item_promo2"><span>Рекоммендуем</span></li>
 				<li class="product-promo__item product-promo__item_promo3"><span>Новинка</span></li>
@@ -300,7 +628,7 @@
 				<li class="product-promo__item product-promo__item_promo6"><span>Хит</span></li>
 				-->
 
-				<!--
+          <!--
 				<article class="product-wrap"  data-components='["2","3"]'>
 					<div class="product product_isAdded">
 						<div class="product__isOnCart"></div>
@@ -542,10 +870,10 @@
 						</footer>
 					</div>
 				</article> -->
-			</div>
-		</section>
-		
-		<!--
+        </div>
+      </section>
+
+      <!--
 		<section class="container main">
 			<header class="heading">
 				<div class="heading__title"><h2>Суши</h2></div>
@@ -841,65 +1169,118 @@
 			</div>
 		</section>
 		-->
-		
-		<div class="delivery-bottom">
-			<div class="container container-sm">
-				<div class="delivery-bottom__title"><p>Условия доставки</p></div>
-				<div class="delivery-bottom-col-wrap">
-					<div class="delivery-bottom-col">
-						<img width=130 height=130 class="delivery-bottom__image" alt="" src="assets/img/delivery-bottom-1.png">
-						<div class="delivery-bottom-col__title"><p>Стоимость</p></div>
-						<p class="delivery-bottom-col__text">При заказе от&nbsp;400&nbsp;₽&nbsp;&mdash; доставка по&nbsp;Томску бесплатно. Если сумма заказа не&nbsp;превышает 400&nbsp;₽, доставка оплачивается отдельно (50&nbsp;Р).<br />
-						<a>Доставка в&nbsp;отдаленные районы »</a></p>
-					</div>
-				</div>
-				<div class="delivery-bottom-col-wrap">
-					<div class="delivery-bottom-col">
-						<img width=130 height=130 class="delivery-bottom__image" alt="" src="assets/img/delivery-bottom-2.png">
-						<div class="delivery-bottom-col__title"><p>Контакты</p></div>
-						<p class="delivery-bottom-col__text">После оформления заказа на&nbsp;сайте, в&nbsp;течение 10&nbsp;минут вам перезвонит оператор. Пожалуйста, позвоните по&nbsp;телефону 342-999, если оператор вам не&nbsp;перезванивает.</p>
-					</div>
-				</div>
-				<div class="delivery-bottom-col-wrap">
-					<div class="delivery-bottom-col">
-						<img width=130 height=130 class="delivery-bottom__image" alt="" src="assets/img/delivery-bottom-3.png">
-						<div class="delivery-bottom-col__title"><p>Время</p></div>
-						<p class="delivery-bottom-col__text">Заказы принимаются ежедневно, с&nbsp;10:00 до&nbsp;23:00. В&nbsp;пятницу, субботу и&nbsp;праздничные дни&nbsp;&mdash; до&nbsp;24:00. В&nbsp;зависимости от&nbsp;ситуации на&nbsp;дорогах, время доставки&nbsp;&mdash; от&nbsp;40&nbsp;минут.</p>
-					</div>
-				</div>
-				<div class="delivery-bottom-col-wrap">
-					<div class="delivery-bottom-col">
-						<img width=130 height=130 class="delivery-bottom__image" alt="" src="assets/img/delivery-bottom-4.png">
-						<div class="delivery-bottom-col__title"><p>Оплата</p></div>
-						<p class="delivery-bottom-col__text">Заказ оплачивается при получении наличными или банковской картой. Акции и&nbsp;скидки не&nbsp;суммируются.</p>
-					</div>
-				</div>
-			</div>
-			<div class="delivery-bottom__button">
-				<a class="btn btn-lg"><span>Перейти к оформлению »</span></a>
-			</div>
-		</div>
-		</div>
 
-		<footer class="footer">
-			<div class="container">
-				<div class="footer-company">
-					<div class="footer-company__title"><p>Кафе и&nbsp;служба доставки &laquo;Ням-Ням&raquo;</p></div>
-					<div class="footer-company__address"><p>г. Томск, ул. Котовского, 17</p></div>
-				</div>
-				<div class="footer-phone">
-					<p><a href="tel:+73822342999">342-999</a></p>
-				</div>
-				
-				<div class="footer-copy">
-					<a href="http://provocationstudio.ru/?from=nyam-nyam.me" target="_blank">
-						<div class="footer-copy__title"><p>Студия Интернет-маркетинга</p></div>
-						<div class="footer-copy__image"><img src="assets/img/provocationstudio.ru.svg" alt=""></div>
-					</a>
-				</div>
-			</div>
-		</footer>
-		<!--
+      <div class="delivery-bottom">
+        <div class="container container-sm">
+          <div class="delivery-bottom__title"><p>Условия доставки</p></div>
+          <div class="delivery-bottom-col-wrap">
+            <div class="delivery-bottom-col">
+              <img
+                width="130"
+                height="130"
+                class="delivery-bottom__image"
+                alt=""
+                src="assets/img/delivery-bottom-1.png"
+              />
+              <div class="delivery-bottom-col__title"><p>Стоимость</p></div>
+              <p class="delivery-bottom-col__text">
+                При заказе от&nbsp;400&nbsp;₽&nbsp;&mdash; доставка
+                по&nbsp;Томску бесплатно. Если сумма заказа не&nbsp;превышает
+                400&nbsp;₽, доставка оплачивается отдельно (50&nbsp;Р).<br />
+                <a>Доставка в&nbsp;отдаленные районы »</a>
+              </p>
+            </div>
+          </div>
+          <div class="delivery-bottom-col-wrap">
+            <div class="delivery-bottom-col">
+              <img
+                width="130"
+                height="130"
+                class="delivery-bottom__image"
+                alt=""
+                src="assets/img/delivery-bottom-2.png"
+              />
+              <div class="delivery-bottom-col__title"><p>Контакты</p></div>
+              <p class="delivery-bottom-col__text">
+                После оформления заказа на&nbsp;сайте, в&nbsp;течение
+                10&nbsp;минут вам перезвонит оператор. Пожалуйста, позвоните
+                по&nbsp;телефону 342-999, если оператор вам
+                не&nbsp;перезванивает.
+              </p>
+            </div>
+          </div>
+          <div class="delivery-bottom-col-wrap">
+            <div class="delivery-bottom-col">
+              <img
+                width="130"
+                height="130"
+                class="delivery-bottom__image"
+                alt=""
+                src="assets/img/delivery-bottom-3.png"
+              />
+              <div class="delivery-bottom-col__title"><p>Время</p></div>
+              <p class="delivery-bottom-col__text">
+                Заказы принимаются ежедневно, с&nbsp;10:00 до&nbsp;23:00.
+                В&nbsp;пятницу, субботу и&nbsp;праздничные дни&nbsp;&mdash;
+                до&nbsp;24:00. В&nbsp;зависимости от&nbsp;ситуации
+                на&nbsp;дорогах, время доставки&nbsp;&mdash;
+                от&nbsp;40&nbsp;минут.
+              </p>
+            </div>
+          </div>
+          <div class="delivery-bottom-col-wrap">
+            <div class="delivery-bottom-col">
+              <img
+                width="130"
+                height="130"
+                class="delivery-bottom__image"
+                alt=""
+                src="assets/img/delivery-bottom-4.png"
+              />
+              <div class="delivery-bottom-col__title"><p>Оплата</p></div>
+              <p class="delivery-bottom-col__text">
+                Заказ оплачивается при получении наличными или банковской
+                картой. Акции и&nbsp;скидки не&nbsp;суммируются.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="delivery-bottom__button">
+          <a class="btn btn-lg"><span>Перейти к оформлению »</span></a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-company">
+          <div class="footer-company__title">
+            <p>Кафе и&nbsp;служба доставки &laquo;Ням-Ням&raquo;</p>
+          </div>
+          <div class="footer-company__address">
+            <p>г. Томск, ул. Котовского, 17</p>
+          </div>
+        </div>
+        <div class="footer-phone">
+          <p><a href="tel:+73822342999">342-999</a></p>
+        </div>
+
+        <div class="footer-copy">
+          <a
+            href="http://provocationstudio.ru/?from=nyam-nyam.me"
+            target="_blank"
+          >
+            <div class="footer-copy__title">
+              <p>Студия Интернет-маркетинга</p>
+            </div>
+            <div class="footer-copy__image">
+              <img src="assets/img/provocationstudio.ru.svg" alt="" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <!--
 		<div class="container">
 			<div class="item">
 				<div class="inside">
@@ -917,25 +1298,28 @@
 			<div class="item"><div class="inside"><p>Тельняшка</p></div></div>
 		</div>-->
 
+    <div id="updown"><div id="updown-container"></div></div>
+    <script>
+      function submitSearch() {
+        var form = document.searchForm;
+        var query =
+          document.getElementById("f-search").value ||
+          document.getElementById("f-search-mob").value;
+        form.query.value = query;
+        return true;
+      }
+    </script>
 
-		
-		
-
-		<div id="updown"><div id="updown-container"></div></div>
-		<script>
-		function submitSearch(){
-			var form = document.searchForm;
-			var query = document.getElementById('f-search').value || document.getElementById('f-search-mob').value;
-			form.query.value = query;
-			return true;
-		}
-		</script>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
-		<!--<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>-->
-		<!-- build:js assets/js/main.min.js -->
-		<script src="assets/js/main.js"></script>
-		<!-- /build -->
-	</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="assets/js/vendor/jquery.min.js"><\/script>'
+        );
+    </script>
+    <!--<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>-->
+    <!-- build:js assets/js/main.min.js -->
+    <script src="assets/js/main.js"></script>
+    <!-- /build -->
+  </body>
 </html>
