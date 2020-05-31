@@ -1926,6 +1926,7 @@ a:hover {
 }
 .js-send-btn:disabled {
   background-color: $accent-25 !important;
+  pointer-events: none;
 }
 
 .error {
