@@ -4558,14 +4558,15 @@ body.modal_open {
 /* line 1927, ../../sass/_main.scss */
 .js-send-btn:disabled {
   background-color: #f2e0b3 !important;
+  pointer-events: none;
 }
 
-/* line 1931, ../../sass/_main.scss */
+/* line 1932, ../../sass/_main.scss */
 .error {
   text-align: center;
 }
 
-/* line 1934, ../../sass/_main.scss */
+/* line 1935, ../../sass/_main.scss */
 .error__title {
   margin-top: 1.42857em;
   padding-top: 0em;
@@ -4573,7 +4574,7 @@ body.modal_open {
   margin-bottom: 0em;
 }
 
-/* line 1937, ../../sass/_main.scss */
+/* line 1938, ../../sass/_main.scss */
 .error__title span {
   font-size: 8.57143em;
   line-height: 1.04167em;
@@ -4581,7 +4582,7 @@ body.modal_open {
   color: #801817;
 }
 
-/* line 1943, ../../sass/_main.scss */
+/* line 1944, ../../sass/_main.scss */
 .error__caption {
   max-width: 46.42857em;
   padding: 0 1.07143em;
@@ -4592,31 +4593,31 @@ body.modal_open {
   margin-bottom: 1.42857em;
 }
 
-/* line 1949, ../../sass/_main.scss */
+/* line 1950, ../../sass/_main.scss */
 .error__caption span {
   font-size: 1.42857em;
   line-height: 1.5em;
 }
 @media (max-width: 25em) {
-  /* line 1949, ../../sass/_main.scss */
+  /* line 1950, ../../sass/_main.scss */
   .error__caption span {
     font-size: 1.14286em;
     line-height: 1.5625em;
   }
 }
 
-/* line 1955, ../../sass/_main.scss */
+/* line 1956, ../../sass/_main.scss */
 .error__caption a {
   color: #801817;
   border-bottom: 0.07143em solid #fdd637;
 }
 
-/* line 1960, ../../sass/_main.scss */
+/* line 1961, ../../sass/_main.scss */
 .error__button {
   margin-bottom: 5.35714em;
 }
 
-/* line 1964, ../../sass/_main.scss */
+/* line 1965, ../../sass/_main.scss */
 .delivery-table table {
   margin: 0 auto;
   margin-top: 0.71429em;
@@ -4625,7 +4626,7 @@ body.modal_open {
   margin-bottom: 1.42857em;
 }
 
-/* line 1968, ../../sass/_main.scss */
+/* line 1969, ../../sass/_main.scss */
 .delivery-table table th {
   font-weight: bold;
   text-align: left;
@@ -4633,33 +4634,33 @@ body.modal_open {
   color: #fff;
 }
 
-/* line 1974, ../../sass/_main.scss */
+/* line 1975, ../../sass/_main.scss */
 .delivery-table table tr:hover {
   background-color: #f2e0b3;
 }
 
-/* line 1977, ../../sass/_main.scss */
+/* line 1978, ../../sass/_main.scss */
 .delivery-table tr:nth-child(odd) {
   background: #eeeeee;
 }
 
-/* line 1980, ../../sass/_main.scss */
+/* line 1981, ../../sass/_main.scss */
 .td_right {
   text-align: right;
 }
 
-/* line 1983, ../../sass/_main.scss */
+/* line 1984, ../../sass/_main.scss */
 .delivery-table table th span {
   font-size: 1.14286em;
   line-height: 1.5625em;
 }
 
-/* line 1986, ../../sass/_main.scss */
+/* line 1987, ../../sass/_main.scss */
 .delivery-table table td {
   border-top: 0.07143em solid #dddddd;
 }
 
-/* line 1989, ../../sass/_main.scss */
+/* line 1990, ../../sass/_main.scss */
 .delivery-table table td,
 .delivery-table table th {
   margin-top: 0em;
@@ -4670,7 +4671,7 @@ body.modal_open {
   padding-right: 2.14286em;
 }
 
-/* line 1996, ../../sass/_main.scss */
+/* line 1997, ../../sass/_main.scss */
 .cafe__title {
   text-align: center;
   font-size: 1.42857em;
@@ -4678,38 +4679,38 @@ body.modal_open {
   margin-bottom: 0.5em;
 }
 
-/* line 2002, ../../sass/_main.scss */
+/* line 2003, ../../sass/_main.scss */
 .cafe__map iframe {
   max-width: 100%;
 }
 
-/* line 2006, ../../sass/_main.scss */
+/* line 2007, ../../sass/_main.scss */
 .cafe {
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (max-width: 46.25em) {
-  /* line 2006, ../../sass/_main.scss */
+  /* line 2007, ../../sass/_main.scss */
   .cafe {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
-/* line 2015, ../../sass/_main.scss */
+/* line 2016, ../../sass/_main.scss */
 .cafe__item {
   margin-bottom: 0.71429em;
   display: inline-block;
 }
 
-/* line 2020, ../../sass/_main.scss */
+/* line 2021, ../../sass/_main.scss */
 .vacancy-list:after {
   content: " ";
   display: block;
   clear: both;
 }
 
-/* line 2026, ../../sass/_main.scss */
+/* line 2027, ../../sass/_main.scss */
 .cafe__icon {
   display: inline-block;
   padding: 0.17857em;
