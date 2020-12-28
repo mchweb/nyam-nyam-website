@@ -36,7 +36,7 @@
       >
         <strong>Кажется, ваш браузер безнадежно устарел.</strong> Скорее всего,
         сайт будет отображаться и работать некорректно.<br />Пожалуйста,
-        <a style="color: red;" href="http://browsehappy.com/" target="_blank"
+        <a style="color: red" href="http://browsehappy.com/" target="_blank"
           >установите с одного из официальных сайтов</a
         >
         новую версию своего браузера.<br />
@@ -296,7 +296,7 @@
       <div class="promo main-carousel">
         <img
           class="promo__item carousel-cell"
-          style="cursor: pointer;"
+          style="cursor: pointer"
           onclick="document.location.href = 'brands#winbd'"
           width="1920"
           height="360"
@@ -316,7 +316,7 @@
       <section class="container">
         <header class="heading">
           <div class="heading__title"><h2>Пицца</h2></div>
-          <div class="components__switcher">
+          <!-- <div class="components__switcher">
             <a
               ><span class="comp-caption__show">Показать</span
               ><span class="comp-caption__hide">Скрыть</span> фильтры</a
@@ -365,260 +365,290 @@
               Выбранному набору ингридиентов не соответствует ни одно блюдо в
               меню.
             </p>
-          </div>
+          </div> -->
+          <ul class="subcat">
+            <li
+              data-subcat="-1"
+              class="subcat__item subcat__item_clear subcat__item_isActive"
+            >
+              <a>Все вместе</a>
+            </li>
+            <li data-subcat="1044" class="subcat__item"><a>Салаты</a></li>
+            <li data-subcat="1045" class="subcat__item"><a>Супы</a></li>
+            <li data-subcat="1046" class="subcat__item"><a>Горячее</a></li>
+            <li data-subcat="1047" class="subcat__item"><a>Гарниры</a></li>
+            <li data-subcat="1050" class="subcat__item"><a>Суши</a></li>
+            <li data-subcat="1048" class="subcat__item"><a>Десерты</a></li>
+            <li data-subcat="1051" class="subcat__item"><a>Хлеб</a></li>
+            <li data-subcat="1049" class="subcat__item"><a>Соусы</a></li>
+          </ul>
+          <ul class="heading-links">
+            <li class="heading-links__item heading-links__item_print"><a href="#">Печатная форма меню</a></li>
+            <li class="heading-links__item heading-links__item_excel">
+              <a href="#">Лист заказа в Excel</a>
+            </li>
+          </ul>
         </header>
 
         <div class="products">
-          <article class="product-wrap" data-components='["1","2","3"]'>
-            <div class="product" id="p-12">
-              <div
-                class="product__isOnCart js-cart-rm"
-                data-id="-1"
-                data-gid="12"
-              ></div>
-              <div
-                class="product__image"
-                style="background-image: url('assets/img/product.jpg');"
-              >
-                <ul class="product-promo">
-                  <li class="product-promo__item product-promo__item_promo1">
-                    <span>Вегетерианское</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="product-info">
-                <div class="product-info__title"><h3>Курица с грибами</h3></div>
-                <div class="product-info__desc">
-                  <p>
-                    Соус томатный, сыр, ветчина, салями, курица, пепперони,
-                    помидоры.
-                  </p>
+          <section class="products__subcat" data-subcat="1044">
+            <h3 class="products__subcat-title"><span>Салаты</span></h3>
+
+            <article class="product-wrap" data-components='["1","2","3"]'>
+              <div class="product" id="p-12">
+                <div
+                  class="product__isOnCart js-cart-rm"
+                  data-id="-1"
+                  data-gid="12"
+                ></div>
+                <div
+                  class="product__image"
+                  style="background-image: url('assets/img/product.jpg')"
+                >
+                  <ul class="product-promo">
+                    <li class="product-promo__item product-promo__item_promo1">
+                      <span>Вегетерианское</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="product-info">
+                  <div class="product-info__title">
+                    <h3>Курица с грибами</h3>
+                  </div>
+                  <div class="product-info__desc">
+                    <p>
+                      Соус томатный, сыр, ветчина, салями, курица, пепперони,
+                      помидоры.
+                    </p>
+                  </div>
+
+                  <ul class="product-types">
+                    <li class="product-type">
+                      <input
+                        type="radio"
+                        name="pt-12"
+                        id="pt-12_0"
+                        data-gid="12"
+                        value="0"
+                        class="js-pt-change product-type__radio"
+                      /><label for="pt-12_0" class="product-type__label"
+                        >45 см (1420 г) — 910&nbsp;₽</label
+                      >
+                    </li>
+                    <li class="product-type">
+                      <input
+                        type="radio"
+                        name="pt-12"
+                        id="pt-12_1"
+                        data-gid="12"
+                        checked
+                        value="1"
+                        class="js-pt-change product-type__radio"
+                      /><label for="pt-12_1" class="product-type__label"
+                        >36 см (765 г) — 589&nbsp;₽</label
+                      >
+                    </li>
+                    <li class="product-type">
+                      <input
+                        type="radio"
+                        name="pt-12"
+                        id="pt-12_2"
+                        data-gid="12"
+                        value="2"
+                        class="js-pt-change product-type__radio"
+                      /><label for="pt-12_2" class="product-type__label"
+                        >28 см (555 г) — 395&nbsp;₽</label
+                      >
+                    </li>
+                  </ul>
                 </div>
 
-                <ul class="product-types">
-                  <li class="product-type">
-                    <input
-                      type="radio"
-                      name="pt-12"
-                      id="pt-12_0"
+                <footer
+                  class="product-footer product-footer_isHidden"
+                  id="pf-12_0"
+                >
+                  <div class="product__price">
+                    <span>695&nbsp;₽*</span>
+                    <div class="prorudct__promo-price">
+                      <p>Цена по акции «Счастливые часы»</p>
+                    </div>
+                  </div>
+                  <div class="product-buttons">
+                    <button
+                      class="btn js-cart-add"
+                      data-id="12_0"
                       data-gid="12"
-                      value="0"
-                      class="js-pt-change product-type__radio"
-                    /><label for="pt-12_0" class="product-type__label"
-                      >45 см (1420 г) — 910&nbsp;₽</label
+                      data-sid="1123"
+                      data-title="Курица с грибами 45 см"
+                      data-price="310"
+                      data-sprice="645"
+                      data-weight="300 г"
+                      data-image="assets/img/piece.jpg"
                     >
-                  </li>
-                  <li class="product-type">
-                    <input
-                      type="radio"
-                      name="pt-12"
-                      id="pt-12_1"
+                      В корзину
+                    </button>
+                    <div class="product-buttons__count">
+                      <button class="btn btn-md js-cart-minus" data-id="12_0">
+                        <span>–</span>
+                      </button>
+                      <input
+                        class="i-count i-count"
+                        id="count-12_0"
+                        type="text"
+                        disabled
+                        value="1"
+                        maxlength="3"
+                      />
+                      <button class="btn btn-md js-cart-plus" data-id="12_0">
+                        <span>+</span>
+                      </button>
+                    </div>
+                  </div>
+                </footer>
+                <footer class="product-footer" id="pf-12_1">
+                  <div class="product__price">
+                    <span>595&nbsp;₽*</span>
+                    <div class="prorudct__promo-price">
+                      <p>Цена по акции «Счастливые часы»</p>
+                    </div>
+                  </div>
+                  <div class="product-buttons">
+                    <button
+                      class="btn js-cart-add"
+                      data-id="12_1"
                       data-gid="12"
-                      checked
-                      value="1"
-                      class="js-pt-change product-type__radio"
-                    /><label for="pt-12_1" class="product-type__label"
-                      >36 см (765 г) — 589&nbsp;₽</label
+                      data-sid="1123"
+                      data-title="Курица с грибами 36 см"
+                      data-price="310"
+                      data-sprice="645"
+                      data-weight="300 г"
+                      data-image="assets/img/piece.jpg"
                     >
-                  </li>
-                  <li class="product-type">
-                    <input
-                      type="radio"
-                      name="pt-12"
-                      id="pt-12_2"
+                      В корзину
+                    </button>
+                    <div class="product-buttons__count">
+                      <button class="btn btn-md js-cart-minus" data-id="12_1">
+                        <span>–</span>
+                      </button>
+                      <input
+                        class="i-count i-count"
+                        id="count-12_1"
+                        type="text"
+                        disabled
+                        value="1"
+                        maxlength="3"
+                      />
+                      <button class="btn btn-md js-cart-plus" data-id="12_1">
+                        <span>+</span>
+                      </button>
+                    </div>
+                  </div>
+                </footer>
+                <footer
+                  class="product-footer product-footer_isHidden"
+                  id="pf-12_2"
+                >
+                  <div class="product__price">
+                    <span>495&nbsp;₽*</span>
+                    <div class="prorudct__promo-price">
+                      <p>Цена по акции «Счастливые часы»</p>
+                    </div>
+                  </div>
+                  <div class="product-buttons">
+                    <button
+                      class="btn js-cart-add"
+                      data-id="12_2"
                       data-gid="12"
-                      value="2"
-                      class="js-pt-change product-type__radio"
-                    /><label for="pt-12_2" class="product-type__label"
-                      >28 см (555 г) — 395&nbsp;₽</label
+                      data-sid="1123"
+                      data-title="Курица с грибами 28 см"
+                      data-price="310"
+                      data-sprice="645"
+                      data-weight="300 г"
+                      data-image="assets/img/piece.jpg"
                     >
-                  </li>
-                </ul>
+                      В корзину
+                    </button>
+                    <div class="product-buttons__count">
+                      <button class="btn btn-md js-cart-minus" data-id="12_2">
+                        <span>–</span>
+                      </button>
+                      <input
+                        class="i-count i-count"
+                        id="count-12_2"
+                        type="text"
+                        disabled
+                        value="1"
+                        maxlength="3"
+                      />
+                      <button class="btn btn-md js-cart-plus" data-id="12_2">
+                        <span>+</span>
+                      </button>
+                    </div>
+                  </div>
+                </footer>
               </div>
+            </article>
+          </section>
+          <section class="products__subcat" data-subcat="1045">
+            <h3 class="products__subcat-title"><span>Супы</span></h3>
 
-              <footer
-                class="product-footer product-footer_isHidden"
-                id="pf-12_0"
-              >
-                <div class="product__price">
-                  <span>695&nbsp;₽*</span>
-                  <div class="prorudct__promo-price">
-                    <p>Цена по акции «Счастливые часы»</p>
+            <article class="product-wrap" data-components='["1","2","3"]'>
+              <div class="product" id="p-13">
+                <div class="product__isOnCart js-cart-rm" data-id="13"></div>
+                <div
+                  class="product__image"
+                  style="background-image: url('assets/img/product-0.jpg')"
+                ></div>
+                <div class="product-info">
+                  <div class="product-info__title"><h3>Цезарь</h3></div>
+                  <div class="product-info__desc">
+                    <p>
+                      Соус томатный, сыр, ветчина, салями, курица, пепперони,
+                      помидоры.
+                    </p>
                   </div>
+                  <div class="product-info__extra"><p>240 г, 250 кКал</p></div>
                 </div>
-                <div class="product-buttons">
-                  <button
-                    class="btn js-cart-add"
-                    data-id="12_0"
-                    data-gid="12"
-                    data-sid="1123"
-                    data-title="Курица с грибами 45 см"
-                    data-price="310"
-                    data-sprice="645"
-                    data-weight="300 г"
-                    data-image="assets/img/piece.jpg"
-                  >
-                    В корзину
-                  </button>
-                  <div class="product-buttons__count">
-                    <button class="btn btn-md js-cart-minus" data-id="12_0">
-                      <span>–</span>
-                    </button>
-                    <input
-                      class="i-count i-count"
-                      id="count-12_0"
-                      type="text"
-                      disabled
-                      value="1"
-                      maxlength="3"
-                    />
-                    <button class="btn btn-md js-cart-plus" data-id="12_0">
-                      <span>+</span>
-                    </button>
-                  </div>
-                </div>
-              </footer>
-              <footer class="product-footer" id="pf-12_1">
-                <div class="product__price">
-                  <span>595&nbsp;₽*</span>
-                  <div class="prorudct__promo-price">
-                    <p>Цена по акции «Счастливые часы»</p>
-                  </div>
-                </div>
-                <div class="product-buttons">
-                  <button
-                    class="btn js-cart-add"
-                    data-id="12_1"
-                    data-gid="12"
-                    data-sid="1123"
-                    data-title="Курица с грибами 36 см"
-                    data-price="310"
-                    data-sprice="645"
-                    data-weight="300 г"
-                    data-image="assets/img/piece.jpg"
-                  >
-                    В корзину
-                  </button>
-                  <div class="product-buttons__count">
-                    <button class="btn btn-md js-cart-minus" data-id="12_1">
-                      <span>–</span>
-                    </button>
-                    <input
-                      class="i-count i-count"
-                      id="count-12_1"
-                      type="text"
-                      disabled
-                      value="1"
-                      maxlength="3"
-                    />
-                    <button class="btn btn-md js-cart-plus" data-id="12_1">
-                      <span>+</span>
-                    </button>
-                  </div>
-                </div>
-              </footer>
-              <footer
-                class="product-footer product-footer_isHidden"
-                id="pf-12_2"
-              >
-                <div class="product__price">
-                  <span>495&nbsp;₽*</span>
-                  <div class="prorudct__promo-price">
-                    <p>Цена по акции «Счастливые часы»</p>
-                  </div>
-                </div>
-                <div class="product-buttons">
-                  <button
-                    class="btn js-cart-add"
-                    data-id="12_2"
-                    data-gid="12"
-                    data-sid="1123"
-                    data-title="Курица с грибами 28 см"
-                    data-price="310"
-                    data-sprice="645"
-                    data-weight="300 г"
-                    data-image="assets/img/piece.jpg"
-                  >
-                    В корзину
-                  </button>
-                  <div class="product-buttons__count">
-                    <button class="btn btn-md js-cart-minus" data-id="12_2">
-                      <span>–</span>
-                    </button>
-                    <input
-                      class="i-count i-count"
-                      id="count-12_2"
-                      type="text"
-                      disabled
-                      value="1"
-                      maxlength="3"
-                    />
-                    <button class="btn btn-md js-cart-plus" data-id="12_2">
-                      <span>+</span>
-                    </button>
-                  </div>
-                </div>
-              </footer>
-            </div>
-          </article>
 
-          <article class="product-wrap" data-components='["1","2","3"]'>
-            <div class="product" id="p-13">
-              <div class="product__isOnCart js-cart-rm" data-id="13"></div>
-              <div
-                class="product__image"
-                style="background-image: url('assets/img/product-0.jpg');"
-              ></div>
-              <div class="product-info">
-                <div class="product-info__title"><h3>Цезарь</h3></div>
-                <div class="product-info__desc">
-                  <p>
-                    Соус томатный, сыр, ветчина, салями, курица, пепперони,
-                    помидоры.
-                  </p>
-                </div>
-                <div class="product-info__extra"><p>240 г, 250 кКал</p></div>
+                <footer class="product-footer" id="pf-13">
+                  <div class="product__price">
+                    <span>595&nbsp;₽</span>
+                  </div>
+                  <div class="product-buttons">
+                    <button
+                      class="btn js-cart-add"
+                      data-id="13"
+                      data-gid="13"
+                      data-sid="1123"
+                      data-title="Цезарь"
+                      data-price="545"
+                      data-sprice="545"
+                      data-weight="300 г"
+                      data-image="assets/img/product-0.jpg"
+                    >
+                      В корзину
+                    </button>
+                    <div class="product-buttons__count">
+                      <button class="btn btn-md js-cart-minus" data-id="13">
+                        <span>–</span>
+                      </button>
+                      <input
+                        class="i-count i-count"
+                        type="text"
+                        id="count-13"
+                        disabled
+                        value="1"
+                        maxlength="3"
+                      />
+                      <button class="btn btn-md js-cart-plus" data-id="13">
+                        <span>+</span>
+                      </button>
+                    </div>
+                  </div>
+                </footer>
               </div>
-
-              <footer class="product-footer" id="pf-13">
-                <div class="product__price">
-                  <span>595&nbsp;₽</span>
-                </div>
-                <div class="product-buttons">
-                  <button
-                    class="btn js-cart-add"
-                    data-id="13"
-                    data-gid="13"
-                    data-sid="1123"
-                    data-title="Цезарь"
-                    data-price="545"
-                    data-sprice="545"
-                    data-weight="300 г"
-                    data-image="assets/img/product-0.jpg"
-                  >
-                    В корзину
-                  </button>
-                  <div class="product-buttons__count">
-                    <button class="btn btn-md js-cart-minus" data-id="13">
-                      <span>–</span>
-                    </button>
-                    <input
-                      class="i-count i-count"
-                      type="text"
-                      id="count-13"
-                      disabled
-                      value="1"
-                      maxlength="3"
-                    />
-                    <button class="btn btn-md js-cart-plus" data-id="13">
-                      <span>+</span>
-                    </button>
-                  </div>
-                </div>
-              </footer>
-            </div>
-          </article>
-
+            </article>
+          </section>
           <!--
 				<li class="product-promo__item product-promo__item_promo1"><span>Вегетерианское</span></li>
 				<li class="product-promo__item product-promo__item_promo2"><span>Рекоммендуем</span></li>

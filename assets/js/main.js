@@ -369,34 +369,21 @@ $(document).ready(function() {
 		});
 	}
 
-	function updateSubcatsResults(){
-		$(".product-wrap").each(function(){
-			var show = true;
-			var t = $(this).data("subcat");
-
-			$(".subcat__item").each(function(){
-				if ($(this).hasClass("subcat__item_isActive")){
-					var c = $(this).data("subcat");
-					if ((c != t) && (c != -1)){
-						show = false;
-					}
-				}
-			});
-
-			if (show){
-				$(this).css("display","block");
-			}else{
-				$(this).css("display","none");
+	function updateSubcatsResults(active_subcat){
+		$(".products__subcat").each(function(){
+			if ($(this).data("subcat") === active_subcat || active_subcat === -1){
+				$(this).removeClass("products__subcat_isHidden")
+			} else {
+				$(this).addClass("products__subcat_isHidden")
 			}
-
-		});
+		})
 	}
 $(document).ready(function() {
 	$(".subcat__item").each(function(){
 		$(this).click(function(){
 			clearSubcats();
 			$(this).addClass("subcat__item_isActive");
-			updateSubcatsResults();
+			updateSubcatsResults($(this).data("subcat"));
 		});
 	});  
 });
